@@ -1,0 +1,52 @@
+<view class="storeview" wx:if="{{!comIsShow}}">
+  <text bindtap="openvideo" class="w_storeF_icon w_storeF_icon01">
+    拍视频
+    <text class="store-footer-text">赚豆</text>
+  </text>
+  <text bindtap="openCamera" class="w_storeF_icon w_storeF_icon02">
+    拍照片
+    <text class="store-footer-text">赚豆</text>
+  </text>
+  <text class="w_storeF_icon w_storeF_icon03" bindtap="writeText">
+    写评论
+    <text class="store-footer-text">赚豆</text>
+  </text>
+</view>
+<view class="w_commFooter" wx:else>
+  <view class='comment-btn' bindtap="handleBlur">取消</view>
+  <view class="comment-input-wrap">
+    <input class='comment-input' bindinput="setDefaultValue"  placeholder="拍图片/视频将能获取更多豆哦~" />
+    <!-- <view class='comment-tips'>至少输入12个字</view> -->
+  </view>
+  <view class='comment-btn' bindtap="submit">发表</view>
+</view>
+<view class='popup-dialog' wx:if="{{popupShow}}" catchtouchmove="prevent">
+  <view class='popup-dialog-content'>
+    <view class="w_headers">
+      <text class="w_head_leftTxt w_head_txt" bindtap="comsCancel">取消</text>
+      <text class="w_head_rightTxt w_head_txt" bindtap="comsConfirm">发表</text>
+    </view>
+    <view class="w_boxsT">
+      <view class="w_find_coms">
+        <textarea class='comment-textarea' bindinput="setDefaultValue" placeholder="评价一下吧">
+        </textarea>
+        <view class="w_find_com_list">
+          <view class="vimg" wx:for="{{imglist}}" wx:key="index" wx:if="{{imglist.length > 0}}">
+            <image class='vimg' src="{{item || errorImg}}" bindtap='showBigImg' data-index="{{index}}" mode='widthFix'></image>
+          </view>
+          <video id="showvideo" class='product-vedio' src="{{vedioUrl}}" show-play-btn controls wx:if="{{vedioUrl}}"></video>
+          <text wx:if="{{isOpenCamera}}" bindtap="openCamera" v-if="myshowimg" class="w_find_btns w_btn_photo">
+            上传照片
+          </text>
+          <text wx:else bindtap="openvideo" v-if="myshowvideo" class="w_find_btns w_btn_video">
+            重新拍摄
+          </text>
+        </view>
+      </view>
+      <view class="w_find_comSel">
+        <view class='current-bussines'>当前商户</view>
+        <view class='store-name'>{{storeName}}</view>
+      </view>
+    </view>
+  </view>
+</view>

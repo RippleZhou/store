@@ -1,0 +1,105 @@
+<view class="w_headers flex-wrp">
+  <view bindtap="scan" class="w_icon_saos"></view>
+  <!-- <text class="w_head_leftback" bindtap="goBack" ></text> -->
+  <view class="head_i_cens">
+    <form class='head_i_cens_form'>
+      <input class='head_i_cens_input' disabled bindtap='search' placeholder="请输入要搜索产品"></input>
+    </form>
+  </view>
+  <navigator class="w_icon_message" url="/pages/news/news"></navigator>
+</view>
+
+<swiper class="swiper-wrap-tab" display-multiple-items="{{4}}" next-margin="140rpx">
+  <block wx:for="{{tabs}}" wx:key="index">
+    <swiper-item class="swiper-item-tab tc" bindtap="jumpTab" data-index="{{index}}">
+      <view class="swiper-item-tab-text {{currentTab == index ? 'active-tab': ''}}">
+        {{item.name}}
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
+
+
+<view>
+  <swiper class='w_sw_con' current='{{currentTab}}' bindchange="swiperChangeTab">
+    <block wx:for="{{tabs}}" wx:key="index">
+      <swiper-item class="swiper-slide">
+        <scroll-view data-index="{{index}}" style='height:100%;' scroll-y bindscrolltolower="scrolltolower">
+
+          <view class='recommend' wx:if="{{index == 0}}">
+            <index-recommend swiper-list="{{recommend.homeBanners}}" advertisement="{{recommend.homeAdvertise}}" grid-list="{{recommend.homeNavigs}}" pp-list="{{recommend.homeCopywrs}}" floor-list="{{recommend.homeFloors}}" bind:getBeanId="getBeanId" bind:appdownload="appdownload">
+            </index-recommend>
+          </view>
+
+          <index-home wx:else proid="{{item.id}}" title="{{item.name}}" set-tab-show="{{true}}" type="{{1}}" head-list="{{item.headList}}" pro-list="{{item.proList}}" last-flag="{{item.lastFlag}}">
+          </index-home>
+
+        </scroll-view>
+
+      </swiper-item>
+    </block>
+  </swiper>
+
+</view>
+
+<view class="share-mask" wx:if="{{shareShow}}"></view>
+<view class="weui-dialog" wx:if="{{shareShow}}">
+  <view class="w_tip_view">
+    <view class="span" class="w_tip_fontTxt">转发好友,可自动完成借豆1-50抵用豆,快去测试您的人品吧!</view>
+    <image class="share-image image" src="https://zhkj.oss-cn-shanghai.aliyuncs.com/nJunesMerIndex/nwxf_01_02.png" mode="widthFix" bindtap="shareHide" />
+  </view>
+</view>
+
+<view class="gotoapp-mask" hidden="{{appdownloadHidden}}" bindtap="closeDownload"></view>
+<view class="gotoapp-content" hidden="{{appdownloadHidden}}">
+  <view class="downloadcontainer" style="position: relative; display: flex; flex-direction: column; align-items: center;">
+    <h3 style="margin-top: 16%; padding: 0px 8%;">用app一键分享赚钱，更便捷，更流畅。</h3>
+    <a class="download" bindtap="download" style="display: block; padding: 5px 10px; background: rgb(226, 45, 26); width: 40%; color: rgb(255, 255, 255); margin-top: 50px; margin-bottom: 20px; border-radius: 5px;">
+      下载APP
+    </a>
+    <span bindtap="closeDownload" class="vux-close" style="position: absolute; display: block; text-align: center; top: 10px; right: 10px; font-size: 24px;"></span>
+  </view>
+</view>
+
+<view class="redPacket" wx:if="{{redClose}}">
+  <!-- 显示隐藏 -->
+  <view class="beforeOpen" wx:if="{{redPacketShow}}">
+    <view class="openbtn">
+      <view bindtap="openRed">
+        <view class="span">领</view>
+      </view>
+    </view>
+  </view>
+  <image src="https://zhkj.oss-cn-shanghai.aliyuncs.com/nHelp/nw_redpacket_openBefore.png" mode="widthFix" wx:if="{{redPacketShow}}" />
+  <view class="desc" wx:if="{{redPacketShow}}">
+    <view class="p1 p">
+      <view class="b">最高领取</view>
+    </view>
+    <view class="p1">
+      <view class="b">
+        <text class="span">50元</text> 现金红包
+      </view>
+    </view>
+  </view>
+
+  <view class="Opened" wx:if="{{useRedShow}}">
+    <image src="https://zhkj.oss-cn-shanghai.aliyuncs.com/nHelp/nw_redpacket_openAfter.png" mode="widthFix" />
+    <view class="title">
+      <view class="p">恭喜您获得现金红包</view>
+      <view class="num">
+        <view class="span">20</view>
+        元</view>
+    </view>
+    <view class="immediatelyUse" bindtap="startUseRed">
+      <view class="span">立即使用</view>
+    </view>
+    <view class="explain p">20元现金红包已存入红包</view>
+  </view>
+
+  <view class="cancel" bindtap="closeRed" wx:if="{{redClose}}"></view>
+</view>
+
+
+<view class="w_redpacketImg animate disappear_hingeTops" bindtap="showRed" hidden="{{showSmallRed}}">
+  <image src="https://zhkj.oss-cn-shanghai.aliyuncs.com/nHelp/nw_redpacket_smImg.png" class="small-red"/>
+</view>

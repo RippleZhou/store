@@ -1,0 +1,62 @@
+/* pages/order/virreturn-detail/virreturn-detail.wxss */
+
+page{background: #fff;}
+/***中间**/
+.vir_box{
+  margin-top: 88rpx;padding-bottom: 100rpx;
+}
+
+.vir_det_cons{
+  width:100%;background: #fff;padding:20rpx;margin-bottom: 20rpx;
+}
+.vir_det_lis{
+  color:#333;padding:16rpx 0;font-size: 30rpx;
+}
+.vir_det_lis label{
+  color:#666666;font-size: 28rpx;
+}
+.vir_det_lis text{
+  color:#E61817;
+}
+
+.vir_det_tit{
+font-size: 30rpx;padding:0 20rpx;background: #F5F5F5;color:#333;
+text-align: left;line-height: 80rpx;height: 80rpx;font-weight: bold;
+}
+
+.w_reDetail_lines{
+  padding:35rpx 20rpx;
+}
+.w_logInfo_infos{
+  padding-left: 60rpx;padding-bottom: 60rpx;position: relative;width:100%;
+}
+.w_logInfo_infos::after{
+  content: '';width:1rpx;height:100%;margin-left: 16rpx;position:absolute;left:0;top:8rpx;
+  border-left:1px solid #EBEBEB;z-index:1;
+}
+.w_logInfo_infos:before{
+  width:21rpx;height: 21rpx;border-radius: 21rpx;background: #EBEBEB;content:'';
+  left:0;z-index: 2;margin-left:6rpx;top:8rpx;display:block;position:absolute;
+}
+.w_logInfo_infos view{
+font-size: 28rpx;color:#666666;padding-bottom: 10rpx;
+}
+.w_logInfo_infos text{
+font-size: 24rpx;color:#666666;display:block;line-height: 40rpx;text-align:left;padding-bottom: 10rpx;
+}
+.w_logInfo_infos label{
+color:#828282;font-size: 24rpx;display:block;width:100%;
+}
+
+.w_reDetail_lines .w_logInfo_infos:first-child view{
+color:#EF9001;
+}
+.w_reDetail_lines .w_logInfo_infos:first-child text{
+color:#333;
+}
+.w_reDetail_lines .w_logInfo_infos:first-child::before{
+  border:6rpx solid #FDCAD8;background: #E61817;margin-left: 0;
+}
+.w_reDetail_lines .w_logInfo_infos:last-child::after{
+  height:0;
+}

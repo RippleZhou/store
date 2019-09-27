@@ -1,0 +1,43 @@
+@import "/style/common.wxss";
+
+.w_topSearchs:before {
+  font-size: 100rpx;
+  line-height: 82rpx;
+  font-family: nwscfonts!important;
+  font-weight: 400;
+  font-style: normal;
+  content: "\E005";
+  color: #333;
+  vertical-align: top;
+}
+.swiper-wrap-tab {
+  width: 100%;
+  background: #fff;
+  height: 80rpx;
+  z-index: 100;
+  left: 0;
+  top: 88rpx;
+  position: fixed;
+  border-bottom: 1px solid #ebebeb;
+}
+.swiper-item-tab {
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  color: #000;
+  background: #fff!important;
+}
+.swiper-item-tab-text {
+  height:80rpx;
+  display:inline-block;
+  margin-left: 20rpx;
+}
+.active-tab {
+  color: #e61817;
+  border-bottom: 4px solid #e61817;
+}
+.w_sw_con {
+  margin-top: 172rpx;
+  min-height: calc(100vh - 168rpx);
+  overflow: scroll;
+}

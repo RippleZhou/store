@@ -1,0 +1,85 @@
+<!--pages/order/order-list/order-list.wxml-->
+<wxs module="util" src="./order-list.wxs"></wxs>
+
+<view class='ord_li_heads'>
+    <view class='ord_li_h_tit'>订单列表</view>
+    <icon class='top_servers' bindtap='getTels'></icon>
+</view>
+
+<view class='ord_liBox'>
+
+    <view class='ord_top_Infors'>
+        <view class='ord_top_names'>
+            <text>收货人:{{itemList.contactName}}</text>
+            <text>{{itemList.contactCellPhone}}</text>
+        </view>
+        <view class='ord_top_address'>收货地址:{{itemList.area}}</view>
+    </view>
+
+    <view class='ord_pro_lists' wx:for="{{itemList.orderList}}" wx:key="unique" wx:for-item="ex">
+        <view class='ord_pro_lStates'>{{util.getorderStateName(ex.orderState,ex.tradeState)}}</view>
+        <view class='ord_myOnline_proList'>
+            <image src='{{ex.imgUrl||errorImg}}' mode="widthFix" binderror="errImg" data-err-img="{{errorImg}}"></image>
+            <view class='ord_proL_mids'>
+                <view class='ord_proTits'>{{ex.productName}}</view>
+                <text class='ord_proTips' wx:if="{{ex.requestBuyLimit>1}}">{{ex.requestBuyLimit}}件起购</text>
+            </view>
+            <view class='ord_proL_rigs'>
+                <view class='ord_proL_rgraytxt'>￥{{ex.productPrice}}</view>
+                <view class='ord_proL_rgraytxt2'>x{{ex.productNum}}</view>
+                <view class='ord_proL_rgraytxt3'>{{util.getStateTxt(ex.orderState)}}</view>
+            </view>
+        </view>
+        <view class='ord_myOnline_btns' wx:if="{{ex.tradeState==1}}">
+            <text bindtap='delOrder' data-orderid="{{ex.orderId}}" wx:if="{{ex.orderState==4 ||ex.orderState==7 ||ex.orderState==3}}">删除订单</text>
+            <picker bindchange="bindPickerChange" value="index" range="{{cancelList}}" range-key="{{'text'}}">
+            <text wx:if="{{ex.orderState==1}}" bindtap='cancelShows' data-orderid='{{ex.orderId}}'>取消订单</text>
+            </picker>
+            <text bindtap='confirmReceipt' data-orderid="{{ex.orderId}}" class='ord_redBtns' wx:if="{{ex.orderState==2}}">确认收货</text>
+            <text wx:if="{{ex.orderState==2||ex.orderState==5}}" bindtap='goSeeLogis' data-orderid="{{ex.orderId}}">查看物流</text>
+            <text wx:if="{{ex.orderState==3}}" bindtap='goReturn' data-orderid="{{ex.orderId}}">退/换货</text>
+            <text wx:if="{{ex.orderState==5}}" bindtap='goLogistics' data-orderid="{{ex.orderId}}">填写物流信息</text>
+            <text wx:if="{{ex.orderState==5}}" bindtap='cancelReturnedGoods' data-orderid="{{ex.orderId}}">取消退/换货</text>
+        </view>
+        <view class='ord_myOnline_btns' wx:if="{{ex.tradeState==0}}">
+            <text bindtap='delOrder' data-orderid="{{ex.orderId}}">删除订单</text>
+        </view>
+    </view>
+    <view class='ord_totals'>
+      共计{{itemList.totalNum}}件商品 合计：¥{{itemList.totalAmount}}
+    </view>
+
+    <view class='ord_infor_list'>
+        <view class='ord_infor_lTxt'>
+            <text>商品金额</text><text>￥{{itemList.totalAmount}}</text>
+        </view>
+        <view class='ord_infor_lTxt'>
+            <text>现金红包</text><text>-￥{{itemList.beanAmount}}</text>
+        </view>
+        <view class='ord_infor_lTxt'>
+            <text>转换豆</text><text>-{{itemList.converBeanAmount}}</text>
+        </view>
+         <view class='ord_infor_lTxt'>
+            <text>运费</text><text>+{{util.showexpress(itemList.expressFee,itemList.expressBeans)}}</text>
+        </view>
+        <view class='ord_infor_lNumtxt'>
+            <text>明细</text>实付款<label>￥{{itemList.payAmount}}</label>
+        </view>
+    </view>
+
+    <view class='ord_detail_infor'>
+        <view class='ord_detail_txts'><label>订单信息</label></view>
+        <view class='ord_detail_txts'><label>订单编号</label>{{itemList.orderGroupCode}}</view>
+        <view class='ord_detail_txts'><label>付款时间</label>{{itemList.payTime||''}}</view>
+    </view>
+    <view class='ord_orderDetail_btns' wx:if="{{orderState==0}}">
+      <view class='ord_myOnline_btns'>
+            <text class='ord_redBtns' bindtap='payShows'>立即付款</text>
+            <picker bindchange="bindPickerChange" value="index" range="{{cancelList}}" range-key="{{'text'}}">
+            <text bindtap='cancelShows' data-orderid="{{util.getorderids(itemList.orderList)}}">取消订单</text>
+            </picker>
+        </view>
+    </view>
+
+</view>
+

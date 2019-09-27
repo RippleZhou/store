@@ -1,0 +1,45 @@
+<!--pages/activityNinetyNine/activityNinetyNine.wxml-->
+ <view class="activity-page" style="background-color: #ffd639;">
+      <view class="activity-top">
+        <image mode="widthFix" class="full-img" src="https://zhkj.oss-cn-shanghai.aliyuncs.com/SSLRes/images/activity201904/ninety-nine-title1.jpg" />
+      </view>
+      <view class="activity-tab-wrap">
+        <view class="flex-wrap activity-tab-content" >
+          <view class="{{priceRange == 10 ? 'activity-tab-active': 'activity-tab-active activity-tab'}}" data-index="10" bindtap="priceRange"><view class="{{priceRange == 10 ? 'span': ''}}">9块9包邮</view></view>
+          <view class="{{priceRange == 20 ? 'activity-tab-active': 'activity-tab-active activity-tab' }}"  data-index="20" bindtap="priceRange"><view class="{{priceRange == 20 ? 'span': ''}}">19块9包邮</view></view>
+          <view class="{{priceRange == 30 ? 'activity-tab-active':'activity-tab-active activity-tab' }}"  data-index="30" bindtap="priceRange"><view class="{{priceRange == 30 ? 'span': ''}}">29块9包邮</view></view>
+        </view>
+      </view>
+      <image mode="widthFix" class="activity-tab-img full-img" src="https://zhkj.oss-cn-shanghai.aliyuncs.com/SSLRes/images/activity201904/ninety-nine-title2.png" />
+
+      <view class="product-list-wrap" style="position: relative; top: -15px;">
+          <view class="product-list" wx:for="{{items}}" style="margin-bottom: 0;" >
+            <view class="product-content" bindtap="goto" style="width: 94.3%;padding-top: 10px;">
+              <view class="flex-wrap" style="background-color: #fff;padding-bottom: 2px;" data-pid="{{item.productId}}" bindtap="gotodetail">
+              <view class="product-list-left">
+                <image class="product-img full-img" mode="widthFix" src="{{item.imageUrl}}" />
+                <view class="hot-text">
+                </view>
+              </view>
+              <view class="product-list-right" >
+                <view class="product-name">{{item.productTitle}}</view>
+                <view class="product-detail flex-wrap">
+                  <view class="product-price">
+                    <text class="rmb">￥</text>{{ item.cashPrice }}
+                    <view class="save-money-wrap">
+                      <text class="save-money">
+                        <image class="save-money-img" mode="widthFix" src="https://zhkj.oss-cn-shanghai.aliyuncs.com/SSLRes/images/activity201903/save-money.png" />
+                        <view class="save-text">省{{item.priceCurrentPrice - item.cashPrice}}元</view>
+                      </text>
+                    </view>
+                    <view class="line-through">原价￥{{item.priceCurrentPrice}}元</view>
+                  </view>
+                  <view class="buy-now" data-item="{{item}}" catchtap="buyNow">立即抢购</view>
+                </view>
+              </view>
+              </view>
+            </view>
+          </view>
+      </view>
+
+  </view>

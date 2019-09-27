@@ -1,0 +1,33 @@
+@keyframes kf-marque-animation{ 
+  0% { transform: translateX(100%); } 
+  10% { transform: translateX(80%); } 
+  100% { transform: translateX(-50%); } 
+}
+.marquee-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.marquee{
+  flex-grow: 1;
+  border: none;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: clip;
+  position: relative;
+}
+.marquee-tips {
+  min-width: 10%;
+}
+.marquee-content{
+  display: inline-block;
+  position: relative;
+  animation: kf-marque-animation 10s linear infinite;
+  white-space: nowrap;
+}
+.marquee-placeholder {
+  display: inline-block;
+  width: 375rpx;
+}

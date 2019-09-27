@@ -1,0 +1,68 @@
+<view class="storeCoupon" style="height: 100vh;">
+  <view class="s_container">
+    <!-- 上面 -->
+    <view class="cashCoupon" style="background-color: #f5f5f5;">
+      <view class="w_cashCoupon2 ">
+        <view class="cashCouponDetail" style="border-bottom: 1px dashed #f5f5f5;">
+          <view class="flex-wrap">
+            <image src="{{imgsrc}}" class="coupon-img" mode="widthFix"></image>
+            <view style="flex-grow: 1;">
+              <h2>{{details.virPorductName}}</h2>
+              <label class="w_redTips">可砍到{{details.minSellPrice}}元</label>
+              <p>
+                <span class="nowprice">￥{{details.productPrice}}</span>
+                <s>￥{{details.sellPrice}}</s>
+              </p>
+            </view>
+          </view>
+        </view>
+        <view class="activity">
+          <span class="activLefs">
+            下手要快,仅剩:{{details.surplusNum}}个</span>
+          <view class="w_rigde_rigIcons">
+            <label>{{details.lookPeopleNum}}</label>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="cashCouponExplain">
+      <view class="p">
+        <text class="span">
+          <text class="b">有效期</text>
+        </text>
+        <text class="content content1">{{details.validBeginTime | floatTimes }}  {{details.validEndTime | floatTimes }}</text>
+      </view>
+      <view class="p">
+        <text class="span">
+          <text class="b">使用范围</text>
+        </text>
+        <text class="content">{{details.useScope}}</text>
+      </view>
+      <view class="p">
+        <text class="span">
+          <text class="b">使用说明</text>
+        </text>
+        <text class="content">1.券码名称：瑞幸咖啡饮品券。 2.luckin coffee饮品券21元，结算时，饮品券可抵扣相当面额的饮品费用，但不包括风味糖浆及配送费。 3.领取兑换码后，需使手机登陆luckin coffee APP或小程序进行兑换后使用，券码兑换成功后，咖啡钱包内饮品券有效期三年。 4.本券只适用于在luckin coffee APP及小程序内购买饮品使用。 5.本券不可转让，不做退换，不兑现金，不设找零，抵用金额不可开发票。 6.已开业城市： 重庆、福州、深圳、成都、杭州、无锡、上海、天津、大连、西安、青岛、南京、北京、厦门、长沙、广州、郑州、武汉、苏州、扬州、济南、常州、佛山、东莞、绍兴、珠海
+          即将开业城市： 石家庄、温州、泉州、沈阳、镇江、中山、合肥、南昌、南通、嘉兴、贵阳、太原、昆明(以luckin coffee APP端为准）。 7.如有疑问，请致电luckin coffee客服电话:4000-100-100</text>
+      </view>
+    </view>
+
+  </view>
+  <view class="storeBottom" wx:if="{{details.surplusNum !=0}}">
+    <view class="rushbuy" catchtap="confirmOrder" data-vid="{{details.virProductId}}">去抢购</view>
+    <view class="cutprice" wx:if="{{details.isBargain == 0}}"  data-item="{{details}}" catchtap="clickBargain">去砍价</view>
+    <view class="gooncutprice" wx:else catchtap="toShare2">继续砍</view>
+  </view>
+  <view class="lootstoreBottom" wx:if="{{details.surplusNum ==0}}">
+    <view class="lootall">已抢光</view>
+  </view>
+  <!--成功时分享-->
+  <!-- <div v-transfer-dom>
+        <x-dialog v-model="showDialogStyle" hide-on-blur class="dialogNobgs">
+          <p style="color:#fff;text-align:center;" @click="showDialogStyle = false">
+            <img src="https://zhkj.oss-cn-shanghai.aliyuncs.com/nHelp/nwxf_vir_01.png"/>
+          </p>
+        </x-dialog>
+      </div> -->
+</view>

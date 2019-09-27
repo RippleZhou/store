@@ -1,0 +1,23 @@
+
+function floatTimes(time) {
+  var year = getDate(time).getFullYear()
+  var month = getDate(time).getMonth() + 1
+  var day = getDate(time).getDate()
+  var tiems = year + '.' + month + '.' + day
+  return tiems
+}
+function userDay(week){
+  var N = ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+  var str = week.toString()
+  var len = week.toString().length
+  var C_Num = []
+  for (var i = 0; i < len; i++) {
+    C_Num.push(N[str.charAt(i) - 1])
+  }
+  return C_Num.join(' ') + '/ '
+}
+
+module.exports = {
+  floatTimes: floatTimes,
+  userDay: userDay
+}

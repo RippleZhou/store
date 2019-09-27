@@ -1,0 +1,119 @@
+/* pages/order/order-list/order-list.wxss */
+
+
+/***中间**/
+.ord_liBox{
+  margin-top: 88rpx;padding-bottom: 100rpx;
+}
+.ord_top_Infors{
+  width:100%;background: #fff;padding:55rpx 20rpx 35rpx 90rpx;
+  position: relative;margin-bottom: 20rpx;
+}
+.ord_top_Infors::before{
+  font-family: nwscfonts!important;display: inline-block;content: "\E016";
+  color: #fff;width:60rpx;height: 60rpx;border-radius: 60rpx;line-height: 54rpx;
+  font-size:80rpx;position:absolute;left:20rpx;top:70rpx;text-align: center;
+  background: -webkit-linear-gradient(top, #f61e65 , #f90000); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(bottom, #f61e65, #f90000); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(bottom, #f61e65, #f90000); /* Firefox 3.6 - 15 */
+  background: linear-gradient(to bottom, #f61e65 , #f90000); /* 标准的语法 */
+}
+.ord_top_names{
+  padding-bottom:20rpx;display:flex;display:-webkit-flex;display: -ms-flexbox;
+}
+.ord_top_names text{
+  display: block;width:50%;text-align: left;font-size: 30rpx;color:#333;font-weight: bold;
+}
+.ord_top_names text:last-child{
+  text-align: right;
+}
+.ord_top_address{
+  font-size: 26rpx;color:#333;
+}
+
+/*****/
+.ord_pro_lists{
+  background: #fff;
+}
+.ord_pro_lStates{color:#E61817;font-size: 28rpx;padding:20rpx;text-align: right;}
+.ord_myOnline_proList{
+  display:flex;display:-webkit-flex;display: -ms-flexbox;padding:20rpx;
+}
+.ord_myOnline_proList image{
+  width:184rpx;height: 184rpx;display: block;margin-right: 20rpx;
+}
+.ord_proL_mids{
+  width:50%;text-align: left
+}
+.ord_proL_mids .ord_proTits{
+text-overflow: ellipsis;overflow:hidden;-webkit-box-orient: vertical;display:-webkit-box;-webkit-line-clamp: 2;font-size: 28rpx;color:#333;margin-bottom: 10rpx;
+}
+.ord_proL_mids .ord_proTips{
+font-size: 24rpx;color:#E61817;border:1px solid #E61817;padding:1rpx 12rpx;border-radius: 40rpx;
+}
+
+.ord_proL_rigs{
+  width:30%;text-align: right;
+}
+.ord_proL_rgraytxt{
+  color:#999;font-size: 30rpx;
+}
+.ord_proL_rgraytxt2{
+  color:#333;padding-bottom:10rpx;font-size: 30rpx;
+}
+.ord_proL_rgraytxt3{
+font-size: 28rpx;color:#ff9000;padding-top: 40rpx;
+}
+
+.ord_myOnline_btns{display:flex;display:-webkit-flex;display: -ms-flexbox;
+  flex-direction:row-reverse;-ms-flex-direction: row-reverse;-webkit-flex-direction: row-reverse;
+  padding:20rpx;border-bottom:1px solid #ebebeb;
+}
+.ord_myOnline_btns text{
+  display: block;border:1px solid #ebebeb;font-size: 28rpx;padding:0 20rpx;height: 60rpx;line-height: 54rpx;border-radius: 60rpx;margin-left: 20rpx;
+}
+.ord_myOnline_btns text.ord_redBtns{
+  color:#E61817;border-color:#E61817;
+}
+
+.ord_totals{background: #fff;margin-bottom: 20rpx;
+  width:100%;padding:25rpx 20rpx;font-size: 28rpx;color:#333;text-align: right;
+}
+
+/****/
+.ord_infor_list{
+  width:100%;background: #fff;padding:10rpx 0;margin-bottom: 20rpx;
+}
+.ord_infor_lTxt{
+  padding:10rpx 20rpx;display:flex;display:-webkit-flex;display: -ms-flexbox;
+}
+.ord_infor_lTxt text{
+  width:50%;text-align: right;font-size: 30rpx;color:#333;display: block;
+}
+.ord_infor_lTxt text:first-child{
+  text-align: left;font-weight: bold;
+}
+
+.ord_infor_lNumtxt{
+  padding:10rpx 20rpx;text-align: right;font-size: 26rpx;color:#333;
+}
+.ord_infor_lNumtxt text{
+  font-size: 24rpx;color:#E61817;padding:0 10rpx;border:1px solid #E61817;border-radius: 50rpx;margin-right: 10rpx;
+}
+.ord_infor_lNumtxt label{
+  padding-left: 10rpx;font-size: 36rpx;color:#E61817;font-weight: bold;
+}
+
+/*****/
+.ord_detail_infor{
+  padding:10rpx 20rpx;background: #fff;margin-bottom: 20rpx;width:100%;
+}
+.ord_detail_txts{
+  line-height: 30rpx;color:#333;font-size: 26rpx;padding:10rpx 0;text-align: left;
+}
+.ord_detail_txts label{font-weight: bold;padding-right: 10rpx;}
+
+/****/
+.ord_orderDetail_btns{
+  position: fixed;left:0;bottom:0;width:100%;background: #fff;height: 100rpx;padding:0 20rpx;text-align: right;z-index: 100;
+}

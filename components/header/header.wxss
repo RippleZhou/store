@@ -1,0 +1,48 @@
+/* components/header.wxss */
+/* @import '../../style/common.wxss'; */
+.w_headers {
+    position: fixed;
+    z-index: 100;
+    height:88rpx;
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #ebebeb;
+    top: 0;
+    left: 0;
+    display: flex;
+}
+.w_logHeader {
+    border-bottom: 0;
+}
+.w_head_leftTxt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 12%;
+    text-align: left;
+    display: block;
+    z-index: 101;
+    font-size: 30rpx;
+    line-height: 88rpx;
+    padding-left: 20rpx;
+}
+.w_head_rightTxt {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 12%;
+    text-align: left;
+    display: block;
+    z-index: 101;
+    font-size: 30rpx;
+    line-height: 88rpx;
+    padding-left: 20rpx;
+}
+.h2 {
+  width: 100%;
+  font-size: 34rpx;
+  color: #333;
+  text-align: center;
+  line-height: 88rpx;
+  font-weight: 600;
+}

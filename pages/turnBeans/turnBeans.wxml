@@ -1,0 +1,10 @@
+<!--pages/turnBeans/turnBeans.wxml-->
+<view class="w_sendbean_boxs">
+  <view class="w_sendbean_lists w_sendbean_lists2">
+    <input placeholder="请输入对方手机号码" type="tel" bindinput="phoneInput" value="{{phone}}"/>
+    <view class="label"></view>
+  </view>
+  <view class="w_sendBean_btns w_sendBean_btns2 ">
+    <view  class="{{canUse?'w_beanBtns span canUse':'w_beanBtns span'}}" bindtap="sumbitPs">确定</view>
+  </view>
+</view>

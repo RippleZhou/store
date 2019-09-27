@@ -1,0 +1,10 @@
+var digitalFr = {
+  toFixedDecimal:function(digital,decimal) {
+    // var a = Number(digital)//.toFixed(decimal);
+    return Number(digital).toFixed(decimal)
+  },
+}
+
+module.exports = {
+  toFixedDecimal: digitalFr.toFixedDecimal,
+}

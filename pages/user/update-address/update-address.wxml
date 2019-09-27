@@ -1,0 +1,49 @@
+<!--pages/user/update-address/update-address.wxml-->
+
+<view class='up_address_list'>
+    <label>收货人</label>
+    <input placeholder='请输入收货人' value='{{arryList.contactName}}' bindinput="adListDefault" id='contactName'></input>
+</view>
+<view class='up_address_list'>
+    <label>手机号码</label>
+    <input placeholder='请输入手机号码' value='{{arryList.contactCellPhone}}' bindinput='adListDefault' id='contactCellPhone'></input>
+</view>
+<view class='up_address_list'>
+    <label>地址选择</label>
+    <view class="selCity" bindtap='showCitys'>{{cityText}}</view>
+</view>
+<view class='up_address_list up_address_list2'>
+    <input placeholder='详细地:如街道、门牌号、小区、单元室等' bindinput='adListDefault' id='addressDetail' value='{{arryList.addressDetail}}'></input>
+</view>
+<view class='up_address_list3'>
+  <checkbox-group bindchange="isCheck" class='up_address_sel'>
+    <checkbox value='设为默认地址' checked="{{checkeds}}"></checkbox>设为默认地址
+  </checkbox-group>
+  <view class='up_address_dels' wx:if="{{state!=0}}" bindtap='delAddress'>删除</view>
+</view>
+
+<view class='up_address_links' bindtap='updateAddress'>修改</view>
+
+
+<view hidden="{{isCity}}" class="selector">
+        <view class="inner_box">
+            <view class="header_box">
+                <view class="item l" data-act="cancel" data-mold="city" bindtap="ideChoice">取消</view>
+                <view class="item c">请选择</view>
+                <view class="item r" data-act="confirm" data-mold="city" bindtap="ideChoice">确定</view>
+            </view>
+
+            <picker-view class="picker_box" indicator-class="selected" value="{{cityValue}}" bindchange="cityChange">
+                <picker-view-column>
+                    <view wx:for="{{provinces}}" wx:key="unique">{{item}}</view>
+                </picker-view-column>
+                <picker-view-column>
+                    <view wx:for="{{citys}}" wx:key="unique">{{item}}</view>
+                </picker-view-column>
+                <picker-view-column>
+                    <view wx:for="{{countys}}" wx:key="unique">{{item}}</view>
+                </picker-view-column>
+            </picker-view>
+        </view>
+        <view class="layer"></view>
+</view>

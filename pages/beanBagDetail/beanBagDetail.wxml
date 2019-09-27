@@ -1,0 +1,36 @@
+<!--pages/beanBagDetail/beanBagDetail.wxml-->
+
+<view class="doubaodetail">
+  <view class="doubao-contailer">
+  <view class="add-bean" bindtap="addBean">充豆</view>
+    <view class="arc-red"></view>
+    <view class="zh-logo">
+      <image src="{{bean_detail_logo}}" id="logo-img"></image>
+      <view class="zh-name">转换商城豆包</view>
+      <view class="zh-intro">攒豆过生活！</view>
+    </view>
+  </view>
+  <view class="notice">
+    <view class="p" wx:if="res && res.data && res.data.params && res.data.params.collarBagIsEnd == 0">
+      抢豆包正在进行中
+    </view>
+    <view wx:else>
+      {{timestamp| formatTimeStramp}}
+    </view>
+  </view>
+  <view class="douList">
+    <view class="douBaoList"  wx:for="{{list}}">
+      <image src="{{item.cusImgUrl}}" class="item-head"></image>
+      <view class="list-info">
+        <view class="p1">
+          <text class="phone">{{item.cellPhone}}</text>
+          <text class="quantity">{{item.getBeanBag}}粒豆</text>
+        </view>
+        <view class="p2">
+          <text class="date">{{item.createTime}}</text>
+          <text wx-if="item.optimum==1" class="optimum">手气最佳</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  </view>

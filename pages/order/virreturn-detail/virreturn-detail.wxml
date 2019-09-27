@@ -1,0 +1,23 @@
+<!--pages/order/virreturn-detail/virreturn-detail.wxml-->
+<view class='ord_li_heads'>
+    <view class='ord_li_h_tit'>退款详情</view>
+    <icon class='top_servers' bindtap='getTels'></icon>
+</view>
+
+<view class='vir_box'>
+  <view class='vir_det_cons'>
+    <view class='vir_det_lis'>已退款：<text>￥{{item.refundAmount}}</text></view>
+    <view class='vir_det_lis'>退回账户：<label>{{item.payMethod}}</label></view>
+    <view class='vir_det_lis'>到账时间：<label>{{item.ExpectedDate||''}}</label></view>
+  </view>
+  <view class='vir_det_tit'>退款流程</view>
+
+  <view class='w_reDetail_lines'>
+    <view class='w_logInfo_infos' wx:for="{{item.refundList}}" wx:key="unique" wx:for-item="ex" >
+        <view>{{ex.remark}}</view>
+        <text>{{ex.detail}}</text>
+        <label>{{ex.date||''}}</label>
+    </view>
+  </view>
+
+</view>

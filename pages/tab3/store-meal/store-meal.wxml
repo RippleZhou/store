@@ -1,0 +1,97 @@
+<view class="storeCoupon">
+  <view class="s_container">
+    <view class="cashCoupon">
+      <swiper class="swiper-wrapper" interval="{{3000}}" autoplay="{{swiperAutoPlay}}" bindchange="swiperChange" >
+        <swiper-item class="swiper-slide" bindtouchstart="stopAutoPlay" wx:for="{{details.imageUrls}}" wx:key="key">
+          <image src="{{item || errorImg}}" mode="widthFix" class='banner-img'></image>
+        </swiper-item>
+      </swiper>
+      <view class="w_cashCoupon">
+        <view class="cashCouponDetail">
+            <view class='coupon-h2'>{{details.virPorductName}}</view>
+            <text class="w_redTips">可砍到{{details.minSellPrice}}元</text>
+            <view class='cashCouponDetail_P'>
+              <text class="nowprice">￥{{details.productPrice}}</text> <text class='line-through'>￥{{details.sellPrice}}</text>
+              <text class="activ-tips">下手要快,仅剩:{{details.surplusNum}}个</text>
+            </view>
+            <marquee class="w_redTips2" tips="活动:" text="{{bargTips}}"></marquee>
+        </view>
+        <!-- <view class="activity flex-wrp">
+          <view class="activLefs">下手要快,仅剩:{{details.surplusNum}}个</view>
+          <view class="w_rigde_rigIcons">
+            <text class='watchedicon'>{{details.lookPeopleNum}}</text>
+          </view>
+        </view> -->
+      </view>
+    </view>
+    <view class="mealdetail">
+      <view class='mealdetail-h2'>套餐详情</view>
+      <view class="detail-content">
+        <view class='detail-content-p' wx:for="{{details.dishesList}}" wx:key="{{index}}">
+          ·{{item.dishesName}}<text class="detail-content-number">  {{item.dishesType}}</text> 
+          <text class="detail-content-price"> ￥{{item.dishesPrice}}</text>
+        </view>
+      </view>
+      <view class="reminder">
+        <view>温馨提示</view>
+        <view class='reminber-content'>{{details.kindlyReminder}}</view>
+      </view>
+    </view>
+
+    <view class="cashCouponExplain">
+      <view>
+        <text class='detail-subtitle'>有效期</text>
+        <text class="content content1">{{details.validBeginTime }} - {{details.validEndTime}}</text>
+      </view>
+      <view>
+        <text class='detail-subtitle'>使用时间</text>
+        <text class="content ">{{details.useWeek | replace}}{{details.useTime}}</text>
+      </view>
+      <view>
+        <text class='detail-subtitle'>使用范围</text>
+        <text class="content">{{details.useScope}}</text>
+      </view>
+      <view>
+        <text class='detail-subtitle'>使用说明</text>
+        <text class="content">{{details.useDesc}}</text>
+      </view>
+    </view>
+    <view class="storeIntro">
+      <view tag="view" class="storedetail flex-wrp" bindtap='goDetail'>
+        <block wx:if="{{storeInfo.imgs[0]}}">
+          <image class='store-img' src="{{storeInfo.imgs[0].imgUrl || errorImg}}" mode="widthFix" ></image>
+        </block>
+        <block wx:else>
+          <image class='store-img' src="{{errorImg}}" mode="widthFix" ></image>
+        </block>
+        <view class="storedetailright">
+          <view>
+            <text class='store-right-b'>{{storeInfo.storeBriefName}}</text> 
+            <text class="store-float-right">{{storeInfo.consume}}</text>
+            </view>
+          <view class="store-type">{{storeInfo.storeCuisineType}}</view>
+        </view>
+      </view>
+      <view  class="w_storeDe_list">
+        <text class='w_storeDe_list_span'>营业时间：{{storeInfo.businessHours}}</text>
+      </view>
+      <view  class="w_storeDe_list w_storeDe_list2">
+        <text bindtap="openmap" class='w_storeDe_list_span list_span2'>商家地址：{{storeInfo.storeAddress}}</text>
+        <view bindtap="callPhone" class='call-phone'></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="storeBottom">
+    <block wx:if="{{details.surplusNum !=0}}">
+      <view class="rushbuy" bindtap="confirmOrder">去抢购</view>
+      <view class="cutprice" wx:if="{{details.isBargain == 0}}" 
+        bindtap="clickBargain">去砍价</view>
+      <button class="gooncutprice reset-share-btn" wx:else 
+        hover-class="none" open-type='share'>继续砍</button>
+    </block>    
+    <block wx:else>
+      <view class="rish-all">已抢光</view>
+    </block>
+  </view>
+</view>

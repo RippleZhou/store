@@ -1,0 +1,22 @@
+function formatName(str,long) {
+  var tempStr = ""
+  if (long == 5 && str.length > 4) {
+    tempStr = str.substring(0, 5) + "..."
+  } else {
+    tempStr = str.substring(0, long)
+  }
+  return tempStr
+}
+
+function formatImages(name) {
+  var tempStr = name.split('/')[0] || ''
+  if (tempStr) {
+    return 'http://zhkj.oss-cn-shanghai.aliyuncs.com/CategoryLogo/' + tempStr + '.jpg' 
+  } else {
+    return "https://zhkj.oss-cn-shanghai.aliyuncs.com/nHelp/w_newLogo.png"
+  }
+}
+module.exports = {
+  formatName: formatName,
+  formatImages: formatImages
+}

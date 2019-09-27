@@ -1,0 +1,236 @@
+@import "/style/common.wxss";
+.w_headers {
+  border-top: 1px solid #ebebeb;
+  overflow: hidden;
+}
+.w_icon_cites {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  text-align: center;
+  z-index: 101;
+  font-size: 30rpx;
+  color: #666;
+  height:100%;
+  line-height:88rpx;
+  width: 20%;
+}
+.w_icon_cites::after {
+  font-family: nwscfonts!important;
+  font-weight: 400;
+  font-style: normal;
+  content: "\E002";
+  color: #333;
+  vertical-align: middle;
+  display: inline-block;
+  font-size: 60rpx;
+  padding-left: 4rpx;
+}
+.head-discover {
+  width: 100rpx;
+  display: inline-block;
+  margin: auto;
+}
+.tabs-wrap {
+  width: 100%;
+  position: fixed;
+  height: 80rpx;
+  top: 88rpx; 
+  text-align: center;
+  font-size: 30rpx;
+  background-color: #fff;
+}
+.tabs {
+  line-height: 70rpx;
+  width: 16%;
+  text-align: center;
+  margin-left: 8.5%;
+  margin-right: 8.5%;
+}
+.active-tab {
+  color: #e61817;
+  border-bottom: 4px solid #e61817;
+}
+.w_sw_con {
+  margin-top: 172rpx;
+  min-height: calc(100vh - 172rpx);
+  overflow: scroll;
+}
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.banners-wrap {
+  width: 100%;
+  margin-bottom: 20rpx;
+  height: 256rpx;
+}
+.banner-img {
+  width: 100%;
+  display: block;
+}
+/* ============================= */
+.invented-product-wrap {
+    padding-left: .625rem;
+    padding-right: .625rem;
+    margin-bottom: .625rem;
+    background-color: #fff;
+}
+
+.flex-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.invented-products:first-child {
+    margin-right: .3125rem;
+}
+
+.invented-products {
+  flex:1;
+    position: relative;
+}
+
+.invented-products-top {
+    position: relative;
+}
+
+/* .swiper-container .swiper-slide img {
+    width: 100%;
+    display: block;
+    line-height: 0;
+} */
+
+.invented-products-icons {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,.5);
+    text-align: right;
+    line-height: 1.5625rem;
+}
+
+.w_rigde_rigIcons {
+    padding-top: .15625rem;
+}
+
+.invented-products-icons .label {
+    margin-right: .3125rem;
+}
+
+.w_rigde_rigIcons .label, .w_rigde_rigIcons .span {
+    display: inline-block;
+    color: #999;
+    font-size: .8125rem;
+}
+.w_rigde_rigIcons .label:before {
+    font-family: nwscfonts!important;
+    font-weight: 400;
+    font-style: normal;
+    content: "\E075";
+    color: #999;
+    font-size: 2.5rem;
+    vertical-align: middle;
+}
+
+.w_rigde_rigIcons .label, .w_rigde_rigIcons .span {
+    display: inline-block;
+    color: #999;
+    font-size: .8125rem;
+}
+
+.w_rigde_rigIcons .span:before {
+    font-family: nwscfonts!important;
+    font-weight: 400;
+    font-style: normal;
+    content: "\E074";
+    color: #999;
+    font-size: 2.5rem;
+    vertical-align: middle;
+}
+
+.invented-products-name {
+    color: #333;
+    font-size:28rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    line-height: 1.75rem;
+}
+
+.flex-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.invented-products-price1 {
+    font-size: 32rpx;
+    color: #e61817;
+}
+
+.invented-products-price1 .span {
+    font-size: 24rpx;
+}
+
+.invented-products-price2 {
+    font-size: 24rpx;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.w_rigde_bLinkBlack {
+    background: #ccc;
+    width:130rpx;
+    border: 0;
+}
+
+.w_rigde_btns .a {
+    margin-top:18rpx;
+    display: inline-block;
+    font-size: 26rpx;
+    height: 50rpx;
+    line-height: 48rpx;
+    border-radius: 12rpx;
+    text-align: center;
+    color: #fff;
+}
+
+.w_rigde_btns .a.w_rigde_linkRed,.w_rigde_btns .a:hover.w_rigde_linkRed {
+    background: #e61817;
+    padding: 0 .5rem;
+    line-height: 1.4375rem;
+    margin-left: -.3125rem;
+}
+
+ .w_rigde_btns .a,  .w_rigde_btns .a:hover {
+    width: 4.25rem;
+    margin-top: .5625rem;
+    display: inline-block;
+    font-size: .8125rem;
+    height: 1.5625rem;
+    line-height: 1.5rem;
+    border-radius: .375rem;
+    text-align: center;
+    color: #fff;
+    border: 1px solid #ccc;
+}

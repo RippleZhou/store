@@ -1,0 +1,7 @@
+/* pages/beanExplain/beanExplain.wxss */
+page{background:#fff;}
+.beanExplain{background:#fff;padding:30rpx 25rpx;height:100%;}
+.area{color:#333;}
+.title{font-size: 32rpx;font-weight: 600;padding-bottom: 15rpx;}
+.content{font-size: 28rpx;padding-bottom: 35rpx;line-height: 40rpx;}
+.tishi{font-size: 28rpx;color:#e61817;line-height: 40rpx;}

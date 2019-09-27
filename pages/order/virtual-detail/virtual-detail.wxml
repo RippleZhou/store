@@ -1,0 +1,84 @@
+<!--pages/order/virtual-detail/virtual-detail.wxml-->
+<wxs module="util" src="./virtual-detail.wxs"></wxs>
+<view class='ord_li_heads'>
+    <view class='ord_li_h_tit'>订单详情</view>
+    <icon class='top_servers' bindtap='getTels'></icon>
+</view>
+
+<view class='vir_box'>
+    <view class='w_virDet_pros'>
+        <image src='{{item.imageUrl}}' mode="widthFix"></image>
+        <view class='w_ridge_title'>{{item.productName}}</view>
+        <text class='w_ridge_nums'>x{{item.productPrice}}</text>
+    </view>
+    <view class='w_virDet_lists'>
+        <text>代金券</text>
+        <label>{{item.unusedCount||0}}张可用</label>
+    </view>
+    <view class='w_virDet_lists3'>
+      <text>券号</text>
+      <view class='w_virDet_liRigs'>
+          <view wx:for="{{item.itemList}}"  wx:key="unique" wx:for-item="ex" class="w_codeList {{ex.virState==0?'w_virTxtOthers':(ex.virState==3?'w_virTxtOrange':(ex.virState==4?'w_virTxtReds':'w_virTxtBlack'))}}">
+            <text>{{ex.virCode}}</text>
+            <label wx:if="{{ex.virState==0}}" bindtap='handleCopy' data-vircode="{{ex.virCode}}">复制</label>
+            <label wx:if="{{ex.virState==0}}" bindtap='showCpdes' data-codeimg="{{ex.virQrCodeUrl}}">二维码</label>
+            <label wx:else bindtap='goReturnDetail' data-statu="{{ex.virState}}" data-ids="{{ex.refundId}}">{{ex.ticketStatus}}</label>
+          </view>
+      </view>
+    </view>
+    <view class='w_virDet_lists'>
+        <text>有效期</text>
+        <label>{{util.floatTimes(item.validBeginTime)}} - {{util.floatTimes(item.validEndTime)}}</label>
+    </view>
+     <view class='w_virDet_lists w_vir_mt'>
+        <text>使用时间</text>
+        <label>{{util.userDay(item.userWeek)}}{{item.userTime}}</label>
+    </view>
+    <view class='w_virDet_lists'>
+        <text>手机号码</text>
+        <label>{{item.cellPhone}}</label>
+    </view>
+    <view class='w_virDet_lists2'>
+      <label>使用说明</label>
+      <text>{{item.userDesc}}</text>
+    </view>
+    <view class='w_virtual_priceTxt w_vir_mt'>
+        <view class='w_virDet_lists'>
+            <text>商品金额</text>
+            <label>¥{{proPrice}}</label>
+        </view>
+        <view class='w_virDet_lists'>
+            <text>实付款</text>
+            <label>¥{{item.orderAmount}}</label>
+        </view>
+    </view>
+    <view class='w_virtual_priceTxt w_virtual_priceTxt2 w_vir_mt'>
+        <view class='w_vir_tit'>订单信息</view>
+        <view class='w_vir_inLis'>
+          <label>订单编号：</label>{{item.orderCode}}
+        </view>
+         <view class='w_vir_inLis' wx:if="{{item.payTime!=null&&item.payTime!=''}}">
+          <label>付款时间：</label>{{item.payTime}}
+        </view>
+         <view class='w_vir_inLis' wx:if="{{item.returnTime!=null&&item.returnTime!=''}}">
+          <label>退款时间：</label>{{item.returnTime}}
+        </view>
+    </view>
+</view>
+
+<view class='w_orderDetail_btns'>
+  <text bindtap='delOrder' wx:if="{{item.orderState==6}}">删除订单</text>
+  <text bindtap='getRefudInfo' class='w_txtReds' wx:if="{{item.orderState==1}}">申请退款</text>
+  <text class='w_txtReds' bindtap='continuePay' wx:if="{{item.orderState==0}}">立即支付</text>
+  <text bindtap='cancelOrder' wx:if="{{item.orderState==0}}">取消订单</text>
+  <text class='w_txtReds' bindtap='refundSchedule' wx:if="{{item.orderState==3||item.orderState==4}}">退款进度</text>
+</view>
+
+
+<view class='code_pop' wx:if="{{codeIsShow==true}}">
+  <view class='code_boxs'>
+    <view class='code_tit'>商家扫券码即可消费</view>
+    <image src='{{codeImg}}'></image>
+    <view class='code_btn' bindtap='colseCode'>确定</view>
+  </view>
+</view>

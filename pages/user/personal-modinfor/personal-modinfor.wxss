@@ -1,0 +1,44 @@
+/* pages/user/personal-modinfor/personal-modinfor.wxss */
+/* pages/user/personal-modinfor/personal-modinfor.wxss */
+@import "/style/common.wxss";
+.per_modInforlist{
+  background: #fff;width:100%;padding:0rpx 20rpx;border-bottom:1px solid #f5f5f5;
+  display:flex;display:-webkit-flex;display: -ms-flexbox;position: relative;
+}
+.per_modInforlist label{
+  display: block;font-size:34rpx;color:#333;width:30%;text-align: left;font-weight: bold;
+  line-height: 100rpx;
+}
+.per_modInforlist input{
+  width:100%;text-align: right;font-size: 28rpx;display:block;
+  height: 100rpx;
+}
+.per_modInforlist .sexSel{
+  width:70%;display:block;font-size:28rpx;text-align: right;padding-right:40rpx;color:#999;
+  line-height: 100rpx;
+}
+.per_modInforlist .picker{
+  font-size: 28rpx;
+}
+
+.per_modInforlist .sexSel::after,.per_modInforlist2 navigator::after{
+  font-family: nwscfonts!important; font-size:80rpx;
+  content:"\E003";color:#666;display:block;position:absolute;right:20rpx;top:0rpx;
+}
+
+.per_modInforlist image{
+  width:90rpx !important;height: 90rpx !important;border-radius:90rpx;margin-right:40rpx;vertical-align:middle;
+}
+.per_modInforlist2{padding:30rpx 20rpx;}
+.per_modInforlist2 label{line-height: 90rpx;}
+.per_modInforlist2 navigator{
+  width:70%;text-align: right;
+}
+.per_modInforlist2 navigator::after{
+  top:22rpx;
+}
+
+.per_modBtn{
+  width:100%;margin-top: 30rpx;background:#fff;text-align: center;height: 80rpx;line-height: 80rpx;
+  font-size: 30rpx;color:#e61817;
+}

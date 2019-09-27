@@ -1,0 +1,33 @@
+<view class="w_ridge_box">
+  <view class="w_ridge_Tips">{{bargTips}}</view>
+  <view class="w_ridge_Lists" wx:for="{{list}}" wx:key="{{index}}">
+    <image mode='widthFix' class='head-discover' bindtap="goDetails" 
+      src="{{item.imageUrl || errorImg}}" data-item="{{item}}"></image>
+    <view class="w_ridge_liRigs" bindtap="goDetails" data-item="{{item}}">
+    <view class="distance">{{item.distance}}</view>
+      <view>
+        <view class='w_ridge_liRigs_h2'>{{item.virPorductName}}</view>
+        <view class="w_ridge_rigTips"><text class='w_ridge_rigTips_span'>可砍到¥{{item.minSellPrice}}</text></view>
+        <view class="w_rigde_prices">
+          ¥<text class='w_rigde_prices_b'>{{item.productPrice}}</text>
+          <text class='w_rigde_prices_s'>¥{{item.sellPrice}}</text>
+        </view>
+      </view>
+      <view class="w_rigde_rigIcons">
+        <text class='w_rigde_rigIcons_label'>{{item.lookPeopleNum}}</text>
+      </view>
+    </view>
+    <view class="w_rigde_btns" wx:if="{{item.surplusNum == 0}}">
+      <view class="w_rigde_bLinkBlack w_rigde_link">已抢光</view>
+    </view>
+    <view class="w_rigde_btns" wx:else>
+      <view class="w_rigde_linkWhite w_rigde_link"  
+        wx:if="{{item.isBargain ==0}}" bindtap="clickBargain"
+         data-index="{{index}}" >砍价</view>
+      <view class="w_rigde_linkOrange w_rigde_link" wx:else bindtap="share" 
+        data-index="{{index}}">继续砍</view>
+      <view class="w_rigde_linkRed w_rigde_link" bindtap="goConfirmOrder" 
+        data-index="{{index}}">抢购</view>
+    </view>
+  </view>
+</view>

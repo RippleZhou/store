@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "index-floor": "/components/index/index-floor/index-floor"
+  }
+}

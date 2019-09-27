@@ -1,0 +1,32 @@
+<view class="w_find_liBox">
+  <view class="w_find_list" wx:for="{{list}}" wx:key="{{index}}" >
+    <view class="w_find_l_TopInfor" bindtap="goDetail" data-index="{{index}}">
+      <image class='w_find_list_img' src="{{item.imgUrl || errorImg}}" 
+        mode='widthFix'></image>
+      <view class="w_find_l_TopRs">
+        <view class='w_find_l_TopRs_h2'>
+          {{item.storeBriefName}}
+          <text class='w_find_l_TopRs_h2_span'>{{item.consume}}</text>
+        </view>
+        <view class='w_find_l_TopRs_h3'>{{item.storeCuisineType}}</view>
+        <view class='w_find_l_TopRs_label'>{{item.storePromotion}}</view>
+      </view>
+    </view>
+    
+    <view class="w_find_l_Imgs">
+      <view class="w_find_l_smImg">
+        <block  wx:for="{{item.imgs}}" wx:for-item="imgs" 
+          wx:for-index="key"  wx:key="{{key}}">
+          <image class="w_find_l_img" src="{{imgs.fileUrl || errorImg}}" bindtap="showBigImg" 
+            wx:if="{{key < 3}}" data-index="{{index}}" data-key="{{key}}" 
+            mode="aspectFill"></image>
+        </block>  
+      </view>
+    </view>
+    <view  bindtap="openmap" data-index="{{index}}">
+      <view class="w_find_l_times w_find_icon01">营业时间：{{item.businessHours}}</view>
+      <view class="w_find_l_times w_find_icon02">商家地址：{{item.storeAddress}}</view>
+    </view>
+    
+  </view>
+</view>

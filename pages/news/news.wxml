@@ -1,0 +1,47 @@
+<!--pages/news/news.wxml-->
+<view class="">
+  <view class="w_serMes_clasList">
+    <view  class="span w_serMes_clLs w_serMes_icon01">
+      <view class="i" style="display: none;"></view>
+    </view>
+    <view class="w_serMes_clRs" bindtap="gotoPreferentialPromotion">
+      <view class="h2">优惠大促
+        <view class="label"></view>
+      </view>
+      <view class="h3"></view>
+    </view>
+  </view>
+  <view class="w_serMes_clasList" bindtap="gotoTransactionMessage">
+    <view class="span w_serMes_clLs w_serMes_icon02">
+      <view class="i" style="display: none;"></view>
+    </view>
+    <view class="w_serMes_clRs">
+      <view class="h2">交易通知
+        <view class="label"></view>
+      </view>
+      <view class="h3"></view>
+    </view>
+  </view>
+  <view  class="w_serMes_clasList" bindtap="gotoAccountMessage">
+    <view class="span w_serMes_clLs w_serMes_icon03">
+      <view class="i" style="display:none;"></view>
+    </view>
+    <view class="w_serMes_clRs">
+      <view class="h2">账户消息
+        <view class="label">2019-05-29 09:08</view>
+      </view>
+      <view class="h3">小主我已恭候您多时了，特此奉上新人专享3折起充豆以及豆豆0枚</view>
+    </view>
+  </view>
+  <view class="w_serMes_clasList" bindtap="gotoLogisticsMessage">
+    <view class="span w_serMes_clLs w_serMes_icon04">
+      <view class="i" style="display: none;"></view>
+    </view>
+    <view  class="w_serMes_clRs">
+      <view class="h2" >物流通知
+        <view class="label"></view>
+      </view>
+      <view class="h3"></view>
+    </view>
+  </view>
+</view>

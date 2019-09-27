@@ -1,0 +1,94 @@
+-----------------------------韩银露 -------------------------------------
+user
+personacenter　　个人中心****
+personalset　　　设置****　　　     /////
+modify-phone     修改手机号码**** /////--------
+modify-loginpw   修改登录密码****  /////
+set-paypw        设置支付密码****////
+modify-paypw     修改支付密码****////
+
+find-password    忘记密码****/////
+find-passwordnext 设置新密码****///////
+set-loginpw        设置登录密码****/////////////
+modifying-head     我的头像****////
+personal-modinfor　我的头像****////
+receiving-address　　地址列表****////
+
+update-address　　　 修改，添加地址****///
+account-details　　　账户明细　　　****　　　///
+login-code　  //验证登录　****　　　
+register   //用户注册****　　　
+
+order 
+all-orders   我的订单****  立即付款------未完
+   {
+    online-order   线上****
+    offline-order　线下****
+    virtual-order　虚拟****
+   }  
+
+
+refund-schedule 退款进度****　　　
+virreturn-detail  退款详情****　　　
+see-logistics  查看物流****　　　
+returns  退换货列表****　　　///
+
+fill-logistics 填写物流信息****　　　///
+returns-details 退货详情****　　///
+
+　
+order-list   线上订单列表****　立即付款------未完
+online-detail  线上订单详情 立即付款------未完
+virtual-detail  虚拟订单详情 立即付款------未完
+-----------------------------------------------------------------------韩银露 --------------------------------------------------------------------
+
+-----------------------------------------------------------------------韩冠先 --------------------------------------------------------------------
+pages/index/index  首页
+现金充豆
+发现-城市定位
+
+pages/product/search/search  搜索页
+pages/product/search-list/search-list  搜索列表页
+pages/product/product-view/product-view   产品详情页
+pages/tab1/index-allclas/index-allclas  产品分类
+
+pages/classify/classify  分类
+
+pages/find/find  发现页
+pages/tab3/store-meal/store-meal  套餐详情页
+pages/tab3/comments/comments 评论列表页
+
+
+pages/cart/cart   购物车
+
+pages/login/login  登陆页
+
+
+pages/tab3/store-details/store-details 店铺详情页 拍照 上传视频未完------未完
+pages/order/confirm-order/confirm-order 订单确认页  ------未完
+---------------------------------------------------------------------------------韩冠先 ----------------------------------------------------------
+
+-----------------------------------------------------------------------------------未完成 --------------------------------------------------------
+---------------------已建目录未写代码---------------------
+send-beanbag  发豆包 ---------- 接口回调分享 未做
+apply-return 退换货
+fill-refund   申请退款
+pages/tab3/cities/cities  城市列表页
+
+---------------------未完成页面---------------------
+豆包说明：发豆包 
+	支付成功页面 ： payFial
+借豆页面：首页 列表 借豆 （无页面参照-分享页面）
+继续砍价页面：分享页面
+
+二折区：首页 （自定义组件 index-floor）
+金豆：首页 
+秒杀：首页（测试无数据-参照生产样式）
+
+转豆：暂时不管
+现金充豆 ------页面完成
+签到领豆：我的 --抢豆包
+邀请好友：我的--邀请好友
+查看好友列表：我的--看借豆好友
+充值记录：我的-现金充豆-充值记录
+

@@ -1,0 +1,169 @@
+/* pages/citys/citys.wxss */
+
+.w_grayBgBox {
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  background: #f5f5f5;
+}
+
+.w_citySearchs {
+  width: 100%;
+  position: fixed;
+  height: 2.75rem;
+  background: #fff;
+  border-bottom: 1px solid #ebebeb;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  display: -webkit-box;
+  display: flex;
+  display: -ms-flexbox;
+  padding-right: 0.625rem;
+}
+.w_citySearchs .w_cityColse,
+.w_citySearchs .w_cityColse:hover {
+  width: 10%;
+  text-align: center;
+  display: block;
+}
+
+.w_citySearchs .w_cityColse:before,
+.w_citySearchs .w_cityColse:hover:before {
+  font-family: nwscfonts !important;
+  font-weight: 400;
+  font-style: normal;
+  content: "\E020";
+  color: #333;
+  font-size: 80rpx;
+  vertical-align: middle;
+}
+.w_citySearchs .w_search_inputs {
+  width: 90%;
+  background: #f5f5f5;
+  height: 1.875rem;
+  border-radius: 1.875rem;
+  padding: 0 0.625rem;
+  font-size: 0.9375rem;
+  color: #333;
+  margin-top: 0.4375rem;
+}
+
+.w_search_content {
+  width: 100%;
+  padding: 0.625rem 0.625rem;
+  margin-top: 2.75rem;
+  background: #fff;
+}
+
+.w_search_content .ul {
+  width: 100%;
+}
+
+.w_search_content .ul .li {
+  border-bottom: 1px solid #ebebeb;
+  font-size: 0.9375rem;
+  color: #333;
+  line-height: 2.8125rem;
+}
+
+.w_citySearList {
+  margin-top: 2.75rem;
+}
+
+.w_citySearList .area_Lists {
+  background: #f5f5f5;
+  margin-bottom: 0.625rem;
+}
+
+.w_citySearList .area_Lists .w_city_title2 {
+  font-size: 0.8125rem;
+  color: #999;
+  padding: 0.625rem 0.625rem;
+}
+
+.w_citySearList .area_Lists .w_city_hts {
+  background: #fff;
+  border-bottom: 1px solid #ebebeb;
+  font-size: 30rpx;
+  color: #ff9000;
+  padding: 0.9375rem 0.625rem;
+  position: relative;
+}
+
+.w_citySearList .area_Lists .w_city_hts .refresh:before {
+  content: "\E070";
+}
+.w_citySearList .area_Lists .w_city_hts .refresh {
+  font-family: nwscfonts !important;
+  font-weight: 400;
+  font-style: normal;
+  content: "\E070";
+  color: #999;
+  font-size: 80rpx;
+  float: right;
+  margin-top: -30rpx;
+}
+.w_citySearList .area_Lists .w_city_hts .span {
+  z-index: 90;
+  top: 0.9375rem;
+  right: 2%;
+  display: block;
+}
+
+.w_citySearList .area_Lists .w_city_title2 {
+  font-size: 0.8125rem;
+  color: #999;
+  padding: 0.625rem 0.625rem;
+}
+
+.w_citySearList .area_Lists .w_button-list {
+  padding: 1.25rem 0.625rem;
+  background: #fff;
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  display: -ms-flexbox;
+  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+}
+
+.w_citySearList .area_Lists .w_button-list .button-wrapper {
+  font-size: 0.9375rem;
+  color: #333;
+  border: 1px solid #ebebeb;
+  line-height: 1.875rem;
+  padding: 0 1.5625rem;
+  border-radius: 0.3125rem;
+}
+
+.w_citySearList .w_c_title {
+  width: 100%;
+  background: #f5f5f5;
+  /* padding: 0 .625rem; */
+  color: #999;
+  font-size: 0.9375rem;
+  line-height: 1.875rem;
+}
+
+.w_citySearList .w_c_itemList {
+  background: #fff;
+  width: 100%;
+  padding: 0.3125rem 0.625rem;
+}
+
+.w_citySearList .w_c_itemList li:last-child {
+  border: 0;
+}
+
+.w_citySearList .w_c_itemList .li {
+  border-bottom: 1px solid #ebebeb;
+  color: #333;
+  font-size: 0.9375rem;
+  line-height: 2.8125rem;
+}
+
+.citytag {
+  padding-left: 24rpx;
+}

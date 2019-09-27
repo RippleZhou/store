@@ -1,0 +1,18 @@
+<!--pages/turnBeanNums/turnBeanNums.wxml-->
+<view class="w_turnNumBox">
+  <view class="w_turnNum_head">
+    <image src="https://omtest.3721zh.com/upload/AppHeadImg/default.jpg"/>
+    <view class="h2">18019304383</view>
+  </view>
+  <view class="w_turnNum_cons">
+    <view class="h2">转豆数量</view>
+    <view class="w_turnNum_list">
+      <input type="number" placeholder="请输入豆额" value="{{beanNumberValue}}" bindinput="beanNumberInput"/>
+      <view class="label">粒转换豆</view>
+    </view>
+    <input type="text" class="addshuoming" placeholder='添加转豆说明' value="{{shuomingValue}}" style="height:100rpx" bindinput="addBeanInput"/>
+  </view>
+  <view class="w_sendBean_btns w_sendBean_btns2">
+    <view class="{{canSubmit?'w_beanBtns span canSubmit':'w_beanBtns span'}}" bindtap="changeBean">确认转豆</view>
+  </view>
+</view>

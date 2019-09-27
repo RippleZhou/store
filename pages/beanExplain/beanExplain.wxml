@@ -1,0 +1,17 @@
+<!--pages/beanExplain/beanExplain.wxml-->
+<view class="beanExplain">
+
+  <view class="area" wx:for="{{list}}" wx:key="{{index}}">
+    <view class="title">
+      {{item.title}}
+    </view>
+    <view class="content">
+      {{item.content}}
+    </view>
+  </view>
+
+<view class="tishi">
+温馨提示：为了您账户的安全，请合理合法使用豆包。
+</view>
+
+</view>

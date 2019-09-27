@@ -1,0 +1,135 @@
+<!--pages/activity0903/activity0903.wxml-->
+<view class="activity-page" hidden="{{pageHidden}}">
+  <view class="w_headers w_carHeads" wx:if="{{isApp}}">
+    <text class="w_head_leftback" bindtap="goAppIndex" style="display: inline-block;"></text>
+    <view class="h2" id="activity_title">新用户专享</view>
+  </view>
+
+  <view class="activity-top">
+    <image class="full-img" src="https://zhkj.oss-cn-shanghai.aliyuncs.com/SSLRes/images/activity201903/title-top-r.jpg"></image>
+  </view>
+
+  <view class="count-down-wrap">
+    <view class="count-down flex-wrap">
+      <view class="count-down-left">
+        <view class="money-wrap">
+          <text class="money">￥</text>{{beanAmount}}</view>
+        <view class="money-type">现金红包</view>
+      </view>
+      <view class="count-down-right">
+        <view class="count-right-text" wx:if="{{activityState == 1}}">距离新人活动结束</view>
+        <view class="count-right-detail" wx:if="{{activityState == 1}}">
+          <text class="span">{{days}}</text>天
+          <text class="span">{{hours}}</text>小时
+          <text class="span">{{minutes}}</text>分
+          <text class="span">{{seconds}}</text>秒
+        </view>
+        <view class="count-right-text" wx:if="{{activityState == -1}}">
+          活动已结束
+        </view>
+        <view class="count-right-text" wx:if="{{activityState == 0}}">
+          活动未开始
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="product-list-wrap">
+    <view class="product-list-title">
+      <image class="full-img" mode="widthFix" src="https://zhkj.oss-cn-shanghai.aliyuncs.com/SSLRes/images/activity201903/title-box-r.png"></image>
+    </view>
+
+    <view class="product-list" wx:for="{{list}}" bindtap="gotodetail">
+      <image class="product-bgimg full-img" mode="widthFix" src="https://zhkj.oss-cn-shanghai.aliyuncs.com/SSLRes/images/activity201903/product-box-r.png"></image>
+
+      <view class=" product-content" bindtap="gotodetail" data-pid="{{item.id}}">
+        <view class="flex-wrap" style="background-color: #fff;padding-bottom: 2px;">
+          <view class="product-list-left">
+            <image class="product-img full-img" mode="widthFix" src="{{item.imageUrl}}"></image>
+            <view class="hot-text"></view>
+          </view>
+
+          <view class="product-list-right">
+            <view class="product-name">{{item.productTitle}}</view>
+            <view class="product-detail flex-wrap">
+              <view class="product-price">
+                <text class="rmb">￥</text>{{ item.cashPrice }}
+
+                <view class="save-money-wrap">
+                  <text class="save-money">
+                    <image class="save-money-img" mode="widthFix" src="https://zhkj.oss-cn-shanghai.aliyuncs.com/SSLRes/images/activity201903/save-money.png"></image>
+                    <text class="save-text">省{{item.priceCurrentPrice - item.cashPrice}}元</text>
+                  </text>
+                </view>
+
+                <view class="line-through">原价￥{{item.priceCurrentPrice}}元</view>
+              </view>
+
+            </view>
+
+            <view class="buy-now" catchtap="buyNow" data-item="{{item}}">立即抢购</view>
+          </view>
+
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+  <view class="bottom-banner" bindtap="chaiBean">
+    <image class="full-img" mode="widthFix" src="https://zhkj.oss-cn-shanghai.aliyuncs.com/SSLRes/images/activity201903/bottom-banner.jpg"></image>
+  </view>
+</view>
+
+<view class="mask" bindtap="hidePopup" hidden="{{popupHidden}}"></view>
+
+<view class="weui-dialog" hidden="{{popupHidden}}">
+  <view class="pink-background">
+    <view class="activity0903-popup-cancel" bindtap="hidePopup"></view>
+    <view class="h2">线上新人专享红包</view>
+    <view class="popup-tips">低至1折起，包邮到家</view>
+    <view class="popup-content">
+      <image class="popup-bgimg full-img" mode="widthFix" src="https://zhkj.oss-cn-shanghai.aliyuncs.com/SSLRes/images/activity201903/dialog-redpack.png" />
+      <view class="popup-price">
+        <text class="moneystyle">￥</text>50</view>
+      <view class="tips2">无门槛现金红包</view>
+    </view>
+    <view class="popup-btn" bindtap="joinActivity">立即使用</view>
+  </view>
+</view>
+
+<!-- 抢豆包 弹窗 -->
+  <view class="pop-mask" wx:if='{{beanHidden}}'></view>
+  <view class="weui-dialog"  wx:if='{{beanHidden}}'>
+    <view class="img-box">
+      <image src="../../images/beanbagBg.png" class="w_beanBgImg"></image>
+      <view class="w_beanbagCons">
+        <view class="w_topClose clearfix">
+          <view class="vux-close" bindtap="closePopup"></view>
+        </view>
+
+        <view class="w_beanbagImgs" wx:if="{{stateShow==0}}">
+          <image class="beanbag-image" src="{{w_redLogo01}}"></image>
+          <view class="bean-text">{{successRemark}}</view>
+        </view>
+
+         <view class="w_beanbagImgs" wx:if="{{stateShow==1}}">
+           <image class="beanbag-image" src="{{w_beanfaces}}" ></image>
+          <view class="bean-text">手慢了，豆包已抢完～</view>
+           <view bindtap='envelopelist' class="w_seaLinks">查看大家的手气</view>
+        </view>
+
+        <view class="w_beanbagImgs" wx:if="{{stateShow==2}}">
+          <image class="beanbag-image" src="{{w_redLogo01}}"></image>
+          <view class="remark">{{remark}}庆新版上线</view>
+           <view class="beanBag"><text class="bean-number">{{beanBag}}</text>粒豆</view>
+           <view bindtap='envelopelist' class="w_seaLinks">查看手气</view>
+        </view>
+
+        <view class="w_beanbgIcon" wx:if="{{stateShow==0}}">
+          <text class="beanbg-text" bindtap="openPopup"></text>
+          <audio src="https://zhkj.oss-cn-shanghai.aliyuncs.com/wximg/001.wav" id="myAudio"></audio>
+        </view>
+      </view>
+    </view>
+  </view>

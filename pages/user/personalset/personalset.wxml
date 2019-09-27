@@ -1,0 +1,22 @@
+<!--pages/personalset/personalset.wxml-->
+
+<view class='w_per_setBox'>
+  <navigator class='w_per_setLImg' url='/pages/user/personal-modinfor/personal-modinfor' hover-class="none"><image src='{{uerImg}}' mode="widthFix"></image><text>{{nickName}}</text></navigator>
+  <navigator class='w_per_setList w_per_setMarb' url='/pages/user/receiving-address/receiving-address' hover-class="none">
+    <label>我的收货地址</label>
+  </navigator>
+  <!-- <navigator class='w_per_setList' hover-class="none" url='/pages/user/modify-phone/modify-phone'>
+    <label>修改手机号</label>
+    <text>{{cellPhone}}</text>
+  </navigator> -->
+  <navigator class='w_per_setList' hover-class="none" url='{{setlogUrl}}'>
+    <label>{{setlogTxt}}</label>
+  </navigator>
+  <navigator class='w_per_setList w_per_setMarb' hover-class="none" url='{{setpayUrl}}'>
+    <label>{{setpayTxt}}</label>
+  </navigator>
+
+  <view class='w_per_set_btn' bindtap='logOut'>退出登录</view>
+
+</view>
+

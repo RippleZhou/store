@@ -1,0 +1,21 @@
+<view>
+  <view class="w_storeDe_com_list" wx:for="{{list}}" wx:key="{{index}}" v-if="index < (comitem.length)">
+    <view class="w_storeDe_com_lHead">
+      <image src="{{item.imgUrl || errorImg}}" mode="widthFix" class='comment-avtar'></image>
+      <view class='comment-info-wrap'>
+        <view class='comment-info-h3'>{{item.nick_name}}</view>
+        <view class='comment-info-label'>{{item.commentDate}}</view>
+      </view>
+    </view>
+    <view class='comment-info-content'>{{item.commentContent}}</view>
+    <!--medi为1时是图片，2时是视频 "-->
+    <view class="w_find_comImgList">
+      <view wx:for="{{item.imgs}}" wx:key="index" 
+        wx:for-item="media" wx:for-index="i"  
+        class="w_find_comImgors {{media.fileType==2?'w_find_comImgors2':''}}">
+        <image src="{{media.fileUrl || errorImg}}" mode="widthFix" class='comment-img' wx:if="{{media.fileType==1}}" bindtap='previewImage' data-index="{{index}}" data-i="{{i}}"></image>
+        <video show-play-btn controls src="{{media.fileUrl}}" wx:if="{{media.fileType==2}}" class='media-vedio'></video>
+        </view>
+    </view>
+  </view>
+</view>

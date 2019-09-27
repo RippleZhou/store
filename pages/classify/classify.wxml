@@ -1,0 +1,26 @@
+<wxs module="util" src="./claasify.wxs"></wxs>
+<view class="w_claasify flex-wrp">
+  <!--左侧内容-->
+  <view class="w_claasify_lefts">
+    <scroll-view class="menus scroll" scroll-y>
+      <view wx:for="{{menus}}" wx:key="{{index}}" 
+        class="w_clsfy_Items " bindtap="selecteMenu" data-index="{{index}}">
+        <text class="w_clsfy_Items_text {{index == clickedIndex ? 'active-menu': ''}}"
+          >{{util.formatName(item.name,4)}}</text>
+      </view>
+    </scroll-view>
+  </view>
+  <!--右侧内容-->
+  <view class="w_clsfy_rights">
+      <view class="w_clsfy_ruls" wx:for="{{secondMenu.proProductSecondTypeVos}}" 
+        wx:key="{{index}}" wx:for-item="rlist">
+        <view class='w_clsfy_ruls_h2'>{{rlist.name}}</view>
+        <view class="w_clsfy_rlis">
+          <view class="w_clsfy_rli_item" wx:for="{{rlist.proProductLevelTypeVos}}" wx:for-item="lList" wx:for-index="i" wx:key="{{i}}" bindtap="goList" data-parent-id="{{lList.id}}" data-name="{{lList.name}}">
+            <image class='product-img' src="{{util.formatImages(lList.name)}}" mode="widthFix"></image>
+            <text>{{util.formatName(lList.name,5)}}</text>
+          </view>
+        </view>
+      </view>
+  </view>
+</view>

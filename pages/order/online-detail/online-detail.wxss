@@ -1,0 +1,138 @@
+/* pages/order/online-detail/online-detail.wxss */
+
+/***中间**/
+.ord_liBox{
+  margin-top: 88rpx;padding-bottom: 100rpx;
+}
+.w_orderDetail_tops{
+  width:100%;height: 200rpx;position:relative;overflow: hidden;
+  font-size: 34rpx;color:#fff;padding:50rpx 20rpx;z-index: 10;
+}
+.w_per_bgimg{
+  position:absolute;left:0;top:0;width:100%;height:100%;z-index:1;
+}
+.w_orderDetail_tops text{display:block;position: relative;z-index: 10;}
+
+.w_orderDetail_address{
+  margin-top:-50rpx;margin-bottom: 20rpx;width:100%;background: #fff;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,.06);border-radius: 10rpx;
+  padding:20rpx 20rpx 50rpx 20rpx;position: relative;z-index: 11
+}
+.w_orde_logs{
+   border-bottom:1px solid #ebebeb;padding:10rpx 0 30rpx 70rpx;position:relative;
+}
+.w_orde_logs::before{
+  font-family: nwscfonts!important; content: "\E063";text-align: center;
+  color: #fff;width:60rpx;height: 60rpx;border-radius: 60rpx;position:absolute;left:0;top:20rpx;
+  background: -webkit-linear-gradient(top, #17b1f8 , #0089dd);
+  background: -o-linear-gradient(bottom, #17b1f8, #0089dd);
+  background: -moz-linear-gradient(bottom, #17b1f8, #0089dd);
+  background: linear-gradient(to bottom,#17b1f8, #0089dd);
+  font-size:80rpx;display:block;line-height: 54rpx;
+}
+.w_orde_logs::after{
+  font-family: nwscfonts!important; content: "\E003";
+  color: #666;position:absolute;right:0;top:10rpx;
+  font-size:60rpx;display:block;line-height: 60rpx;
+}
+.w_orde_logs .w_log_Tit{color:#2888E0;font-size:30rpx;}
+.w_orde_logs .w_log_state{
+  display:block;font-size: 24rpx;color:#999;
+}
+
+.w_orde_aPos{
+  padding-top: 35rpx;padding-left:70rpx;position:relative;
+}
+.w_orde_aPos::before{
+  font-family: nwscfonts!important; content: "\E062";text-align: center;
+  color: #fff;width:60rpx;height: 60rpx;border-radius: 60rpx;position:absolute;left:0;top:50rpx;
+  background: -webkit-linear-gradient(top, #f90000 , #f61e65);
+  background: -o-linear-gradient(bottom, #f90000, #f61e65);
+  background: -moz-linear-gradient(bottom, #f90000, #f61e65);
+  background: linear-gradient(to bottom,#f90000, #f61e65);
+  font-size:80rpx;display:block;line-height: 54rpx;
+}
+.w_orde_aPos .w_aPos_tels{
+  display:flex;display:-webkit-flex;display: -ms-flexbox;padding-bottom:20rpx;
+}
+.w_orde_aPos .w_aPos_tels text{
+  display: block;text-align: left;font-size: 30rpx;width:50%;color:#333;font-weight: bold;
+}
+.w_orde_aPos .w_aPos_tels text:last-child{text-align: right;}
+.w_orde_aPos .w_aPos_ads{
+  font-size: 26rpx;color:#333;
+}
+.w_confOrder_lists{
+  background: #fff;display:flex;display:-webkit-flex;display: -ms-flexbox;
+  position: relative;padding:20rpx 20rpx;
+}
+.w_confOrder_lists image{
+  width:184rpx;height: 184rpx;margin-right: 20rpx;
+}
+.w_confOrder_rsDetails{
+width:50%;flex-grow: 1;-webkit-flex-grow: 1;-webkit-box-flex-group: 1;
+}
+.w_confOrder_rsDetails text{
+  font-size: 28rpx;color:#333;display:block;margin-bottom: 10rpx;
+  text-overflow: ellipsis;overflow:hidden;-webkit-box-orient: vertical;display:-webkit-box;-webkit-line-clamp: 2;
+}
+.w_confOrder_rsDetails label{
+  font-size: 24rpx;color:#E61817;border:1px solid #E61817;padding:2rpx 10rpx;border-radius: 40rpx;
+}
+.w_confOrder_numsDetails{
+  width:25%;text-align: right;font-size: 30rpx;color:#999;
+}
+.w_confOrder_numsDetails label{
+color:#333;font-weight: bold;display:block;
+}
+
+.w_orderDetail_totals{
+  text-align: right;padding:25rpx 20rpx;font-size: 28rpx;color:#333;background: #fff;
+}
+.w_orderDetail_statTxts{
+  color:#FF9000;text-align: right;padding:0rpx 20rpx 25rpx 20rpx;font-size: 28rpx;background: #fff;
+}
+
+.w_orderDetail_numList{
+  width:100%;padding:10rpx 20rpx;background: #fff;margin-top: 20rpx;
+}
+
+.w_confOrder_inforList{
+  display:flex;display:-webkit-flex;display: -ms-flexbox;padding:10rpx 0;
+}
+.w_confOrder_inforList text,.w_confOrder_inforList label{
+display:block;color:#333;font-size: 30rpx;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;
+}
+.w_confOrder_inforList text{
+  width:60%;text-align: right;
+}
+.w_confOrder_inforList label{
+width:40%;text-align: left;font-weight:bold;
+}
+.w_orderDetail_numTxtRs{
+  text-align: right;font-size: 26rpx;color:#333;padding:10rpx 0;
+}
+.w_orderDetail_numTxtRs label{
+  color:#E61817;font-weight: bold;padding-left:10rpx;font-size: 36rpx;display: inline-block;
+}
+.w_orderDetail_infors{
+  width:100%;padding:10rpx 20rpx;background: #fff;margin:20rpx 0;
+}
+.w_orderDetail_infors view{
+line-height: 30rpx;padding:10rpx 0;color:#333;font-size: 26rpx;width:100%;
+}
+.w_orderDetail_infors view text{
+  font-weight: bold;padding-right:10rpx;
+}
+
+.w_orderDetail_btns{
+  position: fixed;bottom:0;left: 0;width:100%;height: 100rpx;background: #fff;
+  padding:20rpx;text-align:right;
+}
+.w_orderDetail_btns text{
+height: 60rpx;font-size: 28rpx;color:#333;border:1px solid #EBEBEB;border-radius: 60rpx;
+line-height: 58rpx;margin-left: 20rpx;padding:0 20rpx;display: inline-block;
+}
+.w_orderDetail_btns text.w_txtReds{
+  color:#E61817;border-color:#E61817;
+}

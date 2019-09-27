@@ -1,0 +1,12 @@
+<!--pages/user/receiving-address/receiving-address.wxml-->
+<view class='add_adsBoxs'>
+  <view class='add_ads_list' wx:for="{{addressList}}" wx:key="unique">
+    <view class='add_ads_lets' bindtap="goback" data-item="{{item}}">
+        <view class='add_ads_lTit'>{{item.contactName}}<label>{{item.contactCellPhone}}</label></view>
+        <view class='add_ads_lTxts'><label wx:if="{{item.isDefault==1}}">默认</label>{{item.area + item.addressDetail}}</view>
+    </view>
+    <navigator class='add_ads_rigs' hover-class="none" url='/pages/user/update-address/update-address?id={{item.id}}&contactName={{item.contactName}}&contactCellPhone={{item.contactCellPhone}}&isDefault={{item.isDefault}}&area={{item.area}}&addressDetail={{item.addressDetail}}'>修改</navigator>
+  </view>
+</view>
+
+<navigator class='add_ads_btoms' hover-class="none" url='/pages/user/update-address/update-address?id='>添加新地址</navigator>

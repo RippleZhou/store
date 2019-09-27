@@ -1,0 +1,6 @@
+{
+  "onReachBottomDistance": 50,
+  "usingComponents": {
+    "pro-imgtxt": "/components/pro-imgtxt/pro-imgtxt"
+  }
+}

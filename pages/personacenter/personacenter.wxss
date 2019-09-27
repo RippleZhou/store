@@ -1,0 +1,396 @@
+/* pages/personacenter/personacenter.wxss */
+@import "/style/common.wxss";
+icon::before{
+font-family: nwscfonts!important;vertical-align: middle; font-size:80rpx;
+}
+page{
+  width:100%;
+}
+page,text,span,button,input,view{
+  box-sizing: border-box;-webkit-box-sizing: border-box;
+  outline: none;margin:0;padding:0;
+}
+
+ .w_beanbagImgs .h4 {
+    color: #ffecb8;
+    font-size: 40rpx;
+    padding-top: 40rpx;
+}
+
+.w_beanbagImgs .h5 {
+    padding-top: 80rpx;
+    font-size: 30rpx;
+    color: #ffecb8;
+        font-weight: 400;
+}
+
+.w_beanbagImgs .h5 .b {
+    font-size: 89rpx;
+    display: inline-block;
+    font-weight: 400;
+}
+
+.w_beanbagImgs .w_seaLinks,
+.w_beanbagImgs .w_seaLinks:hover {
+    font-size: 28rpx;
+    color: #ffecb8;
+    margin-top: 170rpx;
+    display: block;
+}
+
+
+
+
+.w_per_header{
+ position:relative;z-index:1;
+  width:100%;
+}
+.w_per_header .w_per_bgimg{
+  position:absolute;left:0;top:0;width:100%;height:100%;z-index:2;
+}
+
+.w_per_icons{
+  height:88rpx;position:relative;z-index:3;display: flex;display: -webkit-flex;
+}
+.w_per_setIcon{
+  display:block;width:12%;text-align:center;
+}
+.w_per_setIcon::before {
+  content: "\E029";
+  color: #fff;
+  font-size:100rpx;
+  line-height:80rpx;
+}
+.w_per_rigIcon{
+  width:88%;text-align:right;color:#fff;position:relative;
+}
+.w_per_rigIcon icon{
+  width:13%;text-align:center;
+}
+.w_per_rigIcon icon::before{
+  content: "\E007";font-size:100rpx;
+  color: #fff;line-height:80rpx;
+}
+.w_per_rigIcon text{
+  width:24rpx;height:24rpx;border-radius:24rpx;color:#e61817;background:#fff;
+  font-size:22rpx;position:absolute;right:2%;top:15rpx;padding:1rpx 6rpx;line-height:24rpx;
+
+}
+.w_per_images{
+  position:relative;z-index:3;padding:35rpx 30rpx;
+}
+.w_per_images image{
+  width:110rpx;height:110rpx;border-radius:110rpx;margin-right:20rpx;border:2px solid #fff;
+  display:inline-block;vertical-align:middle;
+}
+.w_per_images text{
+  font-weight:bold;font-size:42rpx;color:#fff;line-height:110rpx;
+  vertical-align:middle;display: inline-block;
+}
+.w_per_deTxt{
+  background:rgba(0,0,0,.22);color:#fff;height:50rpx;line-height:50rpx;border-radius:50rpx;
+       right:0;top:20rpx;position:absolute;padding:0 20rpx;font-size:26rpx;
+       border-top-right-radius: 0;border-bottom-right-radius:0;
+}
+.w_per_Infors{
+  position:relative;z-index:3;display: flex;display: -webkit-flex;padding-bottom:100rpx;
+  }
+  .w_per_Infors view{
+    width:50%;text-align:center;color:#fff;font-size:26rpx;
+  }
+  .w_per_Infors text{
+    display:block;font-size:36rpx;
+  }
+
+  .w_per_boxs{
+    width:100%;padding:20rpx;margin-top:-90rpx;position:relative;z-index:3;
+  }
+
+  .w_per_lis{
+    background:#fff;border-radius:10rpx;margin-bottom:20rpx;
+  }
+  .w_per_liTits{
+    font-weight:bold;font-size:28rpx;padding:30rpx;color:#333;
+  }
+
+  .w_per_liImgs{
+    display: flex;display: -webkit-flex;padding-top:20rpx;padding-bottom:30rpx;
+  }
+  .w_per_liImgs view{
+    width:25%;text-align:center;font-size:26rpx;color:#333;position:relative;
+  }
+  .w_per_liImgs label{
+    position:absolute;top:6rpx;left:60%;color:#fff;font-size:26rpx;height:26rpx;line-height:26rpx;border-radius:26rpx;padding:0 6rpx;background:#e61817;min-width:20rpx;
+  }
+  .w_per_liImgs view::before{
+    font-family: nwscfonts!important;vertical-align: middle; font-size:139rpx;content:'';color:#333;line-height:80rpx;margin-bottom: 15rpx;margin-top:-10rpx;display:block;
+  }
+  .w_per_liImgs view image{
+    width:40%;margin:0 auto;display:block;line-height:0;margin-bottom:10rpx;
+  }
+ .w_per_liImgs .w_per_step01::before{
+   content:'\E030';
+ }
+ .w_per_liImgs .w_per_step02::before{
+   content:'\E031';
+ }
+ .w_per_liImgs .w_per_step03::before{
+   content:'\E032';
+ }
+ .w_per_liImgs .w_per_step04::before{
+   content:'\E033';
+ }
+ .w_per_liImgs .w_per_step05::before{
+   content:'\E034';
+ }
+  .w_per_liImgs .w_per_step06::before{
+   content:'\E035';
+ }
+  .w_per_liImgs .w_per_step07::before{
+   content:'\E036';
+ }
+  .w_per_liImgs .w_per_step08::before{
+   content:'\E037';
+ }
+  .w_per_liImgs .w_per_step09::before{
+   content:'\E038';
+ }
+
+ /* 弹窗 */
+  .pop-mask{width:100%;height:100%;background:#000;position:fixed;top:0;left:0;opacity: 0.5;z-index: 4000;}
+
+ .weui-dialog {
+   height:802rpx;
+    width: 90%;
+        position: fixed;
+    z-index: 5000;
+    max-width: 600rpx;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+    border-radius: 6rpx;
+    overflow: hidden;
+}
+
+.img-box .w_beanBgImg {
+  height:802rpx;
+    position: relative;
+    z-index: 100;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.w_beanbagCons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    width: 100%;
+    height: 100%;
+}
+
+.w_topClose {
+    width: 15%;
+    text-align: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 103;
+}
+
+.w_beanbagImgs {
+    width: 100%;
+    text-align: center;
+    padding-top: 80rpx;
+}
+.beanbag-image{
+width: 110rpx;
+    height: 110rpx;
+    border-radius: 110rpx;
+    display: block;
+    margin: 0 auto;
+}
+.bean-text{
+color: #ffecb8;
+    font-size: 50rpx;
+    padding: 90rpx 0;
+}
+
+.w_beanbgIcon {
+    text-align: center;
+    width: 100%;
+    height:180rpx;
+    /* background:green; */
+}
+
+.beanbg-text{
+      width:180rpx;
+    height: 180rpx;
+    display: block;
+    position: relative;
+    color: #44371d;
+    font-size: 82rpx;
+    border-radius:180rpx;
+    background: #fbe4a3;
+    text-align: center;
+    line-height: 180rpx;
+    left: 50%;
+    margin-left: -90rpx;
+}
+.vux-close {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    color: #999;
+    width: 48rpx;
+    height: 48rpx;
+}
+ .vux-close:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 22rpx;
+    width: 48rpx;
+    height: 2rpx;
+    background-color: currentColor;
+    transform: rotate(-45deg);
+}
+.vux-close:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 22rpx;
+    width: 48rpx;
+    height: 2rpx;
+    background-color: currentColor;
+    transform: rotate(45deg);
+}
+/* .vux-close:before {
+     font-family: nwscfonts !important;
+    font-weight: 400;
+    font-style: normal;
+    content: "\E020";
+    color: #fff !important;
+    font-size: 80rpx;
+    vertical-align: middle;
+    margin-right:30rpx;
+} */
+
+.beanbg-text:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '\958B';
+    color: #44371d;
+    font-size: 82rpx;
+    display: block;
+      border: 1px solid #ba894f;
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 160rpx;
+    margin-left: 8rpx;
+    margin-top: 8rpx;
+    line-height: 160rpx;
+}
+
+.remark{
+color: #ffecb8;
+    font-size: 40rpx;
+    padding-top: 40rpx;
+}
+
+.beanBag{
+ padding-top: 80rpx;
+    font-size: 30rpx;
+    color: #ffecb8;
+}
+
+.bean-number{
+font-size: 89rpx;
+    display: inline-block;
+    font-weight: 400;
+}
+.w_seaLinks{
+   font-size: 28rpx;
+    color: #ffecb8;
+    margin-top:170rpx;
+    display: block;
+}
+
+/* //下載app彈窗 */
+.gotoapp-mask{  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: #fff;
+  opacity: 0.5;}
+.gotoapp-content{
+  position: fixed;
+    display: table;
+    z-index: 9999;
+    width: 80%;
+    max-width: 300px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 6rpx;
+    overflow: hidden;
+}
+.vux-close {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    color: #999;
+    width: 48rpx;
+    height: 48rpx;
+}
+/* //下載app彈窗 end */
+ 
+
+ .w_per_gbeans {
+    position: fixed;
+    bottom: 10%;
+    right: 3%;
+    z-index: 100;
+    width: 12%;
+}
+
+.a, .a:hover {
+    text-decoration: none;
+    color: #333;
+}
+
+.w_per_gbeans image {
+    width: 100%;
+}
+
+.w_per_gbeans .span {
+    border-radius: 100rpx;
+    background: #e61817;
+    display: block;
+    top: 0;
+    right: 3%;
+    position: absolute;
+    z-index: 101;
+    color: #fff;
+    font-size: 26rpx;
+    padding: 0 10rpx;
+}
+
+    
+   
+
+
+
+
+    

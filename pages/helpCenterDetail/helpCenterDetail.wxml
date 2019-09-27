@@ -1,0 +1,50 @@
+<view class="w_help_conBoxs">
+  <view class="h2">
+    <text class="b">Q：</text>{{question.qTitle}}
+  </view>
+
+  <!-- <view class="h3">
+    <text class="b">A：</text>
+{{question.qContent}}
+  </view> -->
+ <view class="h3" wx:if="{{question.qLayout==1}}">
+    <text class="b">A：</text><text>{{question.qContent}}</text>
+  </view>  
+
+ <view class="h3" wx:if="{{question.qLayout==2}}">
+    <text class="b">A：</text>
+    <block wx:for="{{question.qContent}}">
+      <text class="{{index!=0?'c':''}}">{{item.title}}</text>
+      <view class="c">{{item.content}}</view>
+    </block>
+  </view> 
+
+  <view class="h3" wx:if="{{question.qLayout==3}}">
+    <text class="b">A：</text>
+    <block wx:for="{{question.qContent}}" >
+      <view class="c" wx:if="{{index!=0}}">{{item}}</view>
+      <text wx:else style="">{{item}}</text>
+    </block>
+  </view> 
+
+  <view class="h3" wx:if="{{question.qLayout==4 }}" wx:for="{{question.qContent}}">
+    <text class="b">{{item.title}}</text>
+    <text>{{item.content}}</text>
+  </view>
+
+   <view class="h3" wx:if="{{question.qLayout==5}}">
+    <text class="b">A：</text>
+    <block wx:for="{{question.qContent}}" >
+      <view class="c" wx:if="{{index!=0}}">{{item.title}}</view>
+      <text wx:else>{{item.title}}</text>
+      <view wx:if="{{item.title2}}" class="c">{{item.title2}}</view>
+      <image src="{{item.image}}" class="pl50" wx:if="{{item.image}}"></image>
+         <image src="{{item.image2}}" class="pl50" wx:if="{{item.image2}}"></image>
+    </block>
+  </view> 
+
+</view>
+
+
+
+<!-- <rich-text nodes="{{nodes}}" bindtap="tap"></rich-text> -->

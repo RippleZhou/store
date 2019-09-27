@@ -1,0 +1,137 @@
+<!--pages/personacenter/personacenter.wxml-->
+
+<view class='w_per_header'>
+  <image src='../../images/w_per_headbg.jpg' class='w_per_bgimg' mode="widthFix"></image>
+  <view class='w_per_icons'>
+    <icon class='w_per_setIcon' bindtap='goSets'></icon>
+    <view class='w_per_rigIcon'>
+      <icon></icon>
+      <text>0</text>
+    </view>
+  </view>
+  <view class='w_per_images'>
+    <image src='{{inforlist.imageUrl || errorImg}}'></image>
+    <text>{{username}}</text>
+    <navigator hover-class="none" class='w_per_deTxt' url='/pages/user/account-details/account-details?type=0'>账户明细</navigator>
+  </view>
+  <view class='w_per_Infors'>
+    <view bindtap='goDetails' data-types='0'>
+      <text>{{inforlist.converBeanAmount ?inforlist.converBeanAmount:0}}</text>转换豆
+    </view>
+    <view bindtap='goDetails' data-types='1'>
+      <text>{{inforlist.beanAmount}}</text>红包
+    </view>
+  </view>
+</view>
+
+<view class='w_per_boxs'>
+
+  <view class='w_per_lis'>
+    <view class='w_per_liTits'>我的订单</view>
+    <view class='w_per_liImgs'>
+      <view class='w_per_step01' bindtap='goOrders' data-tabs='0' data-states='1'>
+        <label wx:if='{{inforlist.noPayNum != 0}}'>{{inforlist.noPayNum}}</label>待付款</view>
+      <view class='w_per_step02' bindtap='goOrders' data-tabs='0' data-states='2'>
+        <label wx:if='{{inforlist.noDeliverNum != 0}}'>{{inforlist.noDeliverNum}}</label>待发货</view>
+      <view class='w_per_step03' bindtap='goOrders' data-tabs='0' data-states='3'>
+        <label wx:if='{{inforlist.noReciveNum != 0}}'>{{inforlist.noReciveNum}}</label>待收货</view>
+      <view class='w_per_step04' bindtap='goReturns'>
+        <label wx:if='{{inforlist.returnNum != 0}}'>{{inforlist.returnNum}}</label>退/换货</view>
+      <view class='w_per_step05' bindtap='goOrders' data-tabs='0' data-states='0'>全部订单</view>
+    </view>
+  </view>
+
+  <view class='w_per_lis'>
+    <view class='w_per_liImgs'>
+      <view bindtap="gotoRedPackage">
+        <image src='https://zhkj.oss-cn-shanghai.aliyuncs.com/wximg/w_n_c_02.png' mode="widthFix"></image>签到领红包</view>
+      <view bindtap="gotoSeaFriends">
+        <image src='../../images/w_n_c_09.png' mode="widthFix"></image>看借豆好友</view>
+      <view bindtap="showAppdDwnload">
+        <image src='https://zhkj.oss-cn-shanghai.aliyuncs.com/wximg/w_n_c_010.png' mode="widthFix"></image>分享赚钱</view>
+      <view bindtap="inviteFriend">
+        <image src='https://zhkj.oss-cn-shanghai.aliyuncs.com/wximg/w_n_c_04_n.png' mode="widthFix"></image>邀请好友</view>
+    </view>
+  </view>
+
+  <view class='w_per_lis'>
+    <view class='w_per_liImgs'>
+      <view class='w_per_step06' bindtap="robBean">抢豆包</view>
+      <view class='w_per_step07' bindtap="snedBean">发豆包</view>
+      <view class='w_per_step08' bindtap="cashBean">现金充豆</view>
+      <!-- <router-link
+            tag="span"
+            class="w_icon_beanStep04"
+            v-if="isLogin==true"
+            to="/turnBeans"
+          >我要转豆</router-link> -->
+      <view class='w_per_step09' bindtap="zhuanBean" wx:if="{{isVip}}">我要转豆</view>
+      <view class='w_per_step09' bindtap="helpCenter" wx:else>帮助中心</view>
+    </view>
+  </view>
+</view>
+
+<!-- 抢豆包 弹窗 -->
+<view class="pop-mask" hidden='{{popupHidden}}'></view>
+<view class="weui-dialog" hidden='{{popupHidden}}'>
+  <view class="img-box">
+    <image src="../../images/beanbagBg.png" class="w_beanBgImg"></image>
+    <view class="w_beanbagCons">
+      <view class="w_topClose clearfix">
+        <view class="vux-close" bindtap="closePopup"></view>
+      </view>
+
+
+      <view class="w_beanbagImgs" wx:if="{{stateShow==0}}">
+        <image class="beanbag-image" src="{{w_redLogo01}}"></image>
+        <view class="bean-text">{{successRemark}}</view>
+      </view>
+
+      <view class="w_beanbagImgs" wx:if="{{stateShow==1}}">
+        <image class="beanbag-image" src="{{w_beanfaces}}"></image>
+        <view class="bean-text">手慢了，豆包已抢完～</view>
+        <view bindtap='envelopelist' class="w_seaLinks">查看大家的手气</view>
+      </view>
+
+      <view class="w_beanbagImgs" wx:if="{{stateShow==2}}">
+        <image class="beanbag-image" src="{{w_redLogo01}}" />
+        <view class="h4">{{remark}}</view>
+        <view class="h5">
+          <view class="b">{{beanBag}}</view>粒豆</view>
+        <view bindtap='envelopelist' class="w_seaLinks">查看手气</view>
+      </view>
+
+      <!-- <view class="w_beanbagImgs" wx:if="{{stateShow==2}}">
+          <image class="beanbag-image" src="{{w_redLogo01}}"></image>
+          <view class="remark">{{remark}}庆新版上线</view>
+           <view class="beanBag"><text class="bean-number">{{beanBag}}1</text>粒豆</view>
+           <view bindtap='envelopelist' class="w_seaLinks">查看手气</view>
+        </view> -->
+
+      <view class="w_beanbgIcon" wx:if="{{stateShow==0}}">
+        <text class="beanbg-text" bindtap="openPopup"></text>
+        <audio src="https://zhkj.oss-cn-shanghai.aliyuncs.com/wximg/001.wav" id="myAudio"></audio>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class="gotoapp-mask" hidden="{{appdownloadHidden}}" bindtap="closeDownload"></view>
+<view class="gotoapp-content" hidden="{{appdownloadHidden}}">
+  <div class="downloadcontainer" style="position: relative; display: flex; flex-direction: column; align-items: center;">
+    <h3 style="margin-top: 16%; padding: 0px 8%;">用app一键分享赚钱，更便捷，更流畅。</h3>
+    <view class="download" bindtap="download" style="display: block; padding: 5px 10px; background: rgb(226, 45, 26); width: 40%; color: rgb(255, 255, 255); margin-top: 50px; margin-bottom: 20px; border-radius: 5px;">
+      下载APP
+    </view>
+    <span bindtap="closeDownload" class="vux-close" style="position: absolute; display: block; text-align: center; top: 10px; right: 10px; font-size: 24px;"></span>
+  </div>
+</view>
+
+<!-- 收豆小包 -->
+<view class="w_per_gbeans" bindtap="gotoHarvestBean" wx:if="{{popBenas}}">
+  <view class="a">
+    <image src="https://zhkj.oss-cn-shanghai.aliyuncs.com/nHelp/mePos.png" mode="widthFix"/>
+    <view class="span">{{noGetBeanNum}}</view>
+  </view>
+</view>

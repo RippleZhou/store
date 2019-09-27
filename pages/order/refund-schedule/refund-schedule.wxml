@@ -1,0 +1,25 @@
+<!--pages/order/refund-schedule/refund-schedule.wxml-->
+<view class='ord_li_heads'>
+    <view class='ord_li_h_tit'>退款进度</view>
+    <icon class='top_servers' bindtap='getTels'></icon>
+</view>
+
+<view class='vir_box'>
+    <view class='no_blankIms' wx:if="{{item==null}}">
+        <image src='{{imgUrl}}' mode="widthFix"></image>
+        没有退款进度
+    </view>
+    <view wx:else class='vir_refund_con'>
+        <view class='vir_refund_list' wx:for="{{item}}" wx:key="unique" wx:for-item="ex" bindtap='goDetail' data-refid="{{ex.refundId}}">
+            <view class='vir_refund_tit'>已退款<label>￥{{ex.refundAmount}}</label></view>
+            <view class='w_refSched_liTxt'>
+              <view class='w_re_codeLis' wx:for="{{ex.virCode}}" wx:key="unique" wx:for-item="sm">
+                <text>券码{{index+1}}：</text>{{sm}}
+              </view>
+              <view class='v_re_datas'>到账时间：预计{{ex.refundDate||''}}到账</view>
+            </view>
+        </view>
+    </view>
+</view>
+
+

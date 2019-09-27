@@ -1,0 +1,81 @@
+/* pages/order/see-logistics/see-logistics.wxss */
+
+.w_orderDetail_tops{
+  width:100%;height: 200rpx;position:relative;overflow: hidden;
+  font-size: 34rpx;color:#fff;padding:50rpx 20rpx;z-index: 10;
+}
+.w_per_bgimg{
+  position:absolute;left:0;top:0;width:100%;height:100%;z-index:1;
+}
+.w_see_box{
+  padding:20rpx;
+}
+
+.w_orderDetail_address{
+  margin-top:-140rpx;margin-bottom: 20rpx;width:100%;background: #fff;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,.06);border-radius: 10rpx;
+  padding:20rpx 20rpx 50rpx 20rpx;position: relative;z-index: 11
+}
+
+.w_logisticsInfo_theads{
+  padding:40rpx 40rpx 30rpx 40rpx;border-bottom:1rpx solid #EBEBEB;
+  display:flex;display:-webkit-flex;display: -ms-flexbox;
+}
+.w_logisticsInfo_theads image{
+  width:120rpx;height: 120rpx;border-radius: 10rpx;margin-right: 40rpx;border:1rpx solid #EBEBEB;
+}
+.w_log_thead_Rs{
+  flex-grow: 1;-webkit-flex-grow: 1;-webkit-box-flex-group: 1;width:50%;text-align:left;
+}
+.w_log_thead_Rs text{
+font-size: 38rpx;color:#E61817;padding-bottom: 20rpx;padding-top:8rpx;display:block;
+}
+.w_log_thead_Rs label{display:block;
+font-size: 28rpx;color:#666;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;
+}
+
+.w_re_linTits{
+  font-size: 28rpx;color:#333;padding:60rpx 20rpx 30rpx 15rpx;
+}
+
+.w_logInfo_noInfos{
+  text-align: center;font-size: 30rpx;color:#666;padding:30rpx 20rpx;
+}
+
+
+.w_reDetail_lines{
+  padding:35rpx 20rpx;
+}
+.w_logInfo_infos{
+  padding-left: 60rpx;padding-bottom: 60rpx;position: relative;width:100%;
+}
+.w_logInfo_infos::after{
+  content: '';width:1rpx;height:100%;margin-left: 16rpx;position:absolute;left:0;top:8rpx;
+  border-left:1px solid #EBEBEB;z-index:1;
+}
+.w_logInfo_infos:before{
+  width:21rpx;height: 21rpx;border-radius: 21rpx;background: #EBEBEB;content:'';
+  left:0;z-index: 2;margin-left:6rpx;top:8rpx;display:block;position:absolute;
+}
+.w_logInfo_infos view{
+font-size: 28rpx;color:#666666;padding-bottom: 10rpx;
+}
+.w_logInfo_infos text{
+font-size: 24rpx;color:#666666;display:block;line-height: 40rpx;text-align:left;padding-bottom: 10rpx;
+}
+.w_logInfo_infos label{
+color:#828282;font-size: 24rpx;display:block;width:100%;
+}
+
+.w_reDetail_lines .w_logInfo_infos:first-child view{
+color:#EF9001;
+}
+.w_reDetail_lines .w_logInfo_infos:first-child text{
+color:#333;
+}
+.w_reDetail_lines .w_logInfo_infos:first-child::before{
+  border:6rpx solid #FDCAD8;background: #E61817;margin-left: 0;
+}
+.w_reDetail_lines .w_logInfo_infos:last-child::after{
+  height:0;
+}

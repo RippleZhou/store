@@ -1,0 +1,64 @@
+/* pages/logisticsMessage/logisticsMessage.wxss */
+
+._v-content{
+  text-align: center;
+}
+.no_blankIms{
+  width:30%;
+  padding-top: 100rpx;
+}
+
+
+.w_serMes_MessList {
+    padding: .78125rem .625rem;
+}
+.w_serMes_MessList .w_serMer_ac_list {
+    background: #fff;
+    border-radius: .3125rem;
+    padding: .625rem .625rem;
+    margin-bottom: .78125rem;
+}
+
+.w_serMes_MessList .w_serMer_ac_list .h2 {
+    font-size: .9375rem;
+    color: #333;
+    padding-bottom: .625rem;
+    font-weight: 600;
+}
+.w_serMes_MessList {
+    padding: .78125rem .625rem;
+}
+.w_serMes_MessList .w_serMer_ac_list .w_serMer_logCons {
+    width: 100%;
+    display: -webkit-box;
+    display: flex;
+    display: -ms-flexbox;
+}
+.w_serMes_MessList .w_serMer_ac_list .w_serMer_logCons image {
+    /* width: 154rpx;
+    height:154rpx; */
+    margin-right: .625rem;
+}
+
+.w_serMes_MessList .w_serMer_ac_list .w_serMer_logCons .w_serMer_logRs .p {
+    font-size: 28rpx;
+    color: #333;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* width: 100%; */
+    padding-bottom: .625rem;
+    line-height: 1.375rem;
+}
+
+.w_serMes_MessList .w_serMer_ac_list .w_serMer_logCons .w_serMer_logRs .label {
+    display: block;
+    flex: 1;
+    font-size: .8125rem;
+    color: #999;
+}
+.w_serMer_logRs{
+  flex:1
+}

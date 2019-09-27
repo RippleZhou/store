@@ -1,0 +1,156 @@
+<view class="w_headers flex-wrp" >
+  <view class="w_head_leftback" bindtap="goBack" wx:if="{{isEidt}}"></view>
+  <view class='w_head_title'>购物车</view>
+  <view class="w_head_rightTxt" bindtap="editCart">{{headTxt}}</view>
+</view>
+
+<view class="w_boxsT bg-main w_marBoxs">
+  <view class="w_conNulls w_boxsT" wx:if="{{exboxList.length == 0}}">
+    <image class='w_conNulls_img' mode="widthFix" src='https://zhkj.oss-cn-shanghai.aliyuncs.com/nHelp/nw_blank_01.png'></image>
+    <view class="w_icon_aosao_h2">购物车空空如也哦</view>
+  </view>
+  <view wx:else>
+    <view class="w_exboxUls">
+      <scroll-view class="scroll-view " scroll-x lower-threshold="200"
+        wx:for="{{exboxList}}" wx:for-index="index" wx:key="index"
+        wx:if="{{item.isValid}}" >
+          <view id="ex-contet" class="exlist-content">
+              <view class="ex-lists flex-wrp">
+                <view class="checkbox-wrap">
+                  <view class="check-none" wx:if="{{!item.checkpro}}"
+                    bindtap="checkSel" data-index='{{index}}'
+                  ></view>
+                  <view class="checked" 
+                    wx:else bindtap="checkSel" data-index='{{index}}'></view>
+                </view>
+                <image class='cart-item-img' mode='widthFix' bindtap="goto({jumpType:0,jumpId:item.proId})" src="{{item.imgUrl || errorImg}}"></image>
+                <view class="w_exLi_ris">
+                  <view class="w_exLi_ris_h2 ellipse" bindtap="goto({jumpType:0,jumpId:item.proId})">{{item.proTit}}</view>
+                  <view class="w_exLi_ris_p" bindtap="goto({jumpType:0,jumpId:item.proId})">{{item.proSpec}}</view>
+                  <view bindtap="goto({jumpType:0,jumpId:item.proId})" class="w_eLi_litxt">
+                    <text wx:if="{{item.proTips !='' && item.limitAmount > 1}}" class="w_eLi_litxt_label">{{item.proTips}}</text>
+                    <text class='w_eLi_litxt_label' wx:if="{{item.sourceType==1}}">用豆直兑</text>
+                    <text class="w_eLi_litxt_label w_txtYels" wx:if="{{item.sourceType==1 || item.sourceType==2}}">红包直抵</text>
+                    <text class="w_eLi_litxt_label w_txtOranges" wx:if="{{item.sourceType==3}}">金豆直兑</text>
+                  </view>
+                  <view class='good-info'>
+                    <view class="w_exLi_ris_h3">￥{{item.proPrice}}</view>
+                    <view class="w_pop_selBtns flex-wrp">
+                      <image class="icon-sub {{item.proNums <= item.limitAmount ? 'prevent-icon': ''}}" mode="widthFix" id="sub"
+                        data-proid="{{item.proId}}" 
+                        data-proNums="{{item.proNums}}"  dadta-type="sub"
+                        data-index="{{index}}"  bindtap='changeNum'
+                        src='../../images/icons/sub.png'></image>
+                      <input class="input-num" placeholder="0" type="number" id="input" 
+                        data-proid="{{item.proId}}" 
+                        data-proNums="{{item.proNums}}" 
+                        data-index="{{index}}" dadta-type="input"
+                        value="{{item.proNums}}" bindinput='changeNum'/>
+                      <image class="icon-sub {{item.proNums >= 1000 ? 'prevent-icon': ''}}" mode="widthFix" id="add"
+                        data-proid="{{item.proId}}" 
+                        data-proNums="{{item.proNums}}" 
+                        data-index="{{index}}" bindtap='changeNum'
+                        src='../../images/icons/add.png'></image>
+                    </view>
+                  </view>
+                </view>
+              </view>
+          </view>
+          <view id="ex-button" class="right-menu">
+            <view bindtap="deletePro" 
+              data-index="{{index}}" data-proid="{{item.proId}}">删除</view>
+          </view>
+     </scroll-view>
+
+      <view class="w_isValidPro" wx:if="{{isNums>0}}">
+        <view class="w_isValTit flex-wrp">
+          <text class='flex-grow-1'>失效产品</text>
+          <text class='delete-icon' bindtap="delFailureClick"></text>
+        </view>
+        <scroll-view class="scroll-view " scroll-x lower-threshold="200"
+        wx:for="{{unexboxList}}" wx:for-index="index" wx:for-item="exlist" wx:key="index"
+        wx:if="{{!exlist.isValid}}" >
+          <view id="ex-contet" class="exlist-content">
+            <view class='overlay-content'>
+              <view class="w_isVal_pops"></view>
+              <text class="w_isVal_tips">商品已下架</text>
+            </view>
+            <view class="ex-lists flex-wrp" >
+              <view class="checkbox-wrap">
+                <view class="check-none" wx:if="{{!exlist.checkpro}}"
+                  bindtap="checkSel(index,exlist.proId)"
+                ></view>
+                <view class="checked" 
+                  wx:else="exlist.checkpro" bindtap="checkSel(index,exlist.proId)"></view>
+              </view>
+              <image class='cart-item-img' mode='widthFix' bindtap="goto({jumpType:0,jumpId:exlist.proId})" src="{{exlist.imgUrl || errorImg}}"></image>
+              <view class="w_exLi_ris">
+                <view class="w_exLi_ris_h2 ellipse" bindtap="goto({jumpType:0,jumpId:exlist.proId})">{{exlist.proTit}}</view>
+                <view class="w_exLi_ris_p" bindtap="goto({jumpType:0,jumpId:exlist.proId})">{{exlist.proSpec}}</view>
+                <view bindtap="goto({jumpType:0,jumpId:exlist.proId})" class="w_eLi_litxt">
+                  <text wx:if="{{exlist.proTips !='' && exlist.limitAmount > 1}}" class="w_eLi_litxt_label">{{exlist.proTips}}</text>
+                  <text class='w_eLi_litxt_label' wx:if="{{exlist.sourceType==1}}">用豆直兑</text>
+                  <text class="w_eLi_litxt_label w_txtYels" wx:if="{{exlist.sourceType==1 || exlist.sourceType==2}}">红包直抵</text>
+                  <text class="w_eLi_litxt_label w_txtOranges" wx:if="{{exlist.sourceType==3}}">金豆直兑</text>
+                </view>
+                <view class='good-info'>
+                  <view class="w_exLi_ris_h3">￥{{exlist.proPrice}}</view>
+                  <view class="w_pop_selBtns flex-wrp">
+                    <image class='icon-sub' mode="widthFix" id="sub"
+                      data-proid="{{exlist.proId}}" 
+                      data-proNums="{{exlist.proNums}}"  dadta-type="sub"
+                      data-index="{{index}}"  bindtap='changeNum'
+                      src='../../images/icons/sub.png'></image>
+                    <input class="input-num" placeholder="0" type="number" id="input" 
+                      data-proid="{{exlist.proId}}" 
+                      data-proNums="{{exlist.proNums}}" 
+                      data-index="{{index}}" dadta-type="input"
+                      value="{{exlist.proNums}}" bindinput='changeNum'/>
+                    <image class='icon-add' mode="widthFix" id="add"
+                      data-proid="{{exlist.proId}}" 
+                      data-proNums="{{exlist.proNums}}" 
+                      data-index="{{index}}" bindtap='changeNum'
+                      src='../../images/icons/add.png'></image>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view id="ex-button" class="right-menu">
+            <view bindtap="onButtonClick" 
+              data-index="{{index}}" data-proid="{{exlist.proId}}">删除</view>
+          </view>
+        </scroll-view>
+
+      </view> 
+   
+    </view>
+  </view>
+</view>
+
+<view class="w_car_footers flex-wrp" wx:if="{{!isEidt}}">
+  <view class="w_car_f_sels flex-wrp">
+    <view class="checkbox-wrap checksels">
+      <text class="check-none" wx:if="{{!checkAll}}" bindtap="checkSelAll"></text>
+      <text class="checked" wx:else bindtap="checkSelAll"></text>
+    </view>
+    <view>全选</view>
+  </view>
+  <view class="w_car_f_price">
+    合计：
+    <text>¥{{allMoney}}</text>
+  </view>
+  <view class='settlement' bindtap="goConfirmOrder">结算({{allNum}})</view>
+</view>
+<div class="w_car_footers flex-wrp" wx:else>
+  <view class="w_car_f_sels flex-wrp">
+    <view class="checkbox-wrap checksels">
+      <text class="check-none" wx:if="{{!checkAll}}" bindtap="checkSelAll"></text>
+      <text class="checked" wx:else bindtap="checkSelAll"></text>
+    </view>
+    <view>全选</view>
+  </view>
+  <div class="flex-grow-1 tr">
+    <text class="w_car_f_dels" bindtap="deletePro" data-type="all">删除</text>
+  </div>
+</div>

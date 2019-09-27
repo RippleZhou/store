@@ -1,0 +1,52 @@
+<!--pages/lowbuy/lowbuy.wxml-->
+<wxs src="../../filters/digitalFr.wxs" module="digitalFr" />
+
+<swiper class="swiper-wrap-tab" display-multiple-items="{{4}}" next-margin="140rpx">
+  <block wx:for="{{tabs}}" wx:key="index">
+    <swiper-item class="swiper-item-tab tc " bindtap="jumpTab" data-index="{{index}}">
+      <view class="swiper-item-tab-text {{currentTab == index ? 'active-tab': ''}}">
+        {{item.name}}
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
+
+<view>
+  <swiper class='w_sw_con' current='{{currentTab}}' bindchange="swiperChangeTab">
+    <block wx:for="{{tabs}}" wx:key="index">
+      <swiper-item class="swiper-slide">
+        <scroll-view data-index="{{index}}" style='height:100%;' scroll-y bindscrolltolower="scrolltolower">
+
+          <view class='recommend' wx:if="{{index == 0}}">
+            <index-recommend 
+            swiper-list="{{recommend.homeBanners}}" 
+            advertisement="{{recommend.homeAdvertise}}" 
+            grid-list="{{recommend.homeNavigs}}" 
+            pp-list="{{recommend.homeCopywrs}}" 
+            newproductList="{{recommend.homeRecommend}}"
+            floor-list="{{recommend.homeFloors}}">
+            </index-recommend>
+          </view>
+
+          <view class="list" wx:else>
+            <view class="item" wx:for="{{list}}" data-pid="{{item.productId}}" bindtap="gotoDetail">
+              <view class="img-wrap" style="line-height:0">
+                <image src="{{item.imgUrl}}" class="item-image" mode="widthFix"></image>
+              </view>
+
+              <view class="content">
+                <view class="title">{{item.productTitle }}</view>
+                <view class="hongbao">红包直抵</view>
+                <view class="h3">￥
+                  <text class="money">{{digitalFr.toFixedDecimal(item.priceCurrentPrice,2)}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+
+        </scroll-view>
+      </swiper-item>
+    </block>
+  </swiper>
+
+</view>

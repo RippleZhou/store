@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "pro-imgtxt": "/components/pro-imgtxt/pro-imgtxt"
+  }
+}

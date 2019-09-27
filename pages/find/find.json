@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "bargain-list": "/components/find/bargain-list/bargain-list",
+    "find-list": "/components/find/find-list/find-list"
+  },
+    "navigationBarTitleText": "发现"
+}

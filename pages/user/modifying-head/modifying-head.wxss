@@ -1,0 +1,34 @@
+/* pages/user/modifying-head/modifying-head.wxss */
+@import "/style/common.wxss";
+page{
+  background: #fff;
+}
+.mod_head_Tit{
+  font-size: 28rpx;color:#333;padding: 20rpx;
+}
+.mod_head_Cons{
+  padding:0 20rpx;width:100%;display:flex;display:-webkit-flex; /* Safari */display: -ms-flexbox;flex-wrap: wrap;
+}
+.mod_head_list{
+  max-width:162rpx;height: 162rpx;background: #f0f0f0;
+font-size: 26rpx;color:#666;position: relative;width:22.2%;
+margin: 0 10rpx 20rpx 10rpx;text-align: center;overflow: hidden;
+}
+.mod_head_list image{
+  width:100%;display: block;line-height: 0;
+}
+
+.mod_head_lasts::before{
+  font-family: nwscfonts!important; font-size:100rpx;
+  content:"\E043";color:#666;display:block;line-height: 100rpx;
+  text-align: center;
+}
+
+.mod_head_btn{
+   margin: 90rpx;color:#fff;height: 90rpx;line-height: 90rpx;border-radius: 10rpx;
+  background: -webkit-linear-gradient(left, #f90000 , #f61e65); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(right, #f90000, #f61e65); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(right, #f90000, #f61e65); /* Firefox 3.6 - 15 */
+  background: linear-gradient(to right, #f90000 , #f61e65); /* 标准的语法 */
+  text-align: center;font-size: 30rpx;
+}

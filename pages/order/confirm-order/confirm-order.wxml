@@ -1,0 +1,105 @@
+<view class="confirm-order-box">
+  <view class="w_confOrder_address" wx:if="{{!address.id}}" bindtap="goAddress">请填写收货地址</view>
+
+  <view class="w_confOrder_address2" wx:else bindtap="goAddress">
+    <view class="w_confOr_ad2_list01">
+      <view class="list01_text">收货：{{address.contactName}}</view>
+      <text class='list01_text list01_span'>{{address.contactCellPhone}}</text>
+    </view>
+    <view class="w_confOr_ad2_list02">
+      <view class="list02_text">地址：</view>
+      <text class='list02_span'><text class='list02_b' wx:if="{{address.isDefault ==1}}">默认</text>{{address.area + address.addressDetail}}</text>
+    </view>
+  </view>
+
+  <view class="w_confOrder_lists flex-wrp" wx:for="{{productList}}" wx:key="index">
+    <image class='product_lists_img' src='{{item.sku.imageUrl || errorImg}}' mode="widthFix"></image>
+    <view class="w_confOrder_rs">
+      <view class='product-h2 ellipse'>{{item.sku.productName}}</view>
+      <view class='product-desc'>{{item.psepc}}</view>
+      <view class="w_eLi_liTxt">
+        <text class='w_eLi_liTxt_span' wx:if="{{item.limitAmount> 1}}">{{item.limitAmount}}件起购</text>
+        <text class='w_eLi_liTxt_text' wx:if="{{item.sku.sourceType==1}}">用豆直兑</text>
+        <text class="w_eLi_liTxt_text w_txtYels" wx:if="{{item.sku.sourceType==1 || item.sku.sourceType==2}}">红包直抵</text>
+        <text class="w_txtOranges" wx:if="{{item.sku.sourceType==3}}">金豆直兑</text>
+      </view>
+
+      <view class="w_confOrder_nums">
+        <text class='w_confOrder_nums_text'>￥{{item.sku.price}}</text>
+        <text class='w_confOrder_nums_text w_confOrder_nums_text2'>x{{item.amount}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="w_confOrder_lineList w_confOrder_lineList3">
+    <view class="bean-input-label">可用转换豆 {{paymentCost.converBeanAmount}} 粒抵 ¥{{paymentCost.converBeanAmount}}</view>
+    <view class="bean-input-wrap">
+      <input type="number" class="bean-input" value="{{ paymentCost.converBeanAmount }}" bindinput="beanInput"></input>
+      粒
+    </view>
+  </view>
+
+  <view class="w_confOrder_inforList ">
+    <view class="p_line">
+      <view class="p_text">商品金额</view>
+      <view class="p_money"> ¥{{paymentCost.totalAmount}}</view>
+    </view>
+    <view class="p_line">
+      <view class="p_text">现金红包</view>
+      <view class="p_money">¥{{paymentCost.beanAmount}}</view>
+    </view>
+    <view class="p_line">
+      <view class="p_text">转换豆</view>
+      <view class="p_money">{{paymentCost.converBeanAmount}}</view>
+    </view>
+    <view class="p_line">
+      <view class="p_text">运费</view>
+      <view class="p_money"> ¥{{paymentCost.expressFee}}</view>
+    </view>
+  </view>
+</view>
+
+
+<view class="w_confirmFooter">
+  <view class="w_comfirmFot_price">
+    实付:
+    <view class="span">
+      ￥{{paymentCost.paymentAmount}}
+      <view class="b"></view>
+    </view>
+    <view class="a" bindtap="showDetails">明细</view>
+  </view>
+
+  <view class="w_comfirmFot_btns" bindtap="submitOrder">提交订单</view>
+</view>
+
+<!-- 明細彈窗 -->
+<cover-view class="detail-mask" wx:if="{{detailShow}}"></cover-view>
+<cover-view class="detail-list" wx:if="{{detailShow}}">
+  <view class="detail-list-title">优惠明细
+    <view class="dl_popup-close" bindtap="closeDetail"></view>
+  </view>
+
+  <scroll-view scroll-y style="height: {{detailListHeight}}rpx;">
+    {{buyerCart}}
+    <view class="w_popDe_lists" wx:for="{{detailList}}">
+      <image class="detail-list-item-image" src="{{item.sku.imageUrl}}"></image>
+      <view class="w_popDe_Rigs">
+        <view class="w_popDe_riTit">
+          <view class="h2">{{item.sku.productName}}</view>
+          <view class="h3">￥{{item.sku.price}}</view>
+        </view>
+        <view class="w_popDe_pops">
+          <view class="h3">x{{item.amount}}</view>
+          <view class="h2">实付:
+            <view class="b">￥{{item.payment}}</view>
+          </view>
+          <view class="p">总额 ¥{{item.amount*item.sku.price}}豆 减{{item.converBean}}粒，红包 减¥
+            <view class="label">{{item.bean}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  
+</cover-view>

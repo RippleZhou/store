@@ -1,0 +1,25 @@
+<!--pages/my/my.wxml-->
+<header set-tit-name="{{setTitName}}" head-left="{{true}}" bind:headevent="goBack"></header>
+<view class="w_boxsT">
+  <view class="w_login_logos">
+    <image class='logo' mode="widthFix" src='../../../images/nw_logs.png'></image>
+  </view>
+  <view class="w_login_cons">
+      <view class="w_login_inpLis">
+        <input  class="input" placeholder="请输入手机号" type="digit" id="cellPhone" bindinput='setDefaultValue' maxlength='11'/>
+      </view>
+      <view class="w_login_inpLis w_login_inpLis2">
+        <input class="input input2" placeholder="请输入密码" id="passWord" password="{{isPw}}" bindinput='setDefaultValue'/>
+        <view class="{{isPw ? 'w_icon_pwCeye' : 'w_icon_pwOeye'}}" bindtap="resetPWType"></view>
+        <navigator class="forget" url="/pages/user/find-password/find-password" hover-class="none">忘记密码</navigator>
+      </view>
+      <view class="w_login_btns">
+          <button class="w_login_bTxts" bindtap="login">登录</button>
+      </view>
+      <view class="w_login_texts">
+        <navigator class='w_login_texts-link' url="/pages/user/login-code/login-code" hover-class="none">短信验证登录</navigator>
+        <navigator class='w_login_texts-link tr' url="/pages/user/register/register" hover-class="none">新用户注册</navigator>
+      </view>
+  </view>
+
+</view>

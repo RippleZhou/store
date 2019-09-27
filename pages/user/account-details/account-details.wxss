@@ -1,0 +1,56 @@
+/* pages/user/account-details/account-details.wxss */
+.det_heads{
+  width:100%;background: #fff;z-index: 100;left:0;top:0;height: 88rpx;
+  font-size: 34rpx;color:#333;text-align: center;line-height:88rpx;position:fixed;
+}
+.det_heads text{
+  font-size: 30rpx;color:#666;width:15%;text-align:center;position:absolute;z-index: 101;
+  right:0;top:0;line-height: 88rpx;
+}
+.det_tabs{
+  width:100%;background: #fff;z-index: 100;left:0;top:88rpx;height: 90rpx;
+  display: flex;display: -webkit-flex;border-bottom:1px solid #ebebeb;
+  position: fixed;
+}
+.det_tabs text{
+  display: block;text-align: center;font-size: 30rpx;color:#333;
+  width:30%;line-height: 90rpx;margin:0 10%;
+}
+.det_tabs text.tabCurs{
+  color:#e61817;border-bottom:2px solid #e61817;
+}
+
+.det_cons{
+  margin-top: 178rpx;
+}
+.det_infoList{
+  width:100%;background: #fff;border-bottom:1px solid #ebebeb;padding:20rpx;display: flex;display: -webkit-flex;
+}
+.det_list_lets{
+  width:75%;text-align: left;font-size: 30rpx;color:#333;
+}
+.det_list_lets text,.det_list_rigs text{
+  display: block!important;font-size: 24rpx;color:#999;
+}
+
+.det_list_rigs{
+  width:25%;text-align: right;font-size: 30rpx;color:#333;
+}
+.ac_pop{
+  width:100%;position:fixed;z-index: 200;background: rgba(0,0,0,.3);top:0;left:0;height:100%;
+}
+.ac_p_con{
+  width:70%;position:absolute;right:0;top:0;z-index: 201;background: #fff;padding:160rpx 30rpx;margin: 0 auto;
+  display: flex;display: -webkit-flex;flex-wrap: wrap;-ms-flex-wrap: wrap;-webkit-flex-wrap: wrap;
+  height: 100%;display:block;
+
+}
+.ac_p_con text{
+width:47.4%;font-size: 30rpx;color:#333;border:1px solid #666;height: 88rpx;line-height: 84rpx;border-radius: 88rpx;margin-bottom: 20rpx;margin-right: 20rpx;text-align:center;display:inline-block;
+}
+.ac_p_con text:nth-child(2n){margin-right: 0;}
+
+
+.ac_p_con .w_detailScreen_tabCurs{
+  color:#E61817;border-color:#E61817;
+}

@@ -1,0 +1,17 @@
+<!--pages/rechargeList/rechargeList.wxml-->
+ <view class="w_grayBgBox">
+    <view class="w_detailList_box">
+        <view style="height: 1px;"></view>
+        <view class="w_detailList_list w_s_detail" hidden="{{nodata}}" wx:for="{{list}}" wx:key="index">
+          <view class="w_detailList_lets">
+           转换豆{{item.converBeanNum}}粒
+            <view class="label">已支付</view>
+            <view class="label">{{item.payDate_show}}</view>
+          </view>
+          <view class="w_detailList_rigs">
+            ￥{{item.moneyAmount}}
+          </view>
+        </view>
+        <view class="nodata" hidden="{{!nodata}}">没有更多数据</view>
+    </view>
+  </view>

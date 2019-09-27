@@ -1,0 +1,20 @@
+<view class="head_index head_searchsList">
+  <view class="head_i_cens">
+    <form class='search_form' >
+      <input class='search_input' type="search" placeholder="请输入要搜索产品" value="{{searchText}}"
+      bindinput="setDefaultValue" confirm-type="搜索" bindconfirm="search"></input>
+    </form>
+  </view>
+</view>
+
+<scroll-view class='product-list' scroll-y bindscrolltolower="scrolltolower">
+  <pro-imgtxt list="{{items}}" last-flag="{{total <= offset ? true: false}}"  wx:if="{{items.length > 0}}">
+  </pro-imgtxt>
+
+  <view wx:else>
+    <image src="https://zhkj.oss-cn-shanghai.aliyuncs.com/nHelp/nw_blank_02.png" v-if="imgIsShow" class="no_blankIms" mode='widthFix'></image>
+    <view class='nodata-text'>没有相关搜索</view>
+  </view>
+</scroll-view>
+
+

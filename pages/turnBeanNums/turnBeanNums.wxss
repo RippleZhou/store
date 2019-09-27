@@ -1,0 +1,94 @@
+/* pages/turnBeanNums/turnBeanNums.wxss */
+
+.w_turnNumBox {
+    border-top: 6rpx solid #f5f5f5;
+    padding: 30rpx 20rpx;
+}
+
+.w_turnNumBox .w_turnNum_head {
+    width: 100%;
+    text-align: center;
+}
+
+.w_turnNumBox .w_turnNum_head image {
+    width: 120rpx;
+    height: 120rpx;
+    margin: 0 auto;
+    border-radius: 120rpx;
+}
+
+.w_turnNumBox .w_turnNum_head .h2 {
+    font-size: 34rpx;
+    color: #333;
+    font-weight: 600;
+    padding: 20rpx 0;
+}
+
+.w_turnNumBox .w_turnNum_cons {
+    width: 100%;
+    padding-top: 10rpx;
+}
+.w_turnNumBox .w_turnNum_cons .h2 {
+    font-size: 28rpx;
+    color: #333;
+    font-weight: 600;
+    padding: 40rpx 0;
+}
+
+.w_turnNumBox .w_turnNum_cons .w_turnNum_list {
+    width: 100%;
+    border-bottom: 1px solid #ebebeb;
+    display: -webkit-box;
+    display: flex;
+    display: -ms-flexbox;
+    padding-bottom: 20rpx;
+}
+
+.w_turnNumBox .w_turnNum_cons .w_turnNum_list input {
+    width: 80%;
+    text-align: left;
+    font-size: 36rpx;
+    color: #333;
+}
+
+.w_turnNumBox .w_turnNum_cons .w_turnNum_list .label {
+    width: 20%;
+    text-align: right;
+    display: block;
+    font-size: .875rem;
+    color: #333;
+}
+
+.addshuoming{
+ font-size:28rpx;
+    color: #999;
+    padding: 20rpx 0;
+}
+
+.w_sendBean_btns.w_sendBean_btns2 {
+    padding-top:100rpx;
+}
+.w_sendBean_btns {
+    padding: 0 70rpx;
+}
+.w_sendBean_btns .w_beanBtns, .w_sendBean_btns w_beanBtns:hover {
+    width: 100%;
+    display: block;
+    height: 90rpx;
+    text-align: center;
+    line-height: 90rpx;
+    color: #fff;
+    font-size: 30rpx;
+    background: #f7c9c9;
+    border-radius: 10rpx;
+}
+
+.canSubmit{
+  background: linear-gradient(to right,#f90000,#f61e65) !important;
+}
+
+
+
+
+
+

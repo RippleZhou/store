@@ -1,0 +1,9 @@
+<!--pages/transactionMessage/transactionMessage.wxml-->
+<view  id="inner-iojiv" class="_v-content" hidden="{{!empty}}">
+  <image  src="https://zhkj.oss-cn-shanghai.aliyuncs.com/nHelp/nw_blank_04.png" class="no_blankIms" mode="widthFix"/>
+  <view  class="loading-layer">
+    <view  class="no-data-text active" style="color: rgb(170, 170, 170);">还没有消息</view>
+  </view>
+</view>
+
+

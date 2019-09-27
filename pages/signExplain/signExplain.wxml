@@ -1,0 +1,20 @@
+
+<view class="w_beanExplainBox">
+  <view class="h2">现金红包说明</view>
+  <view class="p">1、1现金红包=1RMB</view>
+  <view class="p">2、现金红包只能在低价购和商城的产品使用</view>
+  <view class="p">3、现金红包最高可抵扣70%的现金,如价格为10元的商品现金红包中最高可抵扣7RMB,实际只需付款3RMB</view>
+  <view class="p">4、在提交订单页面，抵扣完转换豆后，现金红包自动抵扣可抵额度的商品价格。</view>
+  <view class="p">5、订单中可同时使用现金红包和转换豆，转换豆可以全额直兑商品，纯用现金红包总计不能超过商品价格总额70%。</view>
+  <view class="p">6、使用现金红包的订单,如果发生退换货,现金红包抵扣金额不能退还,只能退还实际支付的商品金额;如果部分退货,将按照订单实际成交商品的金额进行结算;</view>
+
+  <view class="h2">现金红包从哪里获得</view>
+  <view class="p">1、签到可获得现金红包奖励</view>
+  <view class="p">2、受邀请后赠送好友转换豆可得50元现金红包</view>
+  <view class="p">3、每邀请一位新伙伴加入可获取现金红包奖励</view>
+
+  <view class="p"></view>
+  <view class="p">注：</view>
+  <view class="p w_small_txt">1、若使用非正常手段获取抵用豆奖励(包括恶意重复刷取奖励,使用非法技术行为骗取系统奖励),转换商城有权不发放抵用豆奖励,并将视情况对其追究法律责任</view>
+  <view class="p w_small_txt">2、转换商城在法律范围内保留对抵用豆使用细则的最终解释权。</view>
+</view>

@@ -1,0 +1,18 @@
+
+function getrefunStateName(orderState) {
+  var Name = ''
+  if (orderState == 5 || orderState == 12 || orderState == 8) {
+    Name = '退换中'
+  } else if (orderState == 6) {
+    Name = '已退换货'
+  } else if (orderState == 9) {
+    Name = '退款完成'
+  } else if (orderState == 13) {
+    Name = '已失效'
+  }
+  return Name
+}
+
+module.exports = {
+  getrefunStateName: getrefunStateName
+}

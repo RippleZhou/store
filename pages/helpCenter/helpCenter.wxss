@@ -1,0 +1,93 @@
+/* pages/lowbuy/lowbuy.wxss */
+@import "/style/common.wxss";
+
+page{
+  height:100%;
+  background:#fff;
+}
+
+
+.w_sw_con {
+  /* margin-top: 172rpx; */
+  min-height: calc(100vh - 82rpx);
+  overflow: scroll;
+}
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.swiper-wrap-tab {
+  width: 100%;
+  background: #fff;
+  height: 80rpx;
+  z-index: 100;
+  left: 0;
+  top: 90rpx;
+  /* position: fixed; */
+  border-bottom: 1px solid #ebebeb;
+}
+.swiper-item-tab {
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  color: #000;
+  background: #fff!important;
+}
+.tc{text-align:center;}
+.swiper-item-tab-text {
+  height:75rpx;
+  display:inline-block;
+}
+.active-tab {
+  color: #e61817;
+  border-bottom: 4px solid #e61817;
+}
+
+.item{width:49.3%;background:#fff;margin-right:0.7%;margin-bottom:10rpx;
+}
+.list{display: flex;flex-wrap: wrap;}
+.img-wrap{line-height:0;border-bottom: 2rpx solid #ebebeb;}
+.item:nth-child(2n){margin-right: 0;
+    margin-left: .7%;}
+    .item-image{width:100% !important;   }
+    .content{padding: 20rpx 20rpx;
+    text-align: left;}
+.title{ text-overflow: ellipsis;font-size: 30rpx;
+    white-space: nowrap;
+    overflow: hidden;}
+    .hongbao{    
+      color: #ff9000;
+    border: 1px solid #fccf95;
+        font-size: 24rpx;
+    display: inline-block;
+    margin-right:15rpx;
+    padding:4rpx 10rpx;
+    /* height: 32rpx; */
+    border-radius: 32rpx;
+    line-height: 30rpx;
+    text-align: center;
+    
+    }
+
+    .hongbao-wrap{padding: 15rpx 0;    display: flex;}
+.money{display: inline-block;
+    font-size: 36rpx;
+    font-weight: 600;}
+.h3{    color: #e61817;
+    font-size:24rpx;}
+
+
+.w_help_list{
+ width: 100%;
+    border-bottom: 1px solid #ebebeb;
+    padding: .78125rem .78125rem;
+    line-height: 1.125rem;
+    font-size: .875rem;
+    color: #333;
+    background:#fff;
+}
+       
+
+
+

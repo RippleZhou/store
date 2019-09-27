@@ -1,0 +1,63 @@
+/* pages/sendBean/sendBean.wxss */
+.sendbean{font-size:32rpx;padding:30rpx;}
+.sendbean-row{display:flex;height:110rpx;padding: 0 30rpx;background:#fff;border-radius: 10rpx;line-height: 110rpx;}
+
+.row-number-wrap{flex:1;display:flex;}
+.row-number-input{flex: 1;text-align: right;height:110rpx;padding: 0 15rpx;}
+
+.sendbean-two{display:flex;padding: 0 30rpx;background:#fff;border-radius: 10rpx;line-height: 110rpx;margin-top:70rpx;}
+.sendbean-textarea{
+  height:130rpx;
+  line-height: 1.5;
+  padding-top:10rpx;
+}
+.switch-bean-wrap{font-size: 26rpx;padding: 10rpx 0 30rpx 30rpx;}
+.switch-bean{color: #36c;}
+
+.bean-number{text-align:center;padding: 50rpx 0;}
+.number-text{font-size: 88rpx;font-weight: 700;margin-right:10rpx;position:relative;top:6rpx;}
+.number-unit{font-size: 48rpx;}
+
+.bean-enter{height:90rpx;padding:0 70rpx;}
+.bean-enter-text{background: #f7c9c9;color:#fff;text-align: center;height:100%;border-radius: 10rpx;line-height: 90rpx;}
+.ping{    display: inline-block;
+    font-size: 24rpx;
+    color: #fff;
+    background: #e61817;
+    line-height: 32rpx;
+    padding: 2rpx 6rpx;
+    border-radius: 6rpx;
+    margin-left: 10rpx;
+}
+
+.bean-enter-text-active{
+background: linear-gradient(to right,#f90000,#f61e65);
+  color:#fff;text-align: center;height:100%;border-radius: 10rpx;line-height: 90rpx;}
+
+  .beanExplain{
+    float: right;
+    width: 15%;
+    right: 0;
+    top: 0;
+    line-height: 2.75rem;
+    z-index: 101;
+    display: block;
+    font-size: .9375rem;
+    color: #666;
+    text-align: right;
+    padding-left: 0;
+    padding-right: 40rpx;
+    }
+
+  .beanExplain:before{
+  font-family: nwscfonts!important;
+    font-weight: 400;
+    font-style: normal;
+    content: "\E028";
+    color: #333;
+    font-size: 2.5rem;
+    vertical-align: middle;
+  }
+      
+
+      .beanwrap{width:100%;overflow: hidden;}

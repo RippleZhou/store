@@ -1,0 +1,63 @@
+<!--pages/spike/spike.wxml-->
+
+<swiper class="swiper-wrap-tab" display-multiple-items="{{3}}" next-margin="36rpx">
+  <block wx:for="{{spikeTab}}" wx:key="unique" >
+    <swiper-item class="swiper-item-tab spike_tab"
+      bindtap="clickTab" data-index="{{index}}">
+      <view class="{{states == index ? 'active-tab': ''}}">
+        {{item.tit}}
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
+
+<swiper class='w_sw_con' current='{{states}}' bindchange="swiperChangeTab" >
+    <block wx:for="{{spikeTab}}" wx:key="unique">
+      
+      <swiper-item class="swiper-slide">
+        <scroll-view data-index="{{index}}" style='height:100%;' scroll-y bindscrolltolower="scrolltolower" lower-threshold="100">
+          <view class='spike_couTip'>
+            <text class="spike_couIcons {{states==0?'':'spike_couYels'}}">{{item.tit}}</text>
+            <view class='spike_couRigs'>
+              {{item.tip}}
+              <text>{{cutOffTime.o}}</text>:
+              <text>{{cutOffTime.m}}</text>:
+              <text>{{cutOffTime.s}}</text>
+            </view>
+          </view>
+          <!--没有数据时显示-->
+          <view class="eb_noPros {{isShows==true?'':'eb_noShows'}}" wx:if="{{isShows==false}}">
+                <!-- <view class="eb_noImgs">
+                    <image src="{{noMores}}" mode="widthFix"></image>
+                </view> -->
+            <view class="eb_noTxts">没有更多数据</view>
+          </view>
+          <view class='spike_conBox' wx:else>
+              <view class='spike_list' wx:for="{{spikeItem}}" wx:key="unique" wx:for-item="exs" bindtap='goPage' data-ids="{{exs.productId}}">
+                <image mode="widthFix" src='{{exs.imgUrl||errorImg}}' binderror="errImg" data-err-img="{{errorImg}}"></image>
+                <view class='spike_listRigs'>
+                  <view class='spike_list_tit'>{{exs.productTitle}}</view>
+                  <view wx:if="{{states!=0}}" class='spike_list_limit'>限量{{exs.number}}件</view>
+                  <view wx:else class='spike_list_progress'>
+                    <progress percent="{{exs.progress}}" stroke-width="30" backgroundColor="#f2bcbc" activeColor="#e61817"/>
+                    <label>{{exs.progress}}%</label>
+                    <text>已抢{{exs.soldNumber}}件</text>
+                  </view>
+                  <view class='spike_list_txts'>
+                    ¥<text>{{exs.priceCurrentPrice}}</text><label>{{exs.priceBeforePrice}}元</label>
+                    <navigator class="{{states==0?'btnReds':''}}" hover-class="none" url='/pages/product/product-view/product-view?type=3&productId={{exs.productId}}'>去抢单</navigator>
+                  </view>
+                </view>
+              </view>
+          </view>
+          <view class="w_loading_box">
+            <block wx:if="{{noPage==1}}">
+                <view class='w_load_tips'>{{tipTxt}}</view>
+            </block>
+          </view>
+        </scroll-view> 
+        
+        
+      </swiper-item>
+    </block>
+  </swiper>

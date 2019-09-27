@@ -1,0 +1,59 @@
+
+function getorderStateName(orderState, tradeState) //订单大状态
+{
+  var name=''
+  if (orderState == 0) {
+    name = "待付款"
+  } else if (orderState == 1) {
+    name = "待发货"
+  } else if (orderState == 2) {
+    name = "已发货"
+  } else if (orderState == 4) {
+    name = "已取消"
+  }else if (orderState == 11) {
+    name = "备货中"
+  } else if (orderState == 7) {
+    name = "支付失败"
+  } else {
+    name = "已完成"
+  }
+  if (tradeState == 0) {
+    name ="交易关闭"
+  }
+  return name
+}
+function getStateTxt(orderState) //小状态
+{
+  var name = ''
+  if (orderState == 5 || orderState == 12 || orderState == 8) {
+    name = "退换中"
+  } else if (orderState == 6) {
+    name = "已退换货"
+  } else if (orderState == 9) {
+    name = "已退款"
+  } else if (orderState == 13) {
+    name = "已失效"
+  }
+  return name
+}
+function showexpress(fee, Bean)//运费
+{
+  var showName = '￥0'
+  if (fee > 0) {
+    showName = '￥' + fee
+  }
+  if (Bean > 0) {
+    showName = Bean + '粒'
+  }
+  return showName
+}
+function getorderids(list) {//订单列表ＩＤ累加
+  return list.map(function (item) { return item.orderId }).join(',')
+}
+
+module.exports = {
+  getorderStateName: getorderStateName,
+  getStateTxt: getStateTxt,
+  showexpress: showexpress,
+  getorderids: getorderids
+}

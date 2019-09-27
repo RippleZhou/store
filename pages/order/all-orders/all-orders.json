@@ -1,0 +1,8 @@
+{
+  "onReachBottomDistance": 50,
+  "usingComponents": {
+    "online-order": "/components/order/online-order/online-order",
+    "offline-order": "/components/order/offline-order/offline-order",
+    "virtual-order": "/components/order/virtual-order/virtual-order"
+  }
+}

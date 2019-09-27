@@ -1,0 +1,235 @@
+<view class="w_borror_Oranges">
+  <view class="w_borrow_box">
+    <!--顶部头像-->
+    <view class="w_borrow_Tops">
+      <image src="{{userimage}}" class="img" />
+      <view class="w_borrow_TopRigs">
+        <image class="img" src="../../../images/borrowBeans_txt.png" />
+        <view class="h2">借钱要还，借豆不还</view>
+      </view>
+    </view>
+    <!--顶部产品-->
+    <view class="w_borrow_pros" data-pid="{{productItem.productId}}" bindtap="goProducts">
+      <image class="img" src="{{productItem.images}}" mode="widthFix" />
+      <view class="w_borrow_proRigs">
+        <view class="h2">{{productItem.productTitle}}</view>
+        <view class="w_borrow_proRig_pric">
+          <view class="span">¥
+            <view class="b">{{productItem.priceCurrentPrice}}</view>
+          </view>
+          <view class="a" catchtap="gotoShare">借豆购物</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="w_plrs">
+    <view class="w_borrow_OrangeDeep">
+      <!--进度-->
+      <view class="w_borrow_progress">
+        <view class="p" wx:if="productItem.needConverBeans > 0">好友还差
+          <view class="b">{{productItem.needConverBeans}}</view>转换豆</view>
+        <view class="p" wx:else>好友转换豆已满</view>
+        <view class="yellow-line">
+          <view class="weui-progress__bar">
+            <view class="weui-progress__inner-bar"></view>
+          </view>
+        </view>
+      </view>
+
+      <!--按钮-->
+      <view class="w_borrow_btns" wx:if="{{btnShows}}">
+        <view class="w_borrow_btnimage" bindtap="sendBorrow">
+          <image class="img" src="../../../images/borrow_btn01.png" mode="widthFix" />
+        </view>
+        <view class="w_borrow_btnimage" bindtap="sendRefuse">
+          <image class="img" src="../../../images/borrow_btn02.png" mode="widthFix" />
+        </view>
+      </view>
+
+      <!--老用户-->
+      <view wx:if="{{oldUser}}" class="w_borrow_oldUser">
+        <view class="w_borrow_Inputs">
+          <input type="tel" placeholder="请输入豆额" bindinput="BeanInput" />
+          <view class="span" bindtap="borrowBeanOk">确认借豆</view>
+        </view>
+      </view>
+
+      <!--新用户-->
+      <view wx:if="{{newUser}}" class="w_borrow_newUser">
+        <view class="w_borrow_Inputs">
+          <input type="tel" placeholder="做好事要留名(请输入手机号)" bindinput="phoneInput" />
+          <view class="span" wx:if="{{show}}" bindtap="getCode" :disabled="isDisable">获取验证码</view>
+          <view class="span" wx:if="{{!show}}" bindtap="getCode">{{codeTxt}}</view>
+        </view>
+
+        <!-- <button bindtap="test">fasong</button> -->
+        <view class="w_checkpw_cons" wx:if="{{IssendCode}}">
+
+          <input maxlength="4" class="code-input" bindinput="codeInput" cursor="{{cursor}}" focus='{{focus}}' />
+
+          <view class="code-wrap">
+            <block wx:for="{{codeInputs}}">
+              <view class="{{index==codeNow ?'w_psd_blink code-box':'code-box' }}" data-index="{{index}}" bindtap="clickCode">{{item}}</view>
+            </block>
+          </view>
+
+          <view class="ul" class="w_pwd_wrap" bindtap="focus">
+            <!-- <view wx:for="{{numLen}}" class="{{userCode.length == item ? 'w_psd_blink li' : 'li'}}" wx:key="{{index}}"> -->
+            <!-- <input type="tel" maxlength="6" class="pwd" bindkeyup="getNum" style="width:80rpx;height:80rpx;"/> -->
+            <!-- <view class="i" wx:if="{{userCode.length > item }}"></view> -->
+            <!-- </view> -->
+          </view>
+        </view>
+
+        <view class="p" class="w_borrow_xieyis">
+          <checkbox class="checkbox" checked="checked" /> 《转换商城用户协议》
+        </view>
+
+        <basic bindsuccess='captchaSuccess' bindhide='captchaHide' captchaReload='{{captchaReload}}' captchaShow='{{captchaShow}}' options='{{options}}' />
+
+      </view>
+    </view>
+  </view>
+  <image class="img" src="../../../images/borrowBeans_line.jpg" mode="widthFix" class="w_borrow_lineimage" />
+
+  <view class="w_plrs2">
+    <view class="w_borrow_OrangeThin">
+      <!--抢单：借你豆的人-->
+      <view class="w_borrow_blackCon01 w_borrow_blackNobrs" wx:if="{{historyIsShow}}">
+        <view class="h2" class="w_borror_b_Tit w_borror_b_Tit2">{{historTIts}}</view>
+        <view class="w_borrow_b_rUls">
+          <view class="swiper-container w_borowSwiper" wx:if="{{isShowList==false}}">
+            <swiper class="swiper" vertical="true" autoplay="true" circular="false" interval="2000" display-multiple-items="3">
+              <!-- autoplay="true" -->
+              <swiper-item class="swiper-item" wx:for="{{ historyItems }}">
+                <image src="{{item.imageUrl}}" class="swiper-item-img"></image>
+                <text class="swiper-item-text">{{item.productTitle}}</text>
+                <text class="swiper-item-label">{{item.second}}分钟前</text>
+              </swiper-item>
+            </swiper>
+
+            <!-- <view class="swiper-wrapper">
+              <view class="swiper-slide w_borrow_rList" wx:for="{{historyItems}}" wx:key="{{index}}">
+                <image class="img" src="{{item.imageUrl}}" />
+                <view class="span">{{ item.productTitle}}</view>
+                <view class="label">{{item.second}}分钟前</view>
+              </view>
+            </view> -->
+          </view>
+          <view class="swiper-container w_borowSwiper2" wx:else>
+            <view class="swiper-wrapper">
+              <view class="swiper-slide w_borrow_rList" wx:for="{{historyItems}}" wx:key="{{index}}">
+                <image class="img" src="{{item.imageUrl}}" />
+                <view class="span">{{item.giveCellPhone}}赠送给您{{item.beans}}个豆</view>
+                <view class="label">{{item.createTime}}</view>
+              </view>
+            </view>
+          </view>
+
+          <view class="w_borrow_lineRounds">
+            <image class="img" src="../../../images/borrowBeans_lines.png" mode="widthFix" />
+          </view>
+
+        </view>
+      </view>
+
+      <!--规则-->
+      <view class="w_borrow_blackCon01 w_borrow_blackNobrs">
+        <view class="h2" class="w_borror_b_Tit">借豆规则</view>
+        <view class="w_borror_b_Infors">
+          {{beanDescription}}
+        </view>
+      </view>
+      <!--更多-->
+      <view class="w_borrow_blackCon01">
+        <view class="h2" class="w_borror_b_Tit">
+          <image class="img" mode="widthFix" src="../../../images/borrowBeans_round.png" />更多正品好货</view>
+        <!-- <view class="w_borrow_b_products" wx:if="moreItems.length == 0">
+            <view class="w_conNulls">
+              <image src="http://zhkj.oss-cn-shanghai.aliyuncs.com/nHelp/wnw_blank_03.png"/>
+              <view class="h2" class="w_icon_aosao">没有更多产品了</view>
+            </view>
+          </view> -->
+        <view class="w_borrow_b_products">
+          <!--<scroller :on-infinite="infinite" ref="myscroller">-->
+          <!--<view style="height: 1px;"></view>-->
+          <view class="w_floor_proList" wx:for="{{moreItems}}" wx:key="{{index}}">
+            <image class="img product-icon" src="{{item.imgUrl}}" bindtap="goProducts" mode="widthFix" />
+            <view class="w_floor_rTxt">
+              <view class="h2" bindtap="goProducts">{{item.productTitle}}</view>
+              <span class="w_floor_r_tred" wx:if="{{item.requestBuyLimit > 1}}">{{item.requestBuyLimit}}件起兑</span>
+              <view class="h3">
+                ￥
+                <view class="b">{{item.priceCurrentPrice}}</view>
+                <view class="s">{{item.priceBeforePrice}}元</view>
+              </view>
+              <view class="w_floor_postxt">
+                <view class="w_floor_r_icon" wx:if="{{item.sourceType==1}}">
+                  <view class="b" class="w_floor_r_red"></view>用豆直兑
+                </view>
+                <view class="w_floor_r_icon" wx:if="{{item.sourceType==1||item.sourceType==2}}">
+                  <view class="b" class="w_floor_r_yellow"></view>红包直抵
+                </view>
+              </view>
+              <view class="w_floor_posLink">
+                <view class="a" data-pid="{{item.productId}}" bindtap="goBorrowBean">借豆</view>
+                <view class="a" data-pid="{{item.productId}}" bindtap="goProducts">抢单</view>
+              </view>
+            </view>
+          </view>
+          <view class="w_borrow_bTxts">没有更多产品了</view>
+          <!--</scroller>-->
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--</scroller>-->
+  <!--借豆成功或失败-->
+  <view class="mask" wx:if="{{borrowFailShow}}"></view>
+  <image class="borrowfail" mode="widthFix" wx:if="{{borrowFailShow}}" src="https://zhkj.oss-cn-shanghai.aliyuncs.com/nJunesMerIndex/borBean_eorr.png"></image>
+  <!-- <view v-transfer-dom>
+      <x-dialog v-model="showDialogStyle" hide-on-blur class="dialogNobgs">
+        <view bindtap="showDialogStyle=false" :class="isSends==true?'w_smimages':''">
+          <view class="w_popBorSuc" wx:show="isSends">
+            <label>+</label><b>{{beanNums}}</b>粒
+          </view>
+          <image :src="imageUrl">
+        </view>
+      </x-dialog>
+      <x-dialog v-model="showShare" hide-on-blur class="dialogNobgs">
+        <view class="w_tip_view" bindtap="showShare = false">
+          <span class="w_tip_fontTxt">转发好友,可自动完成借豆1-50抵用豆,快去测试您的人品吧!</span>
+          <image src="https://zhkj.oss-cn-shanghai.aliyuncs.com/nJunesMerIndex/nwxf_01_02.png" />
+        </view>
+      </x-dialog>
+    </view> -->
+  <!--错误提示-->
+  <!-- <toast v-model="errorShow" type="text" :text="errorTxt"></toast> -->
+  <view id="c1"></view>
+  <!---音乐-->
+  <audio id="successAudio">
+    <source src="../../assets/audio/success.mp3" type="audio/mpeg" />
+  </audio>
+  <audio id="failAudio">
+    <source src="../../audio/fail.wav" type="audio/mpeg" />
+  </audio>
+</view>
+
+<!-- 分享弹窗 -->
+<view class="share-mask" wx:if="{{shareShow}}"></view>
+<view class="weui-dialog" wx:if="{{shareShow}}">
+  <view class="w_tip_view">
+    <view class="span" class="w_tip_fontTxt">转发好友,可自动完成借豆1-50抵用豆,快去测试您的人品吧!</view>
+    <image class="share-image img" src="https://zhkj.oss-cn-shanghai.aliyuncs.com/nJunesMerIndex/nwxf_01_02.png" mode="widthFix" bindtap="shareHide" />
+  </view>
+</view>
+
+<!-- 借豆成功弹窗 -->
+<view class="borrow-success-mask" wx:if="{{borrowSuccess}}"></view>
+<view class="beannumber-popup" wx:if="{{borrowSuccess}}">
+  <text class="label">+</text>
+  <text class="b">{{borrowBeanNumber}}</text>
+  <text>粒</text>
+</view>
+<image class="borrow-success-content-img" src="https://zhkj.oss-cn-shanghai.aliyuncs.com/nJunesMerIndex/borBean_suc.png" mode="widthFix" bindtap="shareHide" wx:if="{{borrowSuccess}}" />

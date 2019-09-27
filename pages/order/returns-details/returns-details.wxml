@@ -1,0 +1,59 @@
+<!--pages/order/returns-details/returns-details.wxml-->
+<wxs module="util" src="./returns-details.wxs"></wxs>
+<view class='ord_li_heads'>
+    <view class='ord_li_h_tit'>订单详情</view>
+    <icon class='top_servers' bindtap='getTels'></icon>
+</view>
+
+<view class='ord_liBox'>
+  <view class='w_confOrder_lists'>
+      <image src='{{items.imageUrl}}' mode="widthFix"></image>
+      <view class='w_confOrder_rsDetails'>
+          <text>{{items.productName}}</text>
+          <label wx:if="{{items.requestBuyLimit>1}}">{{items.requestBuyLimit}}件起购</label>
+      </view>
+      <view class='w_confOrder_numsDetails'>
+          <label>￥{{items.productPrice}}</label>
+          x{{items.productNum}}
+      </view>
+  </view>
+   <view class='w_orderDetail_statTxts'>
+        {{util.getrefunStateName(items.orderState)}}
+  </view>
+  <view class='w_orderDetail_totals'>
+        共计{{items.productNum}}件商品  合计：¥{{items.orderAmount==null?0:items.orderAmount}}
+  </view>
+  <view class='w_link_btns' wx:if="{{items.orderState==5}}">
+      <text bindtap='goLogistics' data-orderid="{{items.orderId}}">填写物流信息</text>
+  </view>
+  <view class='w_orderDetail_numList'>
+      <view class='w_confOrder_inforList'>
+        <label>商品金额</label>
+        <text>￥{{items.orderAmount==null?0:items.orderAmount}}</text> 
+      </view>
+      <view class='w_confOrder_inforList'>
+        <label>现金红包</label>
+        <text>- ￥{{items.beanAmount==null?0:items.beanAmount}}</text> 
+      </view>
+      <view class='w_confOrder_inforList'>
+        <label>转换豆</label>
+        <text>- ￥{{items.converBean==null?0:items.converBean}}</text> 
+      </view>
+      <view class='w_orderDetail_numTxtRs'>实付款:<label>¥{{items.payAmount==null?0:items.payAmount}}</label></view>
+  </view>
+  <view class='w_orderDetail_infors'>
+      <view>
+          <text>订单信息</text>
+      </view>
+      <view>
+          <text>订单编号:</text>{{items.orderCode}}
+      </view>
+      <view wx:if="{{items.orderDate!=''||items.orderDate!=null}}">
+          <text>付款时间:</text>{{items.orderDate}}
+      </view>
+  </view>
+</view>
+
+<view class='w_orderDetail_btns' wx:if="{{items.orderState==12}}">
+    <text bindtap='cancelReturnedGoods' data-orderid="{{items.orderId}}">取消退/换货</text>
+</view>

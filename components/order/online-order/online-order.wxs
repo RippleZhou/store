@@ -1,0 +1,35 @@
+
+function getStateTxt(states) //状态
+{
+  var name = ''
+  if (states == 1) {
+    name = "待付款"
+  } else if (states == 2) {
+    name = "待发货"
+  } else if (states == 3) {
+    name = "已发货"
+  } else if (states == 4) {
+    name = "已完成"
+  }
+  return name
+}
+
+function getorderids(list) {//订单列表ＩＤ累加
+  return list.map(function (item) { return item.orderId }).join(',')
+}
+
+function methodBind(lists,types){//合计
+  var orderNum=0
+  var orderAmount=0
+  lists.forEach(function(item){
+     orderNum += item.productNum
+     orderAmount += (item.productPrice * item.productNum)
+  })
+  return types == 1 ? orderNum : orderAmount
+}
+
+module.exports = {
+  getStateTxt: getStateTxt,
+  getorderids: getorderids,
+  methodBind: methodBind
+}

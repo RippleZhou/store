@@ -1,0 +1,46 @@
+<!--pages/sendBean/sendBean.wxml-->
+<view class="beanwrap"><view class="beanExplain" bindtap="beanExplain"></view></view>
+
+<view class="sendbean">
+  <view class="sendbean-row">
+    <view wx:if="{{pingshouqiView}}">
+      <text class="row-text">豆包总额</text>
+      <text class="ping">拼</text>
+    </view>
+     <view wx:else>
+      <text class="row-text">单个豆额</text>
+    </view>
+
+    <view class="row-number-wrap">
+      <input type="text" value="{{beanAmount}}" class="row-number-input" bindfocus="firstNumber" bindinput="enterNumber"></input>
+      <text>粒</text>
+    </view>
+  </view>
+
+  <view class="switch-bean-wrap">
+    <text class="row-text">{{pinshouqiText}}</text>
+    <text class="switch-bean" bindtap="changeBean">{{pinshouqiEnterText}}</text>
+  </view>
+
+  <view class="sendbean-row">
+    <text class="row-text">豆包个数</text>
+    <view class="row-number-wrap">
+      <input type="text" placeholder='填写豆包个数' value="{{beanNumber}}"class="row-number-input" bindinput="beanNumber"></input>
+      <text>个</text>
+    </view>
+  </view>
+
+  <view class="sendbean-two">
+    <textarea class="sendbean-textarea" value="{{remark}}" placeholder="恭喜发财！大吉大利！" bindinput="remarkInput"></textarea>
+  </view>
+
+  <view class="bean-number">
+    <text class="number-text">{{beanAmount}}</text>
+    <text class="number-unit">粒</text>
+  </view>
+
+  <view class="bean-enter">
+    <view class=" {{ submitActive ?'bean-enter-text-active': 'bean-enter-text'}}" bindtap="sendBean">发豆包</view>
+  </view>
+
+</view>

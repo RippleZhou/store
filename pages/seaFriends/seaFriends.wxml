@@ -1,0 +1,28 @@
+
+ <view>
+        <view class="w_seaFriendBox">
+            <image src="../../images/borrowBeans_line2.jpg" mode="widthFix" class="img"/>
+            <view class="w_seaFriendOrange">
+              <view class="w_seaFriendWhite">
+                <view class="w_seaFriendWhite_Tits"></view>
+                <view class="w_conNulls" wx:if="{{empty}}">
+                  <image class="img" src="https://zhkj.oss-cn-shanghai.aliyuncs.com/nHelp/nw_blank_07.png" mode="widthFix"></image>
+                  <view class="w_icon_aosao h2">暂无好友</view>
+                  <view class="w_findfriLinks" bindtap="findFriend">去找好友</view>
+                  <!-- <router-link tag="a" to="/inviteFriends" class="w_findfriLinks">去找好友</router-link> -->
+                </view>　
+
+                <view class="swiper-container s_seaFriendSwiper">
+                  <view class="swiper-wrapper">
+                    <view class="swiper-slide w_seaFriendWhite_list" wx:for="{{items}}" >
+                      <image src="{{item.imageUrl}}" class="img"/>
+                      <view class="span">{{item.nickName?item.nickName:''}}</view>
+                      <view class="w_span_cens span">好友赠送</view>
+                      <view class="label">+{{item.beans}}</view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+        </view>
+    </view>

@@ -1,0 +1,40 @@
+
+function getorderStateName(orderState, tradeState) //订单大状态
+{
+  var name = ''
+  if (orderState == 0) {
+    name = "待付款"
+  } else if (orderState == 1||orderState == 10) {
+    name = "待发货"
+  } else if (orderState == 2) {
+    name = "已发货"
+  } else if (orderState == 11) {
+    name = "备货中"
+  } else if (orderState == 7) {
+    name = "支付失败"
+  } else {
+    name = "已完成"
+  }
+  if (tradeState == 0) {
+    name = "交易关闭"
+  }
+  return name
+}
+function getrefunStateName(orderState){
+  var Name = ''
+  if (orderState == 5 || orderState == 12 || orderState == 8) {
+    Name = '退换中'
+  } else if (orderState == 6) {
+    Name = '已退换货'
+  } else if (orderState == 9) {
+    Name = '已退款'
+  } else if (orderState == 13) {
+    Name = '已失效'
+  }
+  return Name
+}
+
+module.exports = {
+  getorderStateName: getorderStateName,
+  getrefunStateName: getrefunStateName
+}

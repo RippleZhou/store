@@ -1,0 +1,119 @@
+<view class="w_s_container">
+  <view class="w_storeDe_tops">
+    <swiper class="swiper-wrapper" indicator-dots interval="{{3000}}" autoplay="{{swiperAutoPlay}}" bindchange="swiperChange"  indicator-active-color="#f80d2a">
+      <swiper-item class="swiper-slide" bindtouchstart="stopAutoPlay" wx:for="{{storeInfo.imgs}}" wx:key="key">
+        <image src="{{item.imgUrl || errorImg}}" mode="widthFix" class='banner-img'></image>
+      </swiper-item>
+    </swiper>
+    <view class='w_storeDe_tops_h2'>{{storeInfo.storeBriefName}}</view>
+    <view class='w_storeDe_tops_h3'>{{storeInfo.storeCuisineType}}</view>
+    <view bindtap="openmap" data-index="{{index}}" class="w_find_l_times w_find_icon01">
+    营业时间：{{storeInfo.businessHours}}
+    </view>
+    <view class='address-wrap'>
+      <view bindtap="openmap" data-index="{{index}}" class="w_find_l_times w_find_icon02">
+          商家地址：{{storeInfo.storeAddress}}
+      </view>
+      <view bindtap="callPhone" class='call-phone'></view>
+    </view>
+  </view>
+
+  <view class="w_storeDe_Infor">
+    <view class='w_storeDe_Infor_h2'>活动说明：</view>
+    <view class="w_storeDe_InforList">{{storeInfo.storePromotion}}</view>
+  </view>
+
+  <view wx:if="{{couponInfo.length > 0}}">
+    <view class="cashCoupon" wx:for="{{couponInfo}}" wx:key="{{index}}">
+      <view class='coupon-title'>代金券</view>
+      <view class="w_cashCoupon" bindtap="goDeatails" data-index="{{index}}" data-type="coupon">
+        <view class='coupon-subtitle'>{{item.virPorductName}}</view>
+        <view class="flex-wrp">
+          <view class="desc">
+            <view>{{item.useScope}}</view>
+            <view class="cutdesc">可砍到￥{{item.minSellPrice}}</view>
+          </view>
+          <view class="cutrush" wx:if="{{item.surplusNum != 0}}">
+            <view class="cutprice" wx:if="{{item.isBargain == 0}}"
+              catchtap="clickBargain" data-index="{{index}}" data-type="coupon">砍价</view>
+            <view class="gooncutprice" wx:if="{{item.isBargain ==1}}" 
+              catchtap="toShare" data-id="{{item.virProductId}}">继续砍</view>
+            <view class="rushbuy" catchtap="confirmOrder" data-id="{{item.virProductId}}">抢购</view>
+          </view>
+          <view class="lootcutrush" wx:else>
+            <view class="lootall">已抢光</view>
+          </view>
+        </view>
+        <view class="price">
+          <text><text class="unit">￥</text>{{item.productPrice}}</text>
+          <text class='price-s'>￥{{item.sellPrice}}</text></view>
+        </view>
+      <view class="activitydesc">
+        <text class="desc2">活动：{{bargTips}}</text>
+        <view class="tool"> 
+          <text class="watchedicon"></text>{{item.lookPeopleNum}} 
+          <text class="cuticon"></text>{{item.bargainPeopleNum}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{mealsInfo.length > 0}}">
+    <view class="cashCoupon" wx:for="{{mealsInfo}}" wx:key="{{index}}">
+      <view class='coupon-title'>套餐</view>
+      <view class="meal" bindtap="goDeatails" data-index="{{index}}" data-type="meal">
+        <image src="{{item.imageUrl || errorImg}}" mode="widthFix" class='meal-img'></image>
+        <view class="mealdetail">
+          <view class="mealdetail-title"><text>{{item.virPorductName}}</text></view>
+          <view class="mealdetail-menu">
+            <text wx:for="{{item.dishesList}}" wx:for-item="li" 
+              wx:for-index="i" wx:key="{{i}}">{{li}}</text>
+            <text wx:if="{{item.dishesList.length > 0}}">、</text>  
+          </view>
+          <view class="mealdetail-condition">{{item.useScope}}</view>
+          <view class="p_bottom flex-wrp">
+            <view class="price">
+              <text><text class="unit">￥</text>{{item.productPrice}}</text>
+              <text class='price-s'>￥{{item.sellPrice}}</text>
+            </view>
+            <view class="cutrush" wx:if="{{item.surplusNum != 0}}">
+              <view class="cutprice" wx:if="{{item.isBargain == 0}}"
+                catchtap="clickBargain" data-index="{{index}}" data-type="meal">砍价</view>
+              <view class="gooncutprice" wx:if="{{item.isBargain ==1}}" 
+                catchtap="toShare" data-id="{{item.virProductId}}">继续砍</view>
+              <view class="rushbuy" catchtap="confirmOrder(list)" data-id="{{item.virProductId}}">抢购</view>
+            </view>
+            <view class="lootcutrush" wx:else>
+              <view class="lootall">已抢光</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="activitydesc">
+        <text class="desc2">活动：{{bargTips}}</text>
+        <view class="tool"> 
+          <text class="watchedicon"></text>{{item.lookPeopleNum}} 
+          <text class="cuticon"></text>{{item.bargainPeopleNum}}
+        </view>
+      </view>
+    </view>
+  </view>
+ 
+  <view class="w_storeDe_comment">
+    <view bindtap='goCommentList' class='comment-title'>
+      <view>评论({{storeInfo.commentList.total}})</view>
+    </view>
+    <comment-list list="{{storeInfo.commentList.rows}}"></comment-list>
+    <view class='bottom-title'>
+      <view bindtap='goCommentList' class="comment-title" >查看全部{{storeInfo.commentList.total}}条评论</view>
+    </view>
+  </view>
+</view>
+
+<store-footer store-name="{{storeInfo.storeBriefName}}" storeid="{{storeid}}"></store-footer>
+<view class='popup-wrap' bindtap="closePopup" wx:if="{{popupShow}}">
+  <view class='popup-content' >
+    <image mode="widthFix"  class="popup-img"          
+      src="https://zhkj.oss-cn-shanghai.aliyuncs.com/nHelp/nwxf_vir_01.png"></image>
+  </view>
+</view>

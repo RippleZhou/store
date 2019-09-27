@@ -1,0 +1,34 @@
+<!--pages/order/see-logistics/see-logistics.wxml-->
+
+
+<view class='w_orderDetail_tops'>
+    <image src='../../../images/w_per_headbg.jpg' class='w_per_bgimg' mode="widthFix"></image>
+</view>
+<view class='w_see_box'>
+  <view class='w_orderDetail_address'>
+  <block wx:for="{{item}}" wx:key="unique" wx:for-item="ex" >
+      <view class='w_logisticsInfo_theads'>
+        <image src='{{ex.imgUrl}}'></image>
+        <view class='w_log_thead_Rs'>
+            <text>{{ex.statusName}}</text>
+            <label>{{ex.expressCompany}}{{ex.expressCode}}</label>
+        </view>
+      </view>
+      <view class='w_reDetail_lines'>
+        <view class='w_re_linTits'>物流信息</view>
+        <view wx:if="{{ex.expressList}}" class='w_logInfo_noInfos'>
+          暂时没有更多信息
+        </view>
+        <block wx:else>
+        <view class='w_logInfo_infos' wx:for="{{ex.expressList}}" wx:key="unique" wx:for-item="sm">
+            <text>{{sm.context}}</text>
+            <label>{{sm.time}}</label>
+        </view>
+        </block>
+      </view>
+  </block>
+  </view>
+
+</view>
+
+

@@ -1,0 +1,28 @@
+<!--pages/lowbuy/lowbuy.wxml-->
+<wxs src="../../filters/digitalFr.wxs" module="digitalFr" />
+
+<swiper class="swiper-wrap-tab" display-multiple-items="{{5}}" next-margin="140rpx">
+  <block wx:for="{{tabs}}" wx:key="index">
+    <swiper-item class="swiper-item-tab tc " bindtap="jumpTab" data-index="{{index}}">
+      <view class="swiper-item-tab-text {{currentTab == index ? 'active-tab': ''}}">
+        {{item.name}}
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
+
+<view>
+  <swiper class='w_sw_con' current='{{currentTab}}' bindchange="swiperChangeTab">
+    <block wx:for="{{swiperItems}}" wx:key="index">
+      <swiper-item class="swiper-slide">
+        <scroll-view data-index="{{index}}" style='height:100%;' scroll-y >
+          <view style="height: 1px;"></view>
+          <view class="w_help_list" wx:for="{{ item.questions}}" data-qTypeid="{{currentTab+1}}" data-qid="{{item.qid}}"  bindtap="gotoDetail">
+         {{item.qTitle}}
+          </view>
+        </scroll-view>
+      </swiper-item>
+    </block>
+  </swiper>
+
+</view>

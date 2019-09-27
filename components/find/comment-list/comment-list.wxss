@@ -1,0 +1,56 @@
+.w_storeDe_com_list {
+  width: 100%;
+  padding: 20rpx;
+  border-bottom: 1px solid #ebebeb;
+}
+.w_storeDe_com_lHead {
+  display: flex;
+  padding-bottom: 15rpx;
+}
+.comment-avtar {
+  width: 80rpx;
+  height: 80rpx!important;
+  border-radius: 80rpx;
+  margin-right: 15rpx;
+}
+.comment-info-wrap {
+  padding-top: 6rpx;
+}
+.comment-info-h3 {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #333;
+  line-height: 28rpx;
+}
+.comment-info-label {
+  font-size: 24rpx;
+  color: #999;
+}
+.comment-info-content {
+  font-size: 28rpx;
+  color: #333;
+}
+.w_find_comImgList {
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+.w_find_comImgors {
+  width: 33.33%;
+  padding-right: 20rpx;
+  padding-top: 20rpx;
+}
+.comment-img {
+  width: 100%;
+  display: block;
+  height: 200rpx!important;
+}
+.w_find_comImgors2 {
+  width:100%;
+}
+.media-vedio {
+  width: 100%;
+  height: 350rpx!important;
+  z-index: 100!important;
+}

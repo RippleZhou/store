@@ -1,0 +1,7 @@
+<!--components/header.wxml-->
+<view class="w_headers {{headLeft ? 'w_logHeader' : ''}}">
+  <view class="w_head_leftback" bindtap="goBack"></view>
+  <view class="w_head_leftTxt" wx:if="{{headLeft}}" bindtap='cancel'>取消</view>
+  <view class="w_head_rightTxt" wx:if="{{headRight}}" bindtap='edit'>编辑</view>
+  <view class='h2'>{{setTitName}}</view>
+</view>

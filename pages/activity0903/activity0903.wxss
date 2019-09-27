@@ -1,0 +1,628 @@
+/* pages/activity0903/activity0903.wxss */
+
+.activity-page {
+    background-color: #f10f41;
+    min-height: 100vh;
+}
+
+.full-img {
+    display: block;
+    width: 100%;
+}
+
+.count-down-wrap {
+    color: #fff;
+    background-color: #fdb11d;
+    width: 92.7%;
+    margin: auto;
+    margin-top: 45rpx;
+    margin-bottom:41rpx;
+    padding-top: 28rpx;
+    padding-bottom: 25rpx;
+    border-radius: 20rpx;
+}
+
+.flex-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+ .count-down-left {
+    position: relative;
+    z-index: 2;
+    width: 190rpx;
+    border-right: 1px dotted #fff;
+    text-align: center;
+    font-size: 26rpx;
+}
+
+.money-wrap {
+    line-height: 58rpx;
+    font-size:64rpx;
+}
+ .count-down-left .money {
+    font-size: 24rpx;
+}
+
+.count-down-right {
+    flex-grow: 1;
+    position: relative;
+    z-index: 2;
+    padding-left:50rpx;
+    font-size: 34rpx;
+}
+
+.count-right-detail {
+    font-size: 24rpx;
+    margin-top: 20rpx;
+}
+
+ .count-right-detail .span {
+    display: inline-block;
+    min-width: 32rpxrem;
+    text-align: center;
+    margin-right: 10rpx;
+    margin-left: 10rpx;
+    background-color: #5b4c2f;
+}
+.count-right-detail .span {
+    display: inline-block;
+    min-width: 34rpx;
+    text-align: center;
+    margin-right: 10rpx;
+    margin-left: 10rpx;
+    background-color: #5b4c2f;
+}
+
+ .product-list {
+    position: relative;
+    margin-bottom:50rpx;
+}
+
+ .product-bgimg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+}
+
+.product-content {
+    position: relative;
+    z-index: 2;
+    width: 93.5%;
+    margin: auto;
+    padding-top: 48rpx;
+}
+.activity-page .bottom-banner {
+    background-color: #fff;
+    padding-top: 10px;
+}
+.full-img {
+    display: block;
+    width: 100%;
+}
+
+ .count-down-right {
+    flex-grow: 1;
+    position: relative;
+    z-index: 2;
+    padding-left: 50rpx;
+    font-size: 34rpx;
+}
+
+ .product-list-left {
+    color: #fff;
+    position: relative;
+    background-color: #fff;
+    width: 42%;
+    overflow: hidden;
+    padding: 10rpx;
+}
+ .product-list-title {
+    width: 323rpx;
+    margin: auto;
+}
+
+ .product-list {
+    position: relative;
+    margin-bottom: 50rpx;
+}
+
+ .product-content {
+    position: relative;
+    z-index: 2;
+    width: 93.5%;
+    margin: auto;
+    padding-top: 48rpx;
+}
+
+ .hot-text {
+    position: absolute;
+    bottom: 10rpx;
+    left: 10rpx;
+    font-size:22rpx;
+}
+
+.save-money-img {
+    position: relative;
+        width: 2.5625rem;
+}
+
+.product-price {
+    font-size: 42rpx;
+    position: relative;
+    color: #ec4e3b;
+}
+
+ .rmb {
+    font-size: 22rpx;
+}
+
+ .save-text {
+    transform: scale(.8);
+    position: absolute;
+    text-align: center;
+    width: 120%;
+     background-color: #ed8797;
+    color: #fff;
+    font-size: 22rpx;
+    left: 0;
+    bottom: 6rpx;
+    display: inline-block;
+    padding-top: 6rpx;
+}
+
+.line-through {
+    text-decoration: line-through;
+    font-size: 22rpx;
+    color: #999;
+}
+ .buy-now {
+   position:absolute;
+    bottom:28rpx;
+
+    font-size: 28rpx;
+    width:140rpx;
+    height:50rpx;
+    line-height:50rpx;
+    display: inline-block;
+    background-color: #ec4e3b;
+    color: #fff;
+    border-radius: 14rpx;
+    text-align: center;
+    right: 16rpx;
+}
+
+.count-right-detail .span {
+    display: inline-block;
+    min-width: 1.0625rem;
+    text-align: center;
+    margin-right: .3125rem;
+    margin-left: .3125rem;
+    background-color: #5b4c2f;
+}
+
+ .product-list-right {
+    background-color: #fff;
+    position: relative;
+    width: 58%;
+    padding-left: .3125rem;
+}
+
+.product-name {
+    font-size: 30rpx;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    margin-top: .8125rem;
+}
+
+ .product-detail {
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    width: 97%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.save-money-wrap{position:relative;
+left:80rpx;
+}
+
+/* //弹窗 */
+
+.mask{
+      position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    opacity: .5;
+    background: #000;
+}
+.weui-dialog {
+    position: fixed;
+    /* display: table; */
+    z-index: 5000;
+    width: 80%;
+    max-width: 300px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.pink-background {
+    background-color: #fcf2de;
+    position: relative;
+    padding-top: 2.0625rem;
+    padding-bottom: 1px;
+
+}
+
+ .activity0903-popup-cancel {
+    position: absolute;
+    top: -6px;
+    left: 12px;
+    z-index: 10;
+}
+
+.activity0903-popup-cancel:before {
+    font-family: nwscfonts!important;
+    font-weight: 400;
+    font-style: normal;
+    content: "\E020";
+    color: #999;
+    font-size: 2.5rem;
+    vertical-align: middle;
+}
+
+.moneystyle{
+    font-size: .9375rem;
+}
+
+.pink-background .h2 {
+    font-size: 1.5rem;
+    color: #e53549;
+    text-align: center;
+    margin-bottom: .625rem;
+}
+
+.popup-tips {
+    font-size: .8125rem;
+    color: #9c8659;
+    text-align: center;
+}
+
+.popup-content {
+    margin: auto;
+    position: relative;
+    margin-top: 1.25rem;
+    width: 48.8%;
+}
+.popup-btn {
+    margin-top: .8125rem;
+    margin-bottom: .9375rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 61.5%;
+    background-color: #ec5750;
+    color: #fff;
+    border-radius: 30px;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+}
+
+ .popup-price {
+    color: #e53549;
+    position: absolute;
+    top: 2.25rem;
+    width: 100%;
+    text-align: center;
+    font-size: 3.0625rem;
+}
+
+ .tips2 {
+    position: absolute;
+    bottom: 1.25rem;
+    width: 100%;
+    text-align: center;
+    font-size: .75rem;
+    color: #fff;
+}
+
+ /* 弹窗 */
+  .pop-mask{width:100%;height:100%;background:#000;position:fixed;top:0;left:0;opacity: 0.5;z-index: 4000;}
+
+ .weui-dialog {
+   height:724rpx !important;
+   /* height:802rpx; */
+    width: 100%;
+      /* width: 90%; */
+        position: fixed;
+    z-index: 5000;
+    max-width: 600rpx;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+    border-radius: 6rpx;
+    overflow: hidden;
+}
+
+.img-box .w_beanBgImg {
+  height:802rpx;
+    position: relative;
+    z-index: 100;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+.w_beanbagCons {
+  background:transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    width: 100%;
+    height: 100%;
+}
+
+.w_topClose {
+    width: 15%;
+    text-align: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 103;
+}
+
+.w_beanbagImgs {
+    width: 100%;
+    text-align: center;
+    padding-top: 80rpx;
+}
+.beanbag-image{
+width: 110rpx;
+    height: 110rpx;
+    border-radius: 110rpx;
+    display: block;
+    margin: 0 auto;
+}
+.bean-text{
+color: #ffecb8;
+    font-size: 50rpx;
+    padding: 90rpx 0;
+}
+
+.w_beanbgIcon {
+    text-align: center;
+    width: 100%;
+    height:180rpx;
+    /* background:green; */
+}
+
+.beanbg-text{
+      width:180rpx;
+    height: 180rpx;
+    display: block;
+    position: relative;
+    color: #44371d;
+    font-size: 82rpx;
+    border-radius:180rpx;
+    background: #fbe4a3;
+    text-align: center;
+    line-height: 180rpx;
+    left: 50%;
+    margin-left: -90rpx;
+}
+
+.vux-close:before {
+     font-family: nwscfonts !important;
+    font-weight: 400;
+    font-style: normal;
+    content: "\E020";
+    color: #fff;
+    font-size: 80rpx;
+    vertical-align: middle;
+    margin-right:30rpx;
+}
+
+.beanbg-text:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '\958B';
+    color: #44371d;
+    font-size: 82rpx;
+    display: block;
+    border: 1px solid #ba894f;
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 160rpx;
+    margin-left: 8rpx;
+    margin-top: 8rpx;
+    line-height: 160rpx;
+}
+
+.remark{
+color: #ffecb8;
+    font-size: 40rpx;
+    padding-top: 40rpx;
+}
+
+.beanBag{
+ padding-top: 80rpx;
+    font-size: 30rpx;
+    color: #ffecb8;
+}
+
+.bean-number{
+font-size: 89rpx;
+    display: inline-block;
+    font-weight: 400;
+}
+.w_seaLinks{
+   font-size: 28rpx;
+    color: #ffecb8;
+    margin-top:170rpx;
+    display: block;
+}
+
+/* 弹窗 */
+  .pop-mask{width:100%;height:100%;background:#000;position:fixed;top:0;left:0;opacity: 0.5;z-index: 4000;}
+
+ .weui-dialog {
+   height:802rpx;
+    width: 90%;
+        position: fixed;
+    z-index: 5000;
+    max-width: 600rpx;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+    border-radius: 6rpx;
+    overflow: hidden;
+}
+
+.img-box .w_beanBgImg {
+  height:802rpx;
+    position: relative;
+    z-index: 100;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.w_beanbagCons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    width: 100%;
+    height: 100%;
+}
+
+.w_topClose {
+    width: 15%;
+    text-align: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 103;
+}
+
+.w_beanbagImgs {
+    width: 100%;
+    text-align: center;
+    padding-top: 80rpx;
+}
+.beanbag-image{
+width: 110rpx;
+    height: 110rpx;
+    border-radius: 110rpx;
+    display: block;
+    margin: 0 auto;
+}
+.bean-text{
+color: #ffecb8;
+    font-size: 50rpx;
+    padding: 90rpx 0;
+}
+
+.w_beanbgIcon {
+    text-align: center;
+    width: 100%;
+    height:180rpx;
+    /* background:green; */
+}
+
+.beanbg-text{
+      width:180rpx;
+    height: 180rpx;
+    display: block;
+    position: relative;
+    color: #44371d;
+    font-size: 82rpx;
+    border-radius:180rpx;
+    background: #fbe4a3;
+    text-align: center;
+    line-height: 180rpx;
+    left: 50%;
+    margin-left: -90rpx;
+}
+
+.vux-close:before {
+     font-family: nwscfonts !important;
+    font-weight: 400;
+    font-style: normal;
+    content: "\E020";
+    color: #fff;
+    font-size: 80rpx;
+    vertical-align: middle;
+    margin-right:30rpx;
+}
+
+.beanbg-text:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '\958B';
+    color: #44371d;
+    font-size: 82rpx;
+    display: block;
+    border: 1px solid #ba894f;
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 160rpx;
+    margin-left: 8rpx;
+    margin-top: 8rpx;
+    line-height: 160rpx;
+}
+
+.remark{
+color: #ffecb8;
+    font-size: 40rpx;
+    padding-top: 40rpx;
+}
+
+.beanBag{
+ padding-top: 80rpx;
+    font-size: 30rpx;
+    color: #ffecb8;
+}
+
+.bean-number{
+font-size: 89rpx;
+    display: inline-block;
+    font-weight: 400;
+}
+.w_seaLinks{
+   font-size: 28rpx;
+    color: #ffecb8;
+    margin-top:170rpx;
+    display: block;
+}

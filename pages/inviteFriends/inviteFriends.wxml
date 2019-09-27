@@ -1,0 +1,63 @@
+<!--pages/inviteFriends/inviteFriends.wxml-->
+
+<view class="inviteFriends">
+  <view class="w_s_container">
+
+    <view class="explain">
+      <!-- 滚动列表  -->
+      <view class="notice">
+        <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="2000">
+          <block wx:for="{{msgList}}">
+            <navigator url="/pages/index/index?title={{item.url}}" open-type="navigate">
+              <swiper-item>
+                <view class="swiper_item">{{item.title}}</view>
+              </swiper-item>
+            </navigator>
+          </block>
+        </swiper>
+      </view>
+    </view>
+
+    <view class="inviation">
+      <view class="reward">
+        <view>
+          <view class="p">已邀请</view>
+          <view class="p">{{invitedNum}}人</view>
+        </view>
+
+        <view>
+          <view class="p">获得现金红包</view>
+          <view class="p">{{gainAmount}}元</view>
+        </view>
+      </view>
+
+      <button class="atonceshare" open-type="share">立即分享</button>
+      <view class="facetoface" bindtap="showCode">当面邀请</view>
+      <view class="headline">简单三步立享现金红包</view>
+
+      <view class="sharesteps">
+        <view class="stepcontent">
+          <view class="circlestep">
+            <view class="circle">1</view>
+            <view class="circle">2</view>
+            <view class="circle">3</view>
+          </view>
+          <view class="line1"></view>
+          <view class="line2"></view>
+        </view>
+        <view class="stepexplain">
+          <text>分享活动给好友</text>
+          <text>好友接受邀请</text>
+          <text>好友注册成功</text>
+        </view>
+
+      </view>
+
+      <view class="ruletitle">邀请规则</view>
+      <view class="rules">1、邀请好友注册最高得20元现金红包</view>
+    </view>
+  </view>
+</view>
+
+<view class="mask" bindtap="hideMask" wx:if="{{showQRcode}}"></view>
+<image class="qcode" mode="aspectFit" wx:if="{{showQRcode}}" src="http://zhkjmalltest.oss-cn-shanghai.aliyuncs.com/mall-20190422-b184184de1684760aab5119570516881.png"></image>

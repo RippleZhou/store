@@ -1,0 +1,81 @@
+<!--pages/order/bargain-confirm-order/bargain-confirm-order.wxml-->
+<view class="w_grayBgBox">
+  <view class="w_bargain_boxs" wx:if="virItem">
+    <view class="w_bargain_proList">
+      <view class="w_bargain_plis">
+        <image class="img" src="{{virItem.imageUrl}}" />
+        <view class="w_bargain_plMids">
+          <view class="h2">{{virItem.virPorductName}}</view>
+          <view class="p">{{virItem.useScope}}</view>
+        </view>
+        <view class="w_bargain_plRigs">¥{{virItem.productPrice}}</view>
+      </view>
+    </view>
+    <view class="w_confOrder_lineList w_confOrder_lineList2">
+      <view class="label">数量</view>
+      <view class="span">限购{{getvirNum}}张</view>
+
+      <view class="w_pop_selBtns flex-wrp">
+        <image class="icon-sub" mode="widthFix" id="sub" src='../../../images/icons/sub.png'></image>
+        <text class="input-num">1</text>
+        <image class="icon-sub" mode="widthFix" id="add" src='../../../images/icons/add.png'></image>
+      </view>
+
+    </view>
+    <view class="w_confOrder_inforList">
+      <view class="label">合计</view>
+      <view class="span">￥{{TotalP}}</view>
+    </view>
+    <view class="w_bargain_Infor">
+      <view class="label">手机号</view>
+      <view class="span">{{cellPhone}}</view>
+    </view>
+    <view class="w_bargain_ptbs">
+      <view class="w_bargain_Infor2">
+        <view class="label">有效期</view>
+        <view class="span">{{virItem.validBeginTime }} - {{virItem.validEndTime}}</view>
+      </view>
+      <view class="w_bargain_Infor2">
+        <template wx:if="{{currencyFlag}}">
+          <view class="label">使用范围</view>
+          <view class="span">{{virItem.useScope }}</view>
+        </template>
+        <template v-else>
+          <view class="label">使用时间</view>
+          <view class="span">{{virItem.useWeek}}{{virItem.useTime}}</view>
+        </template>
+      </view>
+      <view class="w_bargain_Infor2">
+        <view class="label">使用说明</view>
+        <view class="span">{{virItem.useDesc}}</view>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="w_confirmBotm_ads">*如需要退货，请保证⾖额⼤于等于本商品赠送的转换⾖数量！</view>
+  <view class="w_confirmFooter w_confirmFooter2">
+    <view class="w_comfirmFot_price">
+      实付:
+      <view class="span">￥
+        <view class="b">{{TotalP}}</view>
+      </view>
+      <view class="p">赠送{{getbeanNum}}粒转换豆</view>
+    </view>
+    <view class="w_comfirmFot_btns a" bindtap="submitOrders">提交订单</view>
+  </view>
+
+  <!-- <view v-transfer-dom>
+        <x-dialog v-model="showaiImg" class="dialog-demo" >
+          <view style="padding: 20px">
+            <p class="w_payZFBs">请用支付宝扫码支付</p >
+            <qrcode :value="aliUserImg" type="img"></qrcode>
+            <view class="w_payZFBTxt">请在<b>{{timeSecond}}</b>秒内完成支付</view>
+            <span class="vux-close" @click="gopaySuc"
+                  style="position: absolute;display:block;text-align:center;top: 10px;right: 10px;font-size: 24px;">
+            </span>
+          </view>
+        </x-dialog>
+      </view> -->
+
+</view>

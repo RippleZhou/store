@@ -1,0 +1,21 @@
+/* pages/signExplain/signExplain.wxss */
+
+.w_beanExplainBox {
+    border-top: 6rpx solid #f5f5f5;
+    padding: 30rpx 25rpx;
+    background:#fff;
+}
+
+.w_beanExplainBox .h2 {
+    font-size: 32rpx;
+    color: #333;
+    font-weight: 600;
+    padding-bottom:15rpx;
+}
+
+.w_beanExplainBox .p {
+    font-size: 28rpx;
+    color: #333;
+    padding-bottom: 35rpx;
+    line-height: 40rpx;
+}

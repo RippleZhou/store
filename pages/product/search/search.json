@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "recd-list": "/components/recd-list/recd-list"
+  }
+}

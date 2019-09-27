@@ -1,0 +1,76 @@
+<view class="w_headers flex-wrp tc">
+  <navigator class="w_icon_cites" url="/pages/citys/citys">{{locationCity}}</navigator>
+  <image mode='widthFix' class='head-discover' src="/images/w_findTits.jpg"></image>
+</view>
+
+<div class="tabs-wrap flex-wrp">
+  <div wx:for="{{tabList}}" class="tabs {{currentTab == index ? 'active-tab': ''}}" wx:key="{{index}}" bindtap="changeTab" data-type="{{item.type}}" data-index="{{index}}">{{item.name}}</div>
+</div>
+
+<swiper class='w_sw_con'  current='{{currentTab}}' bindchange="swiperChangeTab" wx:if="{{tabList.length>0}}">
+  <block wx:for="{{tabList}}" wx:key="index" wx:for-item="tab">
+    <swiper-item class="swiper-slide">
+      <scroll-view data-index="{{index}}" style='height:100%;' scroll-y bindscrolltolower="scrolltolower" data-type="{{item.bannerType}}">
+        <swiper class='banners-wrap' autoplay="true" wx:if="{{tab.banners.length}}">
+          <swiper-item class="swiper-slide" wx:for="{{tab.banners}}" wx:for-index="i" wx:key="{{i}}" wx:for-item="banner">
+            <image mode='widthFix' class='banner-img' src="{{banner.imgUrl || errorImgban}}"></image>
+          </swiper-item>
+        </swiper>
+
+        <view class="invented-product-wrap flex-wrap" wx:if="{{currentTab==0}}">
+          <view class="invented-products" wx:for="{{virProductsCurrency}}"data-vid="{{item.virProductId}}" bindtap="gotodetail">
+            <view class="invented-products-top">
+              <image mode="widthFix" src="{{item.imageUrl}}" class="full-img"></image>
+              <view class="w_rigde_rigIcons invented-products-icons">
+                <view class="label">{{item.lookPeopleNum}}</view>
+                <view class="span">{{item.bargainPeopleNum}}</view>
+              </view>
+            </view>
+
+            <view>
+              <view class="invented-products-name">{{item.virPorductName}}</view>
+              <view class="flex-wrap">
+                <view class="invented-products-price-wrap">
+                  <view class="invented-products-price1">
+                    <text class="span">￥</text>{{item.productPrice}}
+                  </view>
+                  <view class="invented-products-price2">
+                    <text class="span">￥</text>{{item.sellPrice}}
+                  </view>
+                </view>
+
+                <view class="w_rigde_btns" wx:if="{{item.surplusNum==0}}">
+                  <view class="w_rigde_bLinkBlack a">已抢光</view>
+                </view>
+                <view class="w_rigde_btns" wx:else>
+                  <view class="w_rigde_linkRed a" wx:if="{{item.isBargain == 0}}" data-item="{{item}}" catchtap="clickBargain">点击砍价</view>
+                  <view class="w_rigde_linkOrange a" data-item="{{item}}"  wx:else catchtap="toShare">继续砍</view>
+                </view>
+
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <block wx:if="{{tab.bannerType == 3}}">
+          <bargain-list list="{{tab.items}}" bindshare="openShare"></bargain-list>
+        </block>
+        <block wx:else>
+          <find-list list="{{tab.items}}"></find-list>
+        </block>
+        <view wx:if="{{tab.lastFlag}}" class='loading-layer'>
+          <view>没有更多数据</view>
+        </view>
+      </scroll-view>
+
+    </swiper-item>
+  </block>
+</swiper>
+
+
+
+<view class='popup-wrap' bindtap="closePopup" wx:if="{{popupShow}}">
+  <view class='popup-content'>
+    <image mode="widthFix" class="popup-img" src="https://zhkj.oss-cn-shanghai.aliyuncs.com/nHelp/nwxf_vir_01.png"></image>
+  </view>
+</view>

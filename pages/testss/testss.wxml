@@ -1,0 +1,36 @@
+<!-- <view class="new-product-component">
+  <view class="new-product">
+    <text class="np-title">新品推荐</text>
+  </view>
+
+  <scroll-view scroll-x="true" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-left="{{scrollTop}}">
+    <view class="scroll-x">
+      <view class="item-wrap">
+        <view wx:for-items="{{scrolldata}}" wx:key="indx" class="image-wrap">
+          <view>
+            <view class="content-wrap">
+              <image src="{{item.imgurl}}" mode="widthFix"></image>
+              <view class="title">{{item.title}}</view>
+              <view class="money">
+                <text>￥</text>
+                <text class="money1">{{item.money}}</text>
+                <text class="money2">{{item.money}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view> -->
+
+<swiper
+  style="height:{{viewHeight}}px;"
+>
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" data-id='{{index}}' style="width:{{imageWidth}}px;" mode="widthFix" bindload="imageLoad"/>
+    </swiper-item>
+  </block>
+</swiper>
+

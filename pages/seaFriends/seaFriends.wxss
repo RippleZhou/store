@@ -1,0 +1,212 @@
+/* pages/seaFriends/seaFriends.wxss */
+
+.w_seaFriendBox {
+  background: #ff5601;
+  height: calc(100vh - 72rpx);
+}
+
+.w_seaFriendBox .img {
+  width: 100%;
+  display: block;
+  line-height: 0;
+}
+
+.w_seaFriendBox .w_seaFriendOrange {
+  margin: 0 1.3%;
+  width: 97.4%;
+  height: 93%;
+  border-radius: 0.3125rem;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background: #ffd942;
+}
+
+.w_seaFriendBox .w_seaFriendOrange .w_seaFriendWhite {
+  margin: 0 2.8%;
+  width: 94.4%;
+  height: 93%;
+  overflow: hidden;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 0.5rem;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.w_seaFriendBox .w_seaFriendOrange .w_seaFriendWhite_Tits {
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1px dashed #ebebeb;
+  position: relative;
+}
+
+.w_seaFriendBox .w_seaFriendOrange .w_seaFriendWhite_Tits:before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: -15rpx;
+  width: 15rpx;
+  height: 30rpx;
+  background-color: #ffd942;
+  border-radius: 30rpx;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  right: 0;
+  margin-right:-5rpx;
+}
+
+.w_seaFriendBox .w_seaFriendOrange .w_seaFriendWhite_Tits:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: -15rpx;
+  width: 15rpx;
+  height: 30rpx;
+  background-color: #ffd942;
+  border-radius: 30rpx;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  left: 0;
+  margin-left: -5rpx;
+}
+
+.w_conNulls {
+  width: 100%;
+  padding: 100rpx 50rpx;
+  display: block;
+  text-align: center;
+}
+
+.w_conNulls .img {
+  width: 40% !important;
+  margin: 0 auto;
+  margin-bottom: 20rpx;
+}
+
+.w_conNulls .h2 {
+  font-size: 32rpx;
+  color: #aaa;
+  margin: 0 auto;
+  line-height: 60rpx;
+}
+
+.w_conNulls .w_findfriLinks, .w_conNulls .w_findfriLinks:hover {
+  text-align: center;
+  margin: 0 auto;
+  width:278rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  color: #fff;
+  display: block;
+  border-radius: 70rpx;
+  font-size: 32rpx;
+  margin-top: 70rpx;
+  box-shadow: 0 4px 0 rgba(242, 87, 71, 0.75);
+  background: #f25747;
+}
+
+.w_seaFriendBox .w_seaFriendOrange .s_seaFriendSwiper {
+  height: 900rpx;
+}
+
+.swiper-container {
+  width: 100%;
+}
+
+.swiper-container {
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+}
+
+.swiper-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  box-sizing: content-box;
+}
+
+.w_seaFriendWhite_list {
+  width: 100%;
+  border-bottom: 1px solid #ebebeb;
+  display: flex;
+  padding: 15rpx 30rpx;
+  height: 100rpx !important;
+}
+
+.w_seaFriendWhite_list .img {
+  width: 70rpx !important;
+  height: 70rpx !important;
+  border-radius: 70rpx;
+  margin-right: 20rpx;
+}
+
+.swiper-container .swiper-slide .img {
+  width: 100%;
+  display: block;
+  line-height: 0;
+}
+
+.w_seaFriendWhite_list .span {
+  font-size: 30rpx;
+  color: #000;
+  line-height: 70rpx;
+  width: 40%;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.w_seaFriendWhite_list .span {
+  font-size: 30rpx;
+  color: #000;
+  line-height: 70rpx;
+  width: 40%;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.w_seaFriendWhite_list .span.w_.span_cens {
+  text-align: center;
+}
+
+.w_seaFriendWhite_list .label {
+  font-size:40rpx;
+  color: #666;
+  width: 20%;
+  text-align: right;
+  /* line-height:76rpx; */
+}
+
+.swiper-container .swiper-notification {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  opacity: 0;
+  z-index: -1000;
+}
+
+.swiper-container-vertical>.swiper-wrapper {
+    flex-direction: column;
+}
+
+
+.w_seaFriendBox .img {
+    width: 100%;
+    display: block;
+    line-height: 0;
+}.w_conNulls .img {
+    width: 40%!important;
+    margin: 0 auto;
+    margin-bottom: .625rem;
+}

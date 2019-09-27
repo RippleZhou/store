@@ -1,0 +1,25 @@
+<!--pages/chargeBean/chargeBean.wxml-->
+
+
+<view class="chargeBean">
+<view class="w_top_rightTxt w_sendbean_Record w_s_ricon" bindtap="gotoRecord"></view>
+  <view class="userinfo">
+    <text class="cellphone">{{cellphone}}</text>
+    <image class="head" src="{{head}}"></image>
+    <!-- <image class="head" src="../../images/icons/add.png"></image> -->
+  </view>
+
+  <view class="number-wrap">
+    <view class="number-content">
+      <view class="beanNumber">
+        <input type="text" value="{{ beanNumber}}" class="numberInput" bindfocus="firstNumber" bindinput="enterNumber"></input>
+        <text class="unit">粒</text>
+      </view>
+
+      <view class="button-wrap">
+        <view class="{{ submitActive ?'chargeButton-active': 'chargeButton'}}" bindtap="chargeBean">确认充豆</view>
+      </view>
+    </view>
+  </view>
+
+</view>

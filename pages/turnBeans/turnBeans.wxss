@@ -1,0 +1,83 @@
+/* pages/turnBeans/turnBeans.wxss */
+
+.w_sendbean_boxs {
+    padding: .9375rem .9375rem;
+    background: #f5f5f5;
+}
+.w_sendbean_boxs .w_sendbean_lists, .w_sendbean_boxs .w_sendbean_teats {
+    width: 100%;
+    background: #fff;
+    height: 3.4375rem;
+    border-radius: .3125rem;
+    display: -webkit-box;
+    display: flex;
+    display: -ms-flexbox;
+    overflow: hidden;
+    padding: 0 .9375rem;
+}
+
+.w_sendbean_boxs .w_sendbean_lists.w_sendbean_lists2 input, .w_sendbean_boxs .w_sendbean_teats.w_sendbean_lists2 input {
+    width: 85%;
+    text-align: left;
+    padding: 0;
+}
+
+.w_sendbean_boxs .w_sendbean_lists.w_sendbean_lists2 label, .w_sendbean_boxs .w_sendbean_teats.w_sendbean_lists2 label {
+    width: 15%;
+}
+
+.w_sendbean_boxs .w_sendbean_lists input, .w_sendbean_boxs .w_sendbean_teats input {
+    width: 67%;
+    text-align: right;
+    font-size: 1rem;
+    height: 3.4375rem;
+    padding: 0 .46875rem;
+    color: #333;
+}
+
+.w_sendbean_boxs .w_sendbean_lists label, .w_sendbean_boxs .w_sendbean_teats label {
+    width: 5%;
+    text-align: right;
+}
+.w_sendbean_boxs .w_sendbean_lists label, .w_sendbean_boxs .w_sendbean_lists span, .w_sendbean_boxs .w_sendbean_teats label, .w_sendbean_boxs .w_sendbean_teats span {
+    width: 28%;
+    text-align: left;
+    font-size: 1rem;
+    color: #333;
+    display: block;
+    line-height: 3.4375rem;
+}
+
+.w_sendbean_boxs .w_sendbean_lists.w_sendbean_lists2 label:before, .w_sendbean_boxs .w_sendbean_teats.w_sendbean_lists2 label:before {
+    font-family: w_fonts!important;
+    font-weight: 400;
+    font-style: normal;
+    content: "\E057";
+    color: #398ce7;
+    font-size: 2.5rem;
+    vertical-align: middle;
+}
+
+.w_sendBean_btns.w_sendBean_btns2 {
+    padding-top: 3.125rem;
+}
+
+.w_sendBean_btns {
+    padding: 0 2.1875rem;
+}
+
+.w_sendBean_btns .w_beanBtns, .w_sendBean_btns w_beanBtns:hover {
+    width: 100%;
+    display: block;
+    height: 2.8125rem;
+    text-align: center;
+    line-height: 2.8125rem;
+    color: #fff;
+    font-size: .9375rem;
+    background: #f7c9c9;
+    border-radius: .3125rem;
+}
+
+.canUse{
+  background: linear-gradient(to right,#f90000,#f61e65)!important;
+}

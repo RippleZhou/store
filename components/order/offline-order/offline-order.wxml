@@ -1,0 +1,37 @@
+<!--components/order/offline-order/offline-order.wxml-->
+<!--没有数据时显示-->
+<view class="eb_noPros {{isShows==true?'':'eb_noShows'}}" wx:if="{{isShows==false}}">
+        <view class="eb_noImgs">
+            <image src="{{noMores}}" mode="widthFix"></image>
+        </view>
+    <view class="eb_noTxts">还没有相关订单</view>
+</view>
+
+<view class='w_off_boxs' wx:else>
+<scroll-view  style='height:{{scrollHeight}}px' scroll-y bindscrolltolower="scrolltolower" lower-threshold="100">
+<view class='order_conBox'>
+  <view class='orderLists' wx:for="{{offlineItem}}" wx:key="unique">
+    <view class='order_list_states order_list_states3'>
+      <text class='order_sta_mers'>{{item.storeName}}</text>
+      <text>{{item.createDate}}</text>
+    </view>
+    <view class='order_proList'>
+        <image src='{{item.imageUrl||errorImg}}' mode="widthFix" binderror="errImg" data-err-img="{{errorImg}}"></image>
+        <view class='order_pro_mids'>
+            <view class='order_pMid_tit'>{{item.productTitle}}</view>
+        </view>
+        <view class='order_pro_rigs'>
+            <view class='order_pRig_pric order_pRig_redTxt'>-{{item.orderAmount}}</view>
+            <view class='order_pRig_nums'>x{{item.productNum}}</view>
+        </view>
+    </view>
+  </view>
+</view> 
+<view class="w_loading_box">
+      <block wx:if="{{noPage==1}}">
+          <view class='w_load_tips'>{{tipTxt}}</view>
+      </block>
+  </view>
+</scroll-view> 
+ 
+</view>

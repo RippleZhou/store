@@ -1,0 +1,23 @@
+<!--pages/logisticsMessage/logisticsMessage.wxml-->
+<view id="inner-iojiv" class="_v-content" hidden="{{empty}}">
+  <image src="https://zhkj.oss-cn-shanghai.aliyuncs.com/nHelp/nw_blank_04.png" class="no_blankIms" mode="widthFix" />
+  <view class="loading-layer">
+    <view class="no-data-text active" style="color: rgb(170, 170, 170);">还没有消息</view>
+  </view>
+</view>
+
+
+<view class="w_serMes_MessList">
+
+  <view class="w_serMer_ac_list" wx:for="{{list}}">
+    <view class="h2">{{item.sendStatusName}}</view>
+    <view class="w_serMer_logCons">
+      <image src="{{item.imageUrl}}" style="width:154rpx;height:154rpx;" />
+      <view class="w_serMer_logRs">
+        <view class="p">{{item.productTitle}}</view>
+        <view class="label">运单编号：{{item.expressNo}}</view>
+      </view>
+    </view>
+  </view>
+
+  </view>

@@ -1,0 +1,3 @@
+<!--pages/navigateDownload/navigateDownload.wxml-->
+
+  <web-view src="https://wsc.3721zh.com/agreement.html"></web-view>

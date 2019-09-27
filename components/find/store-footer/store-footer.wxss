@@ -1,0 +1,214 @@
+.storeview {
+  width: 100%;
+  height: 98rpx;
+  display: -webkit-box;
+  display: flex;
+  display: -ms-flexbox;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  bottom: 0;
+  border-top: 1px solid #ebebeb;
+  background: #fff;
+}
+.w_storeF_icon {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 24rpx;
+  color: #333;
+  position: relative;
+}
+.w_storeF_icon:before {
+  font-size: 100rpx !important;
+  line-height: 56rpx;
+  margin-bottom: 3rpx;
+  font-family: nwscfonts !important;
+  font-weight: 400;
+  font-style: normal;
+  color: #000;
+  vertical-align: middle;
+}
+.w_storeF_icon01:before {
+  content: "\E045";
+}
+.w_storeF_icon02:before {
+  content: "\E044";
+}
+.w_storeF_icon03:before {
+  content: "\E046";
+}
+.store-footer-text {
+  position: absolute;
+  left: 56%;
+  top: 10rpx;
+  display: block;
+  height: 24rpx;
+  font-size: 18rpx;
+  color: #fff;
+  line-height: 24rpx;
+  background: #e61817;
+  font-weight: 400;
+  border-radius: 24rpx;
+  text-align: center;
+  padding: 0 4rpx;
+}
+
+.w_commFooter {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: 500;
+  height: 170rpx;
+  border-top: 1px solid #ebebeb;
+  display: flex;
+  align-items: center;
+}
+.comment-input-wrap {
+  flex: 1;
+  border-radius: 10rpx;
+  margin: 30rpx 20rpx;
+  padding: 20rpx;
+  background: #eee;
+}
+.comment-btn {
+  padding: 0 20rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #2a83e8;
+}
+.comment-input {
+  line-height: 40rpx;
+  font-size: 28rpx;
+  display: block;
+}
+
+.comment-textarea {
+  border: 1px solid #eee;
+  padding: 20rpx;
+  margin-bottom: 40rpx;
+  height: 150rpx;
+  white-space: normal;
+  width: auto;
+}
+
+.comment-tips {
+  font-size: 24rpx;
+  color: #666;
+}
+.popup-dialog {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  z-index: 1001;
+}
+.w_headers {
+  height: 88rpx;
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #ebebeb;
+  /* border-bottom: 1px solid #ebebeb; */
+  position: relative;
+}
+.w_head_txt {
+  position: absolute;
+  top: 0;
+  width: 12%;
+  height: 100%;
+  line-height: 88rpx;
+  display: block;
+  text-align: center;
+  font-size: 30rpx;
+  color: #666;
+}
+.w_head_leftTxt {
+  left: 0;
+}
+.w_head_rightTxt {
+  right: 0;
+}
+.w_find_coms {
+  padding: 20rpx;
+}
+.w_find_coms_textarea {
+  font-size: 30rpx;
+  color: #333;
+  text-align: left;
+  width: 100%;
+  min-height: 300rpx;
+  line-height: 40rpx;
+  border: 0;
+}
+.w_find_com_list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.vimg {
+  width: 156rpx;
+  height: 156rpx;
+  border-radius: 10rpx;
+  display: block;
+  margin-right: 20rpx;
+  overflow: hidden;
+}
+
+.w_find_btns {
+  width: 156rpx;
+  height: 156rpx;
+  text-align: center;
+  display: block;
+  border: 1px dashed #ebebeb;
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+  font-size: 24rpx;
+  color: #666;
+  line-height: 1;
+}
+.w_find_btns::before {
+  font-family: nwscfonts !important;
+  font-weight: 400;
+  font-style: normal;
+  content: "\E044";
+  color: #000;
+  display: block;
+  font-size: 120rpx;
+  line-height: 100rpx;
+}
+.w_find_comSel {
+  width: 100%;
+  padding: 80rpx 0;
+  background: #fff;
+  display: -webkit-box;
+  display: flex;
+  display: -ms-flexbox;
+  background: #f5f5f5;
+}
+.current-bussines {
+  font-size: 34rpx;
+  color: #333;
+  width: 50%;
+  text-align: left;
+  background: #fff;
+  padding: 20rpx;
+}
+.store-name {
+  padding: 20rpx;
+  background: #fff;
+  text-align: right;
+  font-size: 34rpx;
+  color: #333;
+  width: 50%;
+}
+.product-vedio {
+  height: 260rpx;
+  border-radius: 10rpx;
+  display: block;
+  margin-bottom: 20rpx;
+  width: 100%;
+}

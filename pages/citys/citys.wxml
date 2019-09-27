@@ -1,0 +1,40 @@
+<!-- search -->
+<view>
+  <view class="w_citySearchs">
+    <view class="w_cityColse" bindtap="goBack"></view>
+    <input class="w_search_inputs" type="text" placeholder="输入城市名" bindinput="searchInput" />
+  </view>
+  <view class="w_search_content" wx:if="{{showSearch}}">
+    <view class="ul">
+      <view class="w_serach_item w_border_bottom li" data-item="{{item}}" bindtap="chooseCity" wx:if="{{searchCityList.length}}" wx:for="{{searchCityList}}" :key="{{item.id}}">
+        {{item.cityName}}
+      </view>
+      <view class="w_serach_item w_border_bottom" wx:if="{{!searchCityList.length}}">
+        没有搜索到匹配的数据
+      </view>
+    </view>
+  </view>
+</view>
+<!-- citylist -->
+<view class="w_citySearList">
+  <view class="area_Lists">
+    <view class="w_city_title2" id="w_cityCurs">当前定位</view>
+    <view class="h2"  class="w_city_hts">
+      <view class="refresh" bindtap="getLocationCity"></view>
+      <view wx:if="{{!locationCity}}">正在定位...</view>
+      <view wx:else class="span" bindtap="chooseCity">{{locationCity}}</view>
+    </view>
+    <view class="w_city_title2" id="w_cityhist">已选择城市</view>
+    <view bindtap="goBack" class="w_button-list">
+      <view class="button-wrapper" wx:if="{{currentCity}}">{{currentCity}}</view>
+    </view>
+  </view>
+  <view class="area">
+    <view class="w_c_title" wx:for="{{ list }}">
+      <view wx:if="{{item.city.length>0}}" class="citytag">{{item.tag}}</view>
+      <view class="w_c_itemList ul" wx:for="{{item.city}}" data-item="{{item}}" bindtap="chooseCity">
+        {{item.cityName}}
+      </view>
+    </view>
+  </view>
+</view>

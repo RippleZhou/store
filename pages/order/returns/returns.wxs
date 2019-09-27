@@ -1,0 +1,50 @@
+
+function statusName(states) //状态
+{
+  var name = ''
+  if (returnStatus == 0) {
+    name = '已申请退换货'
+  } else if (returnStatus == 1) {
+    name = '商家已同意退/换货申请'
+  } else if (returnStatus == 2) {
+    name = '商家已拒绝退/换货申请，请处理'
+  } else if (returnStatus == 3) {
+    name = '等待商户确认收货'
+  } else if (returnStatus == 4) {
+    name = '等待退款'
+  } else if (returnStatus == 5) {
+    name = '退款完成'
+  } else if (returnStatus == 6) {
+    name = '撤销申请'
+  } else if (returnStatus == 7) {
+    name = '当前申请已过期，如有疑问请联系客服'
+  }
+  return name
+}
+function getstateTxt(states){
+  var str = ''
+  if (states == 0) {
+    str = '退换中'
+  } else if (states == 1) {
+    str = '退换中'
+  } else if (states == 2) {
+    str = '退换中'
+  } else if (states == 3) {
+    str = '退换中'
+  } else if (states == 4) {
+    str = '退换中'
+  } else if (states == 5) {
+    str = ''
+  } else if (states == 6) {
+    str = '已取消'
+  } else if (states == 7) {
+    str = '已失效'
+  }
+  return str
+}
+
+
+module.exports = {
+  statusName: statusName,
+  getstateTxt: getstateTxt
+}

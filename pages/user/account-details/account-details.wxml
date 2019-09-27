@@ -1,0 +1,54 @@
+<!--pages/user/account-details/account-details.wxml-->
+<view class='det_heads'>
+  账户明细
+  <text bindtap='screenShow'>筛选</text>
+</view>
+<view class='det_tabs'>
+  <text wx:for="{{tabItem}}" wx:key="unique" data-index="{{index}}" class="{{curTabs==index?'tabCurs':''}}" bindtap='clickTab'>{{item}}</text>
+</view>
+
+<!--没有数据时显示-->
+<view class="det_cons eb_noPros {{isShows==true?'':'eb_noShows'}}">
+    <view class="eb_noTxts">没有更多数据</view>
+</view>
+<!--End 没有数据时显示-->
+
+<view class="det_cons">
+    <scroll-view scroll-y="{{scrollmark}}" bindscrolltolower="scrollbottom" style='height:{{scrollHeight}}px'>
+     <block wx:if="{{getType==1}}">
+        <view class='det_infoList' wx:for="{{detailList}}" wx:key="unique">
+          <view class='det_list_lets'>
+            {{item.description}}
+            <text>{{item.createDate}}</text>
+          </view>
+          <view class='det_list_rigs'>
+            {{item.itemAmount}}¥
+            <text>现金红包</text>
+          </view>
+        </view>
+     </block>
+     <block wx:else>
+        <view class='det_infoList' wx:for="{{detailList}}" wx:key="unique">
+          <view class='det_list_lets'>
+            {{item.converTypeName}}
+            <text>{{item.createDate}}</text>
+          </view>
+          <view class='det_list_rigs'>
+            {{item.converBeanNum}}粒
+            <text>转换豆</text>
+          </view>
+        </view>
+     </block>
+    </scroll-view>
+    <view class="w_loading_box">
+          <block wx:if="{{noPage==1}}">
+              <view class='w_load_tips'>没有更多数据啦！</view>
+          </block>
+      </view>
+</view>
+<view class='ac_pop' wx:if="{{screenHids==true}}">
+  <view class='ac_p_con'>
+    <text wx:for="{{screenTab}}" wx:key="unique" bindtap='clickScreen' data-index="{{item.type}}" class="{{item.type==getType?'w_detailScreen_tabCurs':''}}">{{item.txt}}</text>
+  </view>
+
+</view>

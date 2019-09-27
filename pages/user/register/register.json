@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "注册",
+  "usingComponents": {
+    "basic": "plugin://captcha/basic",
+    "oneclick": "plugin://captcha/oneclick"
+  }
+}

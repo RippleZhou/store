@@ -1,0 +1,138 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/user/register/register",
+    "pages/classify/classify",
+    "pages/find/find",
+    "pages/cart/cart",
+    "pages/mine/mine",
+    "pages/spike/spike",
+    "pages/product/product-view/product-view",
+    "pages/product/search-list/search-list",
+    "pages/personacenter/personacenter",
+    "pages/user/modify-loginpw/modify-loginpw",
+    "pages/user/set-paypw/set-paypw",
+    "pages/user/personalset/personalset",
+    "pages/user/modify-paypw/modify-paypw",
+    "pages/user/modify-phone/modify-phone",
+    "pages/user/find-password/find-password",
+    "pages/user/find-passwordnext/find-passwordnext",
+    "pages/user/set-loginpw/set-loginpw",
+    "pages/user/modifying-head/modifying-head",
+    "pages/user/personal-modinfor/personal-modinfor",
+    "pages/user/receiving-address/receiving-address",
+    "pages/user/update-address/update-address",
+    "pages/user/account-details/account-details",
+    "pages/user/login/login",
+    "pages/user/login-code/login-code",
+    "pages/order/all-orders/all-orders",
+    "pages/order/order-list/order-list",
+    "pages/order/online-detail/online-detail",
+    "pages/order/virreturn-detail/virreturn-detail",
+    "pages/order/virtual-detail/virtual-detail",
+    "pages/order/refund-schedule/refund-schedule",
+    "pages/order/returns/returns",
+    "pages/order/fill-logistics/fill-logistics",
+    "pages/order/returns-details/returns-details",
+    "pages/order/apply-return/apply-return",
+    "pages/order/fill-refund/fill-refund",
+    "pages/order/see-logistics/see-logistics",
+    "pages/tab1/index-allclas/index-allclas",
+    "pages/product/search/search",
+    "pages/beans/borrow-beans/borrow-beans",
+    "pages/order/confirm-order/confirm-order",
+    "pages/tab3/cities/cities",
+    "pages/tab3/store-coupon/store-coupon",
+    "pages/tab3/store-meal/store-meal",
+    "pages/order/bargain-confirm-order/bargain-confirm-order",
+    "pages/tab3/bargain-sharing/bargain-sharing",
+    "pages/tab3/store-details/store-details",
+    "pages/tab3/comments/comments",
+    "pages/beanExplain/beanExplain",
+    "pages/chargeBean/chargeBean",
+    "pages/sendBean/sendBean",
+    "pages/lowbuy/lowbuy",
+    "pages/testss/testss",
+    "pages/goldBean/goldBean",
+    "pages/signInRedPackage/signInRedPackage",
+    "pages/signExplain/signExplain",
+    "pages/inviteFriends/inviteFriends",
+    "pages/beanBagDetail/beanBagDetail",
+    "pages/helpCenter/helpCenter",
+    "pages/helpCenterDetail/helpCenterDetail",
+    "pages/payFail/payFail",
+    "pages/rechargeList/rechargeList",
+    "pages/activity0903/activity0903",
+    "pages/activityNinetyNine/activityNinetyNine",
+    "pages/specialCoupon/specialCoupon",
+    "pages/citys/citys",
+    "pages/seaFriends/seaFriends",
+    "pages/news/news",
+    "pages/navigateDownload/navigateDownload",
+    "pages/turnBeans/turnBeans",
+    "pages/receivingAddress/receivingAddress",
+    "pages/turnBeanNums/turnBeanNums",
+    "pages/beansHarvestDetails/beansHarvestDetails",
+    "pages/transactionMessage/transactionMessage",
+    "pages/accountMessage/accountMessage",
+    "pages/preferentialPromotion/preferentialPromotion",
+    "pages/logisticsMessage/logisticsMessage"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "转换商城",
+    "navigationBarTextStyle": "black",
+    "onReachBottomDistance": 60,
+    "navigationBarBackgroundColor": "#fff",
+    "navigationStyle": "default"
+  },
+  "tabBar": {
+    "selectedColor": "#e61817",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tabs/home.png",
+        "selectedIconPath": "images/tabs/home-on.png"
+      },
+      {
+        "pagePath": "pages/classify/classify",
+        "text": "分类",
+        "iconPath": "images/tabs/classify.png",
+        "selectedIconPath": "images/tabs/classify-on.png"
+      },
+      {
+        "pagePath": "pages/find/find",
+        "text": "发现",
+        "iconPath": "images/tabs/find.png",
+        "selectedIconPath": "images/tabs/find-on.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "images/tabs/cart.png",
+        "selectedIconPath": "images/tabs/cart-on.png"
+      },
+      {
+        "pagePath": "pages/personacenter/personacenter",
+        "text": "我的",
+        "iconPath": "images/tabs/mine.png",
+        "selectedIconPath": "images/tabs/mine-on.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置信息将用于获取当前城市的优惠活动"
+    }
+  },
+  "plugins": {
+    "captcha": {
+      "version": "1.0.0",
+      "provider": "wxbf8483dfc5ac6817"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

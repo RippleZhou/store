@@ -1,0 +1,147 @@
+/* pages/news/news.wxss */
+.w_serMes_clasList {
+    padding-left: .9375rem;
+    padding-right: .625rem;
+    padding-top: .9375rem;
+    padding-bottom: 1.40625rem;
+    border-bottom: 1px solid #ebebeb;
+    display: flex;
+}
+page{
+  background:#fff;
+}
+.w_serMes_clasList .w_serMes_clLs.w_serMes_icon02 {
+    background: #fa671b;
+}
+.w_serMes_clasList .w_serMes_clLs.w_serMes_icon03 {
+    background: #fa9e1b;
+}
+.w_serMes_clasList .w_serMes_clLs.w_serMes_icon03:before {
+    font-family: nwscfonts!important;
+    font-weight: 400;
+    font-style: normal;
+    content: "\E050";
+    color: #fff;
+    font-size: 2.5rem;
+    vertical-align: middle;
+}
+.w_serMes_clasList .w_serMes_clLs.w_serMes_icon04 {
+    background: #3acb8c;
+}
+.w_serMes_clasList .w_serMes_clLs.w_serMes_icon04:before {
+    font-family: nwscfonts!important;
+    font-weight: 400;
+    font-style: normal;
+    content: "\E051";
+    color: #fff;
+    font-size: 2.5rem;
+    vertical-align: middle;
+}
+.w_serMes_clasList .w_serMes_clRs .h2 {
+    font-size: 30rpx;
+    color: #333;
+    padding-bottom: .78125rem;
+    position: relative;
+    width: 100%;
+    font-weight: 600;
+}
+.w_serMes_clasList .w_serMes_clRs .h3 {
+    font-size: 28rpx;
+    color: #999;
+}
+.w_serMes_clasList .w_serMes_clLs {
+    width: 100rpx;
+    height: 100rpx;
+    text-align: center;
+    border-radius: .3125rem;
+    background: #fff;
+    margin-right: .625rem;
+    position: relative;
+}
+.w_serMes_clRs{
+  flex: 1
+}
+.w_serMes_clasList .w_serMes_clRs .h2 .label {
+    font-size: 28rpx;
+    color: #999;
+    font-weight: 400;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.w_serMes_clasList .w_serMes_clLs.w_serMes_icon02:before {
+    font-family: nwscfonts!important;
+    font-weight: 400;
+    font-style: normal;
+    content: "\E049";
+    color: #fff;
+    font-size: 2.5rem;
+    vertical-align: middle;
+}
+.w_serMes_clasList .w_serMes_clLs:before {
+    display: block;
+    font-size: 3.4375rem!important;
+    line-height: 2.8125rem;
+}
+.w_serMes_clasList .w_serMes_clLs.w_serMes_icon01 {
+    background: #fa671b;
+}
+
+.w_serMes_clasList .w_serMes_clLs {
+    width: 100rpx;
+    height: 100rpx;
+    text-align: center;
+    border-radius: .3125rem;
+    background: #fff;
+    margin-right: .625rem;
+    position: relative;
+}
+
+.w_serMes_clasList .w_serMes_clLs.w_serMes_icon01:before {
+    font-family: nwscfonts!important;
+    font-weight: 400;
+    font-style: normal;
+    content: "\E048";
+    color: #fff;
+    font-size: 2.5rem;
+    vertical-align: middle;
+}
+
+.w_serMes_clasList .w_serMes_clLs:before {
+    display: block;
+    font-size: 3.4375rem!important;
+    line-height: 2.8125rem;
+}
+
+.w_serMes_clasList .w_serMes_clLs i {
+    width: .5rem;
+    height: .5rem;
+    border-radius: .5rem;
+    border: 1px solid #fff;
+    background: #e61817;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: -.25rem;
+    margin-right: -.25rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

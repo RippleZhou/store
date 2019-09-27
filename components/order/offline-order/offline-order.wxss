@@ -1,0 +1,2 @@
+/* components/order/offline-order/offline-order.wxss */
+@import "/pages/order/all-orders/all-orders.wxss";

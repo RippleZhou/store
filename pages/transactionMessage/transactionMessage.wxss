@@ -1,0 +1,8 @@
+/* pages/transactionMessage/transactionMessage.wxss */
+._v-content{
+  text-align: center;
+}
+.no_blankIms{
+  width:30%;
+  padding-top: 100rpx;
+}

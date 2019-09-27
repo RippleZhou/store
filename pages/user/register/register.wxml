@@ -1,0 +1,18 @@
+<!--pages/user/register/register.wxml-->
+<view class='w_find_pw'>
+  <view class='w_find_list'>
+    <input type='digit' placeholder='请输入手机号' bindinput="modifyInput" id='phone'></input>
+  </view>
+   <view class='w_find_list w_find_list2'>
+    <input type='digit' placeholder='请输入验证码' bindinput="modifyInput" id='code'></input>
+    <button bindtap='getCodes' disabled='{{btnDisabled}}'>{{codeTxt}}</button>
+  </view>
+  <view class='w_find_list'>
+    <input type='password' placeholder='请输入6-16位密码' bindinput="modifyInput" id='pw'></input>
+  </view>
+  <view class='w_find_list'>
+    <input type='password' placeholder='请确认密码' bindinput="modifyInput" id='pw2'></input>
+  </view>
+  <view class='w_find_Btns' bindtap='getRegister'>注册</view>
+  <basic bindsuccess='captchaSuccess' bindhide='captchaHide' captchaReload='{{captchaReload}}' captchaShow='{{captchaShow}}' options='{{options}}'/>
+</view>

@@ -1,0 +1,12 @@
+{
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "转换商城",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "onReachBottomDistance": 50,
+  "usingComponents": {
+    "index-recommend": "/components/index/index-recommend/index-recommend",
+    "index-home": "/components/index/index-home/index-home"
+  }
+}

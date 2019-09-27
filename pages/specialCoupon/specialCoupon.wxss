@@ -1,0 +1,233 @@
+/* pages/specialCoupon/specialCoupon.wxss */
+
+.storeCoupon {
+    background: #f5f5f5;
+}
+.s_container {
+    margin-bottom: 180rpx;
+}
+.cashCoupon {
+    margin-bottom: .625rem;
+    width: 100%;
+    background: #fff;
+    padding: 20rpx;
+}
+ .w_cashCoupon2:before {
+    content: '';
+    width: 30rpx;
+    height: 30rpx;
+    border-radius: 30rpx;
+    position: absolute;
+    top: 46%;
+    left: 0;
+    margin-left: -.46875rem;
+    background: #f5f5f5;
+}
+ .w_cashCoupon2 {
+    background-color: #fff;
+    border: none;
+    padding: 0 0;
+    border-radius: .46875rem;
+    margin-top: .625rem;
+    position: relative;
+    padding-top: .3125rem;
+}
+
+.w_cashCoupon2:before {
+    content: '';
+    width: .9375rem;
+    height: .9375rem;
+    border-radius: .9375rem;
+    position: absolute;
+    top: 46%;
+    left: 0;
+    margin-left: -.46875rem;
+    background: #f5f5f5;
+}
+
+ .cashCouponDetail {
+  display: block;
+    padding-left: .625rem;
+    padding-right: .625rem;
+}
+
+.flex-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.storeCoupon .s_container .cashCoupon .w_cashCoupon2 .coupon-img {
+    width: 5rem;
+    height: 5rem;
+    margin-right: .625rem;
+    margin-bottom: .625rem;
+}
+
+.storeCoupon .s_container .cashCoupon .cashCouponDetail h2 {
+  display: block;
+    font-size: 1.0625rem;
+    margin-bottom: .625rem;
+}
+
+.cashCoupon h2 {
+    font-size: .875rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.storeCoupon .s_container .cashCoupon .cashCouponDetail .w_redTips {
+    display: inline-block;
+    color: #e61817;
+    border: 1px solid #e61817;
+    font-size: 24rpx;
+    border-radius: 1.25rem;
+    line-height: .9375rem;
+    padding: 0 .3125rem;
+}
+
+.storeCoupon .s_container .cashCoupon .cashCouponDetail p {
+  display: block;
+    font-size: 24rpx;
+    color: #aaa;
+    margin-top: .3125rem;
+}
+.storeCoupon .s_container .cashCoupon .cashCouponDetail {
+    border-bottom: 1px dashed #ffced2;
+    padding: .625rem 1.5625rem;
+}
+.storeCoupon .s_container .cashCoupon .cashCouponDetail p .nowprice {
+    font-size: 32rpx;
+    color: #e61817;
+}
+.storeCoupon .s_container .cashCoupon .cashCouponDetail p s {
+  font-size: 24rpx;
+    color: #aaa;
+    text-decoration:line-through; 
+    margin-right: 1.875rem;
+}
+.storeCoupon .s_container .cashCoupon .w_cashCoupon2 .activity {
+    padding: .15625rem .625rem;
+}
+.storeCoupon .s_container .cashCoupon .activity {
+    padding: .15625rem 1.5625rem;
+    display: -webkit-box;
+    display: flex;
+    display: -ms-flexbox;
+}
+.storeCoupon .s_container .cashCoupon .activity .activLefs {
+    display: block;
+    width: 50%;
+    text-align: left;
+    font-size: 24rpx;
+    color: #aaa;
+    line-height: 1.5625rem;
+}
+.storeCoupon .s_container .cashCoupon .activity .w_rigde_rigIcons {
+    width: 50%;
+    text-align: right;
+    padding-top: 0;
+}
+.w_rigde_rigIcons label, .w_rigde_rigIcons span {
+    display: inline-block;
+    color: #999;
+    font-size: .8125rem;
+}
+.w_rigde_rigIcons label:before {
+    font-family: nwscfonts!important;
+    font-weight: 400;
+    font-style: normal;
+    content: "\E075";
+    color: #999;
+    font-size: 2.5rem;
+    vertical-align: middle;
+}
+.w_rigde_rigIcons label:before, .w_rigde_rigIcons span:before {
+    font-size: 1.875rem!important;
+    display: inline-block;
+    margin-right: .3125rem;
+    margin-top: -.1875rem;
+    line-height: 1.25rem;
+}
+
+.storeCoupon .s_container .cashCoupon .w_cashCoupon2:after {
+    content: '';
+    width: .9375rem;
+    height: .9375rem;
+    border-radius: .9375rem;
+    position: absolute;
+    top: 46%;
+    right: 0;
+    margin-right: -.46875rem;
+    background: #f5f5f5;
+}
+.storeCoupon .s_container .cashCoupon .w_cashCoupon2:before {
+    content: '';
+    width: .9375rem;
+    height: .9375rem;
+    border-radius: .9375rem;
+    position: absolute;
+    top: 46%;
+    left: 0;
+    margin-left: -.46875rem;
+    background: #f5f5f5;
+}
+.storeCoupon .s_container .cashCouponExplain {
+  display:block;
+    margin-top: .625rem;
+    padding: .625rem .625rem;
+    background: #fff;
+}
+.storeCoupon .s_container .cashCouponExplain .p {
+    font-size: 28rpx;
+    margin-bottom: .46875rem;
+}
+.storeCoupon .s_container .cashCouponExplain .p .content1 {
+    margin-left: 1.46875rem;
+}
+.storeCoupon .s_container .cashCouponExplain .p .content {
+    color: #aaa;
+    margin-left: .625rem;
+}
+.storeCoupon .s_container .cashCouponExplain .p:last-child {
+    margin-bottom: 0;
+}
+.storeCoupon .s_container .cashCouponExplain .p {
+    font-size: 28rpx;
+    margin-bottom: .46875rem;
+}
+.storeCoupon .s_container .cashCouponExplain .p .content {
+    color: #aaa;
+    margin-left: .625rem;
+}
+.storeCoupon .storeBottom {
+    position: fixed;
+    bottom: 0;
+    height: 2.96875rem;
+    width: 100%;
+    text-align: center;
+    line-height: 2.96875rem;
+    border-top: 1px solid #ebebeb;
+}
+.storeCoupon .storeBottom .rushbuy {
+    float: left;
+    width: 50%;
+    color: #e61817;
+    background: #fff;
+}
+.storeCoupon .storeBottom .cutprice {
+    float: left;
+    width: 50%;
+    background: #e61817;
+    color: #fff;
+}
+
+
+

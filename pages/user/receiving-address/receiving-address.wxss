@@ -1,0 +1,39 @@
+/* pages/user/receiving-address/receiving-address.wxss */
+page{
+  background: #fff;
+}
+.add_adsBoxs{
+  padding-bottom:80rpx;width:100%;
+}
+.add_ads_list{
+  width:100%;background: #fff;padding:35rpx 20rpx;position: relative;
+}
+.add_ads_lets{
+  width:80%;padding-right: 30rpx;position: relative;
+}
+.add_ads_lTit{
+  font-size: 32rpx;color:#333;padding-bottom: 10rpx;
+}
+.add_ads_lTit label{
+  display: inline-block;font-size: 26rpx;color:#999;padding-left: 15rpx;
+}
+.add_ads_lTxts{
+  font-size: 30rpx;color:#333;line-height: 46rpx;
+}
+.add_ads_lTxts label{
+  display: inline-block;font-size: 24rpx;color: #e61817;padding:0 10rpx;
+  background: #ffe1e1;border-radius: 6rpx;line-height: 30rpx;margin-right:10rpx;
+}
+
+.add_ads_rigs{
+  width:20%;font-size: 30rpx;color:#999;text-align: center;position: absolute;top:26%;right:0;line-height: 70rpx;
+}
+.add_ads_rigs::before{
+      content: '';display: block;border-left:1px solid #ebebeb;position: absolute;left:0;top:26%;width:2rpx;height: 50rpx;
+}
+
+
+.add_ads_btoms{
+  position: fixed;bottom:0;left:0;z-index: 100;width:100%;background: #fff;border-top:1px solid #eee;
+  height: 80rpx;line-height: 80rpx;text-align: center;font-size: 30rpx;color:#e61817;
+}

@@ -1,0 +1,31 @@
+<view class="w_headers flex-wrp" >
+  <view class='w_head_title'>{{title}}</view>
+  <navigator url="/pages/product/search/search" hover-class="none" class="w_head_rightTxt w_topSearchs">
+  </navigator> 
+</view>
+
+<swiper class="swiper-wrap-tab" display-multiple-items="{{productList.length > 4 ? 4 : productList.length}}" >
+  <block wx:for="{{productList}}" wx:key="index" >
+    <swiper-item class="swiper-item-tab"
+      bindtap="jumpTab" data-index="{{index}}">
+      <view class="swiper-item-tab-text {{currentTab == index ? 'active-tab': ''}}">
+        {{item.name}}
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
+
+<swiper class='w_sw_con' current='{{currentTab}}' bindchange="swiperChangeTab">
+    <block wx:for="{{productList}}" wx:key="index">
+      <swiper-item class="swiper-slide">
+        <scroll-view data-index="{{index}}" style='height:100%;' scroll-y 
+          bindscrolltolower="scrolltolower">
+
+          <pro-imgtxt list="{{item.list}}" last-flag="{{item.lastFlag}}">
+
+          </pro-imgtxt>
+        </scroll-view>  
+        
+      </swiper-item>
+    </block>
+  </swiper>

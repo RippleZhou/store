@@ -1,0 +1,330 @@
+@import "/style/common.wxss";
+
+.banner-img {
+  display: block;
+  width: 100%;
+}
+.w_storeDe_tops {
+  width: 100%;
+  background: #fff;
+  padding: 0 20rpx;
+  margin-bottom: 20rpx;
+}
+.w_storeDe_tops_h2 {
+  font-size: 36rpx;
+  color: #333;
+  font-weight: 600;
+  padding-top: 30rpx;
+  padding-bottom: 20rpx;
+}
+.w_storeDe_tops_h3 {
+  font-size: 24rpx;
+  color: #999;
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #ebebeb;
+}
+.w_find_l_times {
+  font-size: 28rpx;
+  color: #333;
+  padding-top: 30rpx;
+  padding-bottom: 16rpx;
+}
+.w_find_l_times::before {
+  font-family: nwscfonts!important;
+  font-weight: 400;
+  font-style: normal;
+  color: #999;
+  vertical-align: top;
+  display: inline-block;
+  font-size: 60rpx;
+  margin-right: 10rpx;
+  line-height: 30rpx;
+}
+.w_find_icon01::before {
+  content: "\E021";
+}
+.w_find_icon02::before {
+  content: "\E022";
+}
+.w_find_icon02 {
+  width: 85%;
+  display:block;
+  padding-top: 0;
+  padding-right: 10rpx;
+  font-size: 28rpx;
+  color: #333;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.address-wrap {
+  position: relative;
+  display: flex;
+}
+.call-phone {
+  border-left: 1px solid #ebebeb;
+  display: block;
+  text-align: center;
+  width: 15%;
+  position: relative;
+  top: -20rpx;
+}
+.call-phone::before {
+  display: block;
+  font-size: 120rpx;
+  line-height: 70rpx;
+  font-family: nwscfonts!important;
+  font-weight: 400;
+  font-style: normal;
+  color: #f80d2a;
+  content: "\E047";
+}
+.w_storeDe_Infor {
+  margin-bottom: 20rpx;
+  width: 100%;
+  background: #fff;
+  padding: 20rpx;
+}
+.w_storeDe_Infor_h2 {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 600;
+}
+.w_storeDe_InforList {
+  padding-top: 20rpx;
+  line-height: 40rpx;
+  font-size: 26rpx;
+  color: #333;
+}
+.cashCoupon {
+  margin-bottom: 20rpx;
+  width: 100%;
+  background: #fff;
+  padding: 20rpx;
+}
+.coupon-title {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 600;
+}
+.w_cashCoupon {
+  padding: 20rpx;
+  background: #fff7f7;
+  border: 1px solid #ffe8ea;
+  border-radius: 15rpx;
+  margin-top: 20rpx;
+  position: relative;
+}
+.coupon-subtitle {
+  color: #333;
+  font-size: 26rpx;
+  font-weight: 600;
+}
+.desc {
+  font-size: 24rpx;
+  color: #aaa;
+}
+.cutdesc {
+  color: #e61817;
+  border: 1px solid #e61817;
+  border-radius: 50rpx;
+  padding: 0 8rpx;
+  position: relative;
+  top: 5rpx;
+}
+.cutrush {
+  width: 175rpx;
+  height: 50rpx;
+  display: -webkit-box;
+  display: flex;
+  display: -ms-flexbox;
+  border-radius: 50rpx;
+  font-size: 26rpx;
+}
+.cutprice {
+  width: 50%;
+  text-align: center;
+  color: #e61817;
+  border: 1px solid #e61817;
+  border-top-left-radius: 26rpx;
+  border-bottom-left-radius: 26rpx;
+  line-height: 50rpx;
+}
+.gooncutprice {
+  width: 55%;
+  text-align: center;
+  color: #ff9000;
+  border: 1px solid #ff9000;
+  border-top-left-radius: 26rpx;
+  border-bottom-left-radius: 26rpx;
+  line-height: 50rpx;
+}
+.rushbuy {
+  width: 50%;
+  text-align: center;
+  color: #fff;
+  background: #e61817;
+  border-top-right-radius: 26rpx;
+  border-bottom-right-radius: 26rpx;
+  line-height: 50rpx;
+}
+.lootcutrush {
+  width: 175rpx;
+  height: 50rpx;
+  display: -webkit-box;
+  display: flex;
+  display: -ms-flexbox;
+  border-radius: 50rpx;
+  font-size: 26rpx;
+  background: #ccc;
+}
+.lootall {
+  margin: auto;
+  color: #fff;
+}
+.price {
+  color: #e61817;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+}
+.unit {
+  font-size: 24rpx;
+}
+.price-s {
+  font-size: 26rpx;
+  color: #aaa;
+  margin-left: 5rpx;
+}
+.w_cashCoupon::before {
+  content: '';
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 30rpx;
+  border-right: 1px solid #ffe8ea;
+  position: absolute;
+  top: 46%;
+  left: 0;
+  margin-left: -15rpx;
+  background: #fff;
+}
+.w_cashCoupon::after {
+  content: '';
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 30rpx;
+  border-left: 1px solid #ffe8ea;
+  position: absolute;
+  top: 46%;
+  right: 0;
+  margin-right: -15rpx;
+  background: #fff;
+}
+.activitydesc {
+  font-size: 24rpx;
+  color: #e61817;
+  padding: 20rpx;
+  line-height: 30rpx;
+  padding-bottom: 0;
+}
+.tool {
+  font-size: 26rpx;
+  color: #aaa;
+  float: right;
+}
+.desc2 {
+  font-size: 24rpx;
+  line-height: 30rpx;
+  color: #e61817;
+}
+.watchedicon:before {
+  position: relative;
+  margin-bottom: 10rpx;
+  display: inline-block;
+  margin-right: 10rpx;
+  font-size: 60rpx;
+  font-family: nwscfonts!important;
+  font-weight: 400;
+  font-style: normal;
+  content: "\E075";
+  color: #aaa;
+  vertical-align: middle;
+}
+.cuticon:before {
+  position: relative;
+  margin-bottom: 10rpx;
+  display: inline-block;
+  margin-right: 10rpx;
+  font-size: 60rpx;
+  font-family: nwscfonts!important;
+  font-weight: 400;
+  font-style: normal;
+  content: "\E074";
+  color: #aaa;
+  vertical-align: middle;
+}
+.cuticon {
+  margin-left: 25rpx;
+}
+.meal {
+  display: -webkit-box;
+  display: flex;
+  display: -ms-flexbox;
+  margin-top: 20rpx;
+}
+.meal-img {
+  width: 210rpx;
+  height: 210rpx;
+  object-fit: cover;
+}
+.mealdetail {
+  padding: 10rpx 20rpx;
+  font-size: 28rpx;
+  /* width: 55%; */
+  -webkit-box-flex: 1;
+  flex: 1;
+}
+
+.mealdetail-menu {
+  margin-top: 15rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.mealdetail-condition {
+  font-size: 24rpx;
+  color: #aaa;
+  margin-top: 15rpx;
+}
+.p_bottom {
+  line-height: 50rpx;
+  margin-top: 20rpx;
+}
+.w_storeDe_comment {
+  width: 100%;
+  background: #fff;
+  padding: 20rpx;
+  padding-bottom: 0;
+}
+.comment-title {
+  font-size: 30rpx;
+  color: #000;
+  font-weight: 600;
+  position: relative;
+}
+.comment-title::after {
+  font-family: nwscfonts!important;
+  font-weight: 400;
+  font-style: normal;
+  content: "\E003";
+  color: #666;
+  font-size: 60rpx;
+  vertical-align: middle;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 15rpx;
+  line-height: 4rpx;
+}
+.bottom-title {
+  padding: 28rpx 0;
+}

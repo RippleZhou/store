@@ -1,0 +1,51 @@
+<!--pages/order/fill-logistics/fill-logistics.wxml-->
+<view class='ord_li_heads'>
+    <view class='ord_li_h_tit'>填写退货物流</view>
+    <icon class='top_servers' bindtap='getTels'></icon>
+</view>
+<view class='fillr_box'>
+  <view class='fill_log_pros'>
+    <image src='{{proItem.imageUrl}}' mode="widthFix"></image>
+    <view class='fill_log_pMids'>
+      <text>{{proItem.productName}}</text>
+      <label wx:if="{{proItem.requestBuyLimit>1}}">{{proItem.requestBuyLimit}}件起购</label>
+    </view>
+    <view class='fill_log_pRigs'>
+      <text>￥{{proItem.productPrice}}</text>
+      <label>x{{proItem.productNum}}</label>
+    </view>
+  </view>
+  <view class='w_applyRe_rPics'>实付:<label>￥{{proItem.paymentAmount}}</label></view>
+  <view class='w_fillLog_list'>
+    <label>物流公司：</label>
+    <picker bindchange="bindPickerChange" value='index' range="{{logItem}}" class='w_fillPicker' range-key="{{'text'}}">
+      <view class="picker">
+       {{index==null?logTxt:logItem[index].text}}
+      </view>
+    </picker>
+  </view>
+   <view class='w_fillLog_list w_fll_mbs'>
+    <label>物流单号：</label>
+    <input placeholder='填写物流单号' type='text' bindinput='modyFill' id='fillNum'/>
+  </view>
+   <view class='w_fillLog_list w_fll_mbs'>
+    <label>联系电话：</label>
+    <input placeholder='填写手机号码' type='digit' bindinput='modyFill' id='fillTel'/>
+  </view>
+  <view class='w_fillLog_list w_fll_mbs'>
+    <label>退/换货说明：</label>
+    <input placeholder='' type='digit' bindinput='modyFill' id='fillInfor'/>
+  </view>
+  <view class='w_fillLog_list2 w_fll_mbs'>
+      <view class='w_fill_tits'>上传凭证</view>
+      <view class='w_fillImgList'>
+        <block wx:for="{{defautImg}}" wx:key="unique" wx:for-item="g">  
+          <image src='{{g}}' mode="widthFix"></image>
+        </block>
+        <text bindtap='chooseType'>上传照片(最多6张)</text>
+      </view>
+  </view>
+</view>
+<view class='w_fillBtns' bindtap='submitInfo'>
+  提交
+</view>

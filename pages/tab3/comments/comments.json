@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "评论",
+  "usingComponents": {
+    "comment-list": "/components/find/comment-list/comment-list"
+  }
+}

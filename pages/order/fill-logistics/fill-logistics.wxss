@@ -1,0 +1,89 @@
+/* pages/order/fill-logistics/fill-logistics.wxss */
+
+.fillr_box{
+ margin-top: 88rpx;padding-bottom: 100rpx;
+}
+
+.fill_log_pros{
+  width:100%;background: #fff;padding:20rpx;display:flex;display:-webkit-flex;display: -ms-flexbox;
+
+}
+.fill_log_pros image{
+  width:184rpx;height: 184rpx;margin-right: 25rpx;
+}
+.fill_log_pMids{
+  width:30%;flex-grow:1;-webkit-box-flex-group:1;-webkit-flex-grow:1;
+  text-align: left;
+}
+.fill_log_pMids text{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;
+  display:block;width:100%;margin-bottom: 40rpx;
+}
+.fill_log_pMids label{
+  font-size: 24rpx;color:#E61817;border:1px solid #E61817;padding:2rpx 10rpx;border-radius: 40rpx;
+}
+.fill_log_pRigs{
+  width:30%;text-align: right;
+}
+.fill_log_pRigs text{
+display: block;font-size: 34rpx;color:#E61817;text-align:right;margin-bottom: 40rpx;
+}
+.fill_log_pRigs label{
+font-size: 34rpx;color:#333;margin-bottom: 10rpx;display:block;
+}
+.w_applyRe_rPics{
+  width:100%;background: #fff;padding:0 20rpx 20rpx 20rpx;text-align:right;
+  font-size: 28rpx;color:#333;  margin-bottom: 20rpx;
+}
+.w_applyRe_rPics label{
+  font-size: 36rpx;color:#E61817;
+}
+
+.w_fillLog_list{
+  padding:0 20rpx;background: #fff;border-bottom:1px solid #EBEBEB;
+  display:flex;display:-webkit-flex;display: -ms-flexbox;
+}
+.w_fillLog_list label{
+  display:block;text-align: left;font-size: 30rpx;color:#333;line-height: 90rpx;
+  width: auto;
+}
+.w_fillLog_list input{
+  display:block;padding:0;margin:0;height:90rpx;font-size: 30rpx;color:#333;width:60%;
+  flex-grow: 1;-webkit-flex-grow: 1;-webkit-box-flex-group: 1;
+}
+.w_fillPicker{
+  height:90rpx;line-height:90rpx;font-size: 30rpx;color:#333;display:block;
+  width:60%;flex-grow: 1;-webkit-flex-grow: 1;-webkit-box-flex-group: 1;
+}
+.w_fll_mbs{
+  margin-bottom: 20rpx;
+}
+
+.w_fillLog_list2{
+  padding:0 20rpx 100rpx 20rpx;background: #fff;
+}
+.w_fill_tits{
+font-size: 30rpx;padding:20rpx 0;color:#333;
+}
+.w_fillImgList{
+  padding:10rpx;display:flex;display:-webkit-flex;display: -ms-flexbox;flex-wrap: wrap;-ms-flex-wrap: wrap;
+}
+.w_fillImgList text{
+  color:#666;border:1px dashed #CCCCCC;width:170rpx;height: 170rpx;border-radius: 10rpx;padding:20rpx;
+  font-size: 26rpx;text-align:center;display:block;
+}
+.w_fillImgList text::before{
+font-family: nwscfonts!important;content: '\e065';color:#666666;
+display:block;margin-bottom: 10rpx;line-height: 60rpx;font-size: 100rpx;
+}
+.w_fillImgList image{
+  width:170rpx;height: 170rpx;border-radius: 10rpx;margin-bottom: 30rpx;margin-right: 30rpx;
+}
+
+.w_fillBtns{
+  position:fixed;font-size:30rpx;text-align:center;
+  height:90rpx;line-height:90rpx;color:#fff;bottom:0;left:0;width:100%;
+  background: -webkit-linear-gradient(left, #F90000 ,#F61E65); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(right, #F90000 ,#F61E65); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(right, #F90000 ,#F61E65); /* Firefox 3.6 - 15 */
+  background: linear-gradient(to right, #F90000 ,#F61E65); /* 标准的语法 */
+}

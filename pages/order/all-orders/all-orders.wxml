@@ -1,0 +1,14 @@
+<!--pages/order/all-orders/all-orders.wxml-->
+
+<view class='order_heads'>
+    <view class='order_head_tab'>
+      <text class="{{currentTab==index ? 'order_head_tCurs':''}}" wx:for="{{headTab}}" wx:key="unique" bindtap='clickHeadTab' data-index="{{index}}">{{item}}</text>
+    </view>
+    <icon class='top_servers' bindtap='getTels'></icon>
+</view>
+
+<view class='orderBoxs'>
+    <online-order wx:if="{{currentTab==0}}" states="{{states}}" no-mores="{{noMores}}"></online-order>
+    <offline-order wx:elif="{{currentTab==1}}" no-mores="{{noMores}}"></offline-order>
+    <virtual-order wx:else states="{{states}}" no-mores="{{noMores}}"></virtual-order>
+</view>

@@ -1,0 +1,22 @@
+/* pages/helpCenterDetail/helpCenterDetail.wxss */
+.b{font-weight: 700;}
+
+.w_help_conBoxs {
+    width: 100%;
+    padding: .625rem .625rem;
+}
+
+.w_help_conBoxs .h2, .w_help_conBoxs .h3 {
+    font-size: .875rem;
+    line-height: 1.5625rem;
+    color: #000;
+    padding-bottom: .46875rem;
+}
+.h3{color:#666 !important;
+    font-size: 28rpx !important;
+}
+.h2{ font-size: 28rpx !important;}
+
+.c{padding-left:54rpx;padding-bottom:20rpx;}
+
+.pl50{padding-left:50rpx;}

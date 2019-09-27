@@ -1,0 +1,158 @@
+
+<wxs module="util" src="./product-view.wxs"></wxs>
+<view class="w_headers w_nborHeader" id="menu-tops" >
+  <view class="tc head_tabs">
+    <text class="head_tab {{showDetail ? '': 'active-tab'}}" bindtap="tabClicks" data-detail="{{false}}" >商品</text>
+    <text class="head_tab {{showDetail ? 'active-tab': ''}}" bindtap="tabClicks" data-detail="{{true}}">详情</text>
+  </view>
+  <navigator url="/pages/index/index" open-type="switchTab" class='home-icon' hover-class="none"></navigator>
+</view>
+
+<view class="w_proViewbox">
+  <view id="top-layout">
+    <view class='swiper-wrap'>
+      <swiper class="swiper-wrap-proimgs" interval="{{3000}}" autoplay="{{swiperAutoPlay}}"
+        style="height:{{maxHeight}}rpx;" current='{{currentImg}}' bindchange="swiperChange">
+        <block wx:for="{{lunbo}}" wx:key="{{index}}" >
+          <swiper-item class="swiper-item-tab" bindtouchstart="stopAutoPlay"
+            data-index="{{index}}">
+            <image src="{{item || errorImg}}" id="{{'proimg' + index}}" 
+              wx:if="{{util.mediaType(item) == 'jpg'}}"
+              class="proimgs" mode='widthFix' bindload="imageLoad">
+            </image>
+
+            <video class='product-vedio' src="{{item}}"
+            wx:else show-play-btn  controls></video>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class='swiper-dot'>{{currentImg+1}}/{{lunbo.length}}</view>
+      <swiper class='w_pro_marquees' autoplay vertical interval="{{2000}}">
+        <block wx:for="{{histories}}" wx:key="{{index}}" >
+          <swiper-item class="pro_marquees">{{item.title}}
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="w_spike_showTab w_spikeIsShow" wx:if="{{type == 3}}">
+        <view class="w_spike_showLets">
+          <text class='spike_price'>￥{{util.numberFixed(productDetails.priceCurrentPrice)}}</text>
+          <text class='spike_price spike_price2'>￥{{util.numberFixed(productDetails.priceBeforePrice)}}</text>
+        </view>
+        <view class="w_spike_showRigs">
+          <text class='spike_text'>距结束还剩</text>
+          <view>
+            <text class="cut-time">{{cutOffTime.o}}</text>:
+            <text class="cut-time">{{cutOffTime.m}}</text>:
+            <text class="cut-time">{{cutOffTime.s}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    
+    <view class="w_proTitles">
+      <view class="pro-title">{{productDetails.productTitle}}</view>
+        <view class='pro-title2'>
+          ￥
+          <view class='pro-desc'>
+          <!-- {{productDetails.priceCurrentPrice}} -->
+             {{util.numberFixed(productDetails.priceCurrentPrice)}} 
+            <text class='pro-title-text' wx:if="{{productDetails.sourceType==1}}">用豆直兑</text>
+            <text class="pro-title-text w_txtYels" wx:if="{{productDetails.sourceType==1 || productDetails.sourceType==2}}">红包直抵</text>
+            <text class="pro-title-text w_txtOranges" wx:if="{{productDetails.sourceType==3}}">金豆直兑</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="w_proNums">
+      <text class='w_proNums_text'>已抢{{productDetails.productVirtualNum}}件</text>
+    </view>
+
+    <view class="w_pro_listInfo w_pro_listInfo_Icons">
+      <text class='w_pro_listInfo_label'>规格</text>
+      <text class='w_pro_listInfo_span' bindtap="toggleSize">请选择规格</text>
+    </view>
+    <view class="w_pro_listInfo">
+      <text class='w_pro_listInfo_label'>参数</text>
+      <text class='w_pro_listInfo_text' wx:if="{{productDetails.shelfLifeScope}}">
+        {{productDetails.shelfLifeScope}}
+      </text>
+    </view>
+    <view class="w_pro_listInfo w_pro_listInfo2">
+      <text class='w_pro_listInfo_label2' wx:for="{{flags}}" wx:key="{{index}}">
+        {{item}}</text>
+    </view>
+
+    <view class="w_pro_upLoads">上拉查看详情</view>
+  </view>
+
+  <view class="w_pro_ViewCons">
+    <image wx:for="{{productImgs}}" mode='widthFix' wx:key="{{index}}" src="{{ item || errorImg}}" class='product-imgs'></image>
+  </view>
+</view>
+
+<view class="w_proFoots {{type==3||detailView.sourceType==2||detailView.sourceType==3||detailView.sourceType==5? 'w_proFootSkipes':''}}">
+  <text bindtap='makePhoneCall' class="foot-span foot-icons w_profot_01" >客服</text>
+  <text bindtap="goCart" class="foot-span foot-icons w_profot_02" >购物车</text>
+
+  <!-- <button class="foot-span foot-icons w_profot_03"
+    plain hover-class="none" open-type='share' wx:if="{{loginFlag}}">去借豆</button>
+  <button class="foot-span foot-icons w_profot_03" bindtap='goLogin'
+    plain hover-class="none" wx:else>去借豆</button> -->
+    <text class="foot-span foot-icons w_profot_03" hover-class="none" bindtap='share'>去借豆</text>
+    <!-- bindtap="share" data-proid="{{porLis.proId}}" data-proimg="{{porLis.proImg}}" -->
+    
+  <text bindtap="insertIntoShopCar" class="foot-span w_profot_04" >加入购物车</text>
+  <text bindtap="puchaseImmediately" class="foot-span w_profot_05" >立即购买</text>
+</view>
+
+<view class='popup-wrap' wx:if="{{popupShow}}">
+  <view class='popup-content'>
+    <text class="w_popColsed" bindtap="closePopup"></text>
+    <view class="w_pop_proImg">
+      <image class='popup-product-img'  mode='widthFix'
+        src="{{util.mediaType(lunbo[0])== 'jpg'? lunbo[0] : lunbo[1]}}" ></image>
+      <view class="w_pop_riPric">
+        <view class='w_pop_riPric_h2'>¥ {{productDetails.priceCurrentPrice}}</view>
+        <view wx:if="{{skuList.length>0}}" class="w_pop_pric_span">
+          已选：
+          <text>{{util.selnameExt(skuList[skuSelected].attr_name_ext,skuList[skuSelected].attr_name)}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view wx:if="{{skuList.length>0}}"  class="w_pop_specs">
+      <block wx:for="{{skuList}}" wx:key="{{index}}">
+        <text class="sku-item {{skuSelected==index ? 'w_tabSpanCur': ''}}" 
+        data-index="{{index}}" bindtap="productChange">{{util.selnameExt(skuList[index].attr_name_ext,skuList[index].attr_name)}}</text>
+      </block>
+    </view>
+
+    <view class="w_pop_selNums">
+      <view class='pop_label'>购买数量</view>
+      <view class="w_pop_selBtns flex-wrp">
+        <image id="sub" bindtap='changeNum'
+          class="icon-sub {{amount <= productDetails.requestBuyLimit ? 'prevent-icon': ''}}" 
+          src='../../../images/icons/sub.png' mode="widthFix"></image>
+        <input class="input-num" placeholder="0" type="number" id="input"
+          value="{{amount}}" bindinput='changeNum'/>
+        <image class="icon-add {{amount >= 1000 ? 'prevent-icon': ''}}" 
+          mode="widthFix" id="add" bindtap='changeNum'
+          src='../../../images/icons/add.png'></image>
+      </view>
+    </view>
+
+    <view class="w_popBtnfot">
+      <text class='w_popBtnfot_span' bindtap="insertIntoShopCar">加入购物车</text>
+      <text class="w_popBtnfot_span w_popBtnReds" bindtap="puchaseImmediately">立即购买</text>
+    </view>
+  </view>
+</view>
+
+
+<view class="share-mask" wx:if="{{shareShow}}"></view>
+<view class="weui-dialog" wx:if="{{shareShow}}">
+  <view class="w_tip_view">
+    <view class="span" class="w_tip_fontTxt">转发好友,可自动完成借豆1-50抵用豆,快去测试您的人品吧!</view>
+    <image class="share-image image" src="https://zhkj.oss-cn-shanghai.aliyuncs.com/nJunesMerIndex/nwxf_01_02.png" mode="widthFix" bindtap="shareHide" />
+  </view>
+</view>

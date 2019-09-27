@@ -1,0 +1,8 @@
+<view class="marquee-wrap">
+  <view class='marquee-tips'>{{tips}}</view>
+  <view class="marquee">
+    <view class="marquee-content">
+      <text>{{text}}</text> <text class='marquee-placeholder'></text>
+    </view>
+  </view>
+</view>

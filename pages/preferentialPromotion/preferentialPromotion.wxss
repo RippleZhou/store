@@ -1,0 +1,60 @@
+.w_serMes_MessList .span {
+  display: inline-block;
+  background: #e3e3e4;
+  color: #fff;
+  height: 1.25rem;
+  line-height: 1.25rem;
+  border-radius: 1.25rem;
+  padding: 0 0.25rem;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.w_serMes_MessList {
+  text-align: center;
+  padding: 20rpx;
+}
+
+.content-wrap{
+  margin-bottom:20rpx ;
+}
+
+.page-wrap {
+  padding: 0 20rpx;
+}
+
+.image-wrap {
+  position: relative;
+  border-radius: 10rpx;
+}
+
+.mask {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  border-radius: 10rpx;
+}
+
+.mask-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+      transform: translate(-50%,-50%);
+      color: #fff;
+      font-size: 32rpx;
+}
+
+.title{
+padding: 20rpx 20rpx;
+font-size: .9375rem;
+    color: #333;
+    font-weight: 600;
+}
+.content{
+    padding: 0 .625rem;
+    padding-bottom: .625rem;
+        font-size: .875rem;
+    color: #666;
+    line-height: 1.4375rem;
+}

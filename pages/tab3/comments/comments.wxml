@@ -1,0 +1,18 @@
+<view class="w_grayBgBox" >
+  <view class="w_allCommBox">
+    <scroll-view class='scroll-view' scroll-y bindscrolltolower="scrolltolower">
+      <view style="height: 1px;"></view>
+      <view class="w_allComm_TopTit">全部评论{{total}}条</view>
+      <comment-list list="{{list}}"></comment-list>
+      <view class='no-data-text'>没有更多数据</view>
+    </scroll-view>
+  </view>
+  <view class="w_commFooter">
+    <view class="comment-input">
+      <textarea class='textarea' bindinput="setDefaultValue" placeholder="拍图片/视频将能获取更多豆哦~"
+        bindblur="viewDefault"></textarea>
+      <view class='comment-tips'>至少输入12个字</view>
+    </view>
+    <view class='comment-btn' bindtap="submit">发表</view>
+  </view>
+</view>

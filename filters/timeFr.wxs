@@ -1,0 +1,39 @@
+var timeFr = {
+  computedTime: function (time) {
+    if (time) {
+      //获取两个时间相差毫秒数
+      var interval = time*1000;
+        
+      //获取两个时间相差天数，相差毫秒数/1000/60/60/24 获得天数
+      var intervalDate = Math.floor(interval / 1000 / 60 / 60 / 24);//天数
+      //获取两个时间相差毫秒数
+
+      //获取两个时间相差小时，相差小时数为相差毫秒数去掉相差的天数  /1000/60/60 获得小时数
+      var leave1 = interval % (1000 * 60 * 60 * 24);//去掉天数剩余的豪秒数
+      var intervalHour = Math.floor(leave1 / 1000 / 60 / 60);//小时
+      var intervalHourStr = intervalHour > 10 ? intervalHour : ('0' + intervalHour);
+
+      //获取两个时间相差分钟数，相差分钟数为相差毫秒数去掉相差的天数和相差的小时数  /1000/60 获得分钟数
+      var leave2 = leave1 % (1000 * 60 * 60);//去除天数和小时数剩余的毫秒数
+      var intervalMinutes = Math.floor(leave2 / 1000 / 60);//分钟
+      var intervalMinutesStr = intervalMinutes > 10 ? intervalMinutes : ('0' + intervalMinutes);
+
+      //获取两个时间相差秒数，相差秒数为相差毫秒数去掉相差的天数、相差的小时数及相差的分钟数  /1000 获得分钟数
+      var leave3 = leave2 % (1000 * 60);//去除天数、小时数、分钟数剩余的毫秒数
+      var intervalSeconds = Math.floor(leave3 / 1000);//秒
+      var intervalSecondsStr = intervalSeconds > 10 ? intervalSeconds : ('0' + intervalSeconds);
+      
+      if (intervalHour > 0 || intervalMinutes > 0 || intervalSeconds > 0 ) {
+        fmt = '剩余 ' + intervalHourStr + ":" + intervalMinutesStr + ":" + intervalSecondsStr;
+        return fmt;
+      }
+     
+    }
+  }
+
+
+}
+
+module.exports = {
+  computedTime: timeFr.computedTime
+}

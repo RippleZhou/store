@@ -1,0 +1,150 @@
+.w_ridge_Tips {
+  background: #fff;
+  font-size: 24rpx;
+  color: #e61817;
+  line-height: 60rpx;
+  padding: 0 20rpx;
+}
+.w_ridge_Tips:before {
+  display: inline-block;
+  margin-right: 10rpx;
+  font-size: 60rpx;
+  margin-top: -6rpx;
+  line-height: 40rpx;
+  font-family: nwscfonts!important;
+  font-weight: 400;
+  font-style: normal;
+  content: "\E073";
+  color: #e61817;
+  vertical-align: middle;
+}
+.w_ridge_Lists {
+  background: #fff;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  position: relative;
+}
+.head-discover {
+  width: 254rpx;
+  height: 254rpx;
+  object-fit: cover;
+  -o-object-fit: cover;
+  display: block;
+  margin-right: 20rpx;
+}
+.w_ridge_liRigs {
+  flex-grow: 1;
+}
+.w_ridge_liRigs_h2 {
+  width: 80%;
+  font-size: 30rpx;
+  color: #333;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+}
+.w_ridge_rigTips {
+  padding-top: 60rpx;
+  margin-bottom: 15rpx;
+}
+.w_ridge_rigTips_span {
+  font-size: 24rpx;
+  color: #e61817;
+  border: 1px solid #e61817;
+  border-radius: 40rpx;
+  padding: 0 10rpx;
+}
+.w_rigde_prices {
+  display: block;
+  font-size: 24rpx;
+  color: #e61817;
+}
+.w_rigde_prices_b {
+  display: inline-block;
+  font-size: 36rpx;
+  margin-right: 10rpx;
+}
+.w_rigde_prices_s {
+  text-decoration: line-through;
+  display: inline-block;
+  font-size: 26rpx;
+  color: #999;
+}
+.w_rigde_btns {
+  position: absolute;
+  right:20rpx;
+  bottom:76rpx;
+}
+.w_rigde_link {
+  display: inline-block;
+  font-size: 26rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  border-radius: 50rpx;
+  text-align: center;
+  color: #fff;
+  border: 1px solid #e61817;
+}
+.w_rigde_bLinkBlack {
+  background: #ccc;
+  width: 130rpx;
+  border: none;
+}
+.w_rigde_linkWhite {
+  background: #fff;
+  color: #e61817;
+  padding: 0 16rpx;
+  line-height: 46rpx;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.w_rigde_linkRed {
+  background: #e61817;
+  padding: 0 16rpx;
+  line-height: 46rpx;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: -10rpx;
+}
+.w_rigde_rigIcons {
+  text-align: right;
+  padding-top: 15rpx;
+}
+.w_rigde_rigIcons_label {
+  display: inline-block;
+  color: #999;
+  font-size: 26rpx;
+  margin-left: 30rpx;
+}
+.w_rigde_rigIcons_label::before {
+    font-family: nwscfonts!important;
+    font-weight: 400;
+    font-style: normal;
+    content: "\E075";
+    color: #999;
+    vertical-align: middle;
+    font-size: 60rpx;
+    display: inline-block;
+    margin-right: 10rpx;
+    margin-top: -10rpx;
+    line-height: 40rpx;
+}
+.w_rigde_linkOrange {
+  border-color: #ff9000;
+  color: #ff9000;
+  border-top-right-radius: 0;
+  padding: 0 16rpx;
+  line-height: 46rpx;
+  border-bottom-right-radius: 0;
+}
+
+.distance{
+    position: absolute;
+    right: 0;
+    top: 1;
+    color: #999;
+    font-size: 24rpx;
+}

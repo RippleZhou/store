@@ -1,0 +1,51 @@
+<!--pages/order/returns/returns.wxml-->
+<wxs module="util" src="./returns.wxs"></wxs>
+<view class='ord_li_heads'>
+    <view class='ord_li_h_tit'>退/换货</view>
+    <icon class='top_servers' bindtap='getTels'></icon>
+</view>
+
+<view class='vir_box'>
+    <view class="eb_noPros {{isShows==true?'':'eb_noShows'}}" wx:if="{{isShows==false}}">
+        <view class="eb_noImgs">
+            <image src="{{noMores}}" mode="widthFix"></image>
+        </view>
+    <view class="eb_noTxts">没有退换货订单</view>
+  </view>
+  <block wx:else>
+    <scroll-view  style='height:{{scrollHeight}}px' scroll-y bindscrolltolower="scrolltolower" lower-threshold="100">
+    <view class='return_cons'>
+      <view class='w_myOnline_list' wx:for="{{returnItem}}" wx:key="unique" wx:for-item="ex">
+          <view class='w_myOnline_states'>
+            <view><label>{{util.statusName(ex.returnStatus)}}</label>{{ex.returnStatus==1 ? ex.time : ''}}</view>
+            <text>{{util.getstateTxt(ex.returnStatus)}}</text>
+          </view>
+          <view class='w_myOnline_proList' bindtap='goDetails' data-orderid="{{ex.orderId}}">
+            <image src="{{ex.imageUrl}}" mode="widthFix"></image>
+            <view class='w_myOnline_liMids'>
+              <text>{{ex.productName}}</text>
+              <label wx:if="{{ex.requestBuyLimit>1}}">{{ex.requestBuyLimit}}件起购</label>
+            </view>
+            <view class='w_myOnline_liRigs'>
+              <text>￥{{ex.productPrice}}</text>
+              <label>x{{ex.productNum}}</label>
+            </view>
+          </view>
+          <view class='w_myOnline_Totals'>
+          共计{{ex.productNum}}件商品  合计：¥{{ex.productNum*ex.productPrice}}
+          </view>
+          <view class='w_myOnline_btns'>
+            <text bindtap='goSeeLogis' data-orderid="{{ex.orderId}}">查看物流</text>
+            <text wx:if="{{ex.orderState==5}}" bindtap='goLogistics' data-orderid="{{ex.orderId}}">填写物流信息</text>
+          </view>
+      </view>
+    </view>
+    <view class="w_loading_box">
+          <block wx:if="{{noPage==1}}">
+              <view class='w_load_tips'>{{tipTxt}}</view>
+          </block>
+      </view>
+    </scroll-view> 
+
+  </block>
+</view>

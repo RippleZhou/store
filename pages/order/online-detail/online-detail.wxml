@@ -1,0 +1,85 @@
+<!--pages/order/online-detail/online-detail.wxml-->
+<wxs module="util" src="./online-detail.wxs"></wxs>
+<view class='ord_li_heads'>
+    <view class='ord_li_h_tit'>订单详情</view>
+    <icon class='top_servers' bindtap='getTels'></icon>
+</view>
+
+<view class='ord_liBox'>
+    <view class='w_orderDetail_tops'>
+      <image src='../../../images/w_per_headbg.jpg' class='w_per_bgimg' mode="widthFix"></image>
+      <text>{{util.getorderStateName(items.orderState,items.tradeState)}}</text>
+    </view>
+    <view class='w_orderDetail_address'>
+      <view class='w_orde_logs'>
+        <view class='w_log_Tit' wx:if="{{items.orderState > 1 && items.sendGoods!=null && items.sendGoods.expressNo!=null}}">{{items.sendGoods.sendStatusName}}</view>
+        <text class='w_log_state'>{{items.orderDate}}</text>
+      </view>
+      <view class='w_orde_aPos'>
+          <view class='w_aPos_tels'>
+            <text>收货人：{{items.contactName}}</text><text>{{items.contactCellPhone}}</text>
+          </view>
+          <view class='w_aPos_ads'>收货地址：{{items.area}}</view>
+      </view>  
+    </view>
+    <view class='w_confOrder_lists'>
+        <image src='{{items.imageUrl}}' mode="widthFix"></image>
+        <view class='w_confOrder_rsDetails'>
+            <text>{{items.productName}}</text>
+            <label wx:if="{{items.requestBuyLimit>1}}">{{items.requestBuyLimit}}件起购</label>
+        </view>
+        <view class='w_confOrder_numsDetails'>
+            <label>￥{{items.productPrice}}</label>
+            x{{items.productNum}}
+        </view>
+    </view>
+    <view class='w_orderDetail_statTxts' wx:if="{{items.orderState==12 || items.orderState==5 || items.orderState==9}}">
+         {{util.getrefunStateName(items.orderState)}}
+    </view>
+     <view class='w_orderDetail_totals' wx:else>
+          共计{{items.productNum}}件商品  合计：¥{{items.orderAmount==null?0:items.orderAmount}}
+    </view>
+    <view class='w_orderDetail_numList'>
+        <view class='w_confOrder_inforList'>
+          <label>商品金额</label>
+          <text>￥{{items.orderAmount==null?0:items.orderAmount}}</text> 
+        </view>
+        <view class='w_confOrder_inforList'>
+          <label>现金红包</label>
+          <text>- ￥{{items.beanAmount==null?0:items.beanAmount}}</text> 
+        </view>
+        <view class='w_confOrder_inforList'>
+          <label>转换豆</label>
+          <text>- ￥{{items.converBean==null?0:items.converBean}}</text> 
+        </view>
+        <view class='w_orderDetail_numTxtRs'>实付款:<label>¥{{items.payAmount==null?0:items.payAmount}}</label></view>
+    </view>
+    <view class='w_orderDetail_infors'>
+        <view>
+            <text>订单信息</text>
+        </view>
+        <view>
+            <text>订单编号:</text>{{items.orderCode}}
+        </view>
+        <view wx:if="{{items.orderDate!=''||items.orderDate!=null}}">
+            <text>付款时间:</text>{{items.orderDate}}
+        </view>
+    </view>
+</view>
+
+<view class='w_orderDetail_btns' wx:if="{{items.tradeState==1}}">
+    <picker bindchange="bindPickerChange" value="index" range="{{cancelList}}" range-key="{{'text'}}">
+      <text wx:if="{{items.orderState==1}}" bindtap='cancelShows'>取消订单</text>
+    </picker>
+    <text wx:if="{{items.orderState==3||items.orderState==4||items.orderState==9}}" bindtap='delOrder'>删除订单</text>
+    <text wx:if="{{items.orderState==2}}" bindtap='confirmReceipt'>确认收货</text>
+    <text wx:if="{{items.orderState==3||items.orderState==2||items.orderState==16}}" bindtap='goSeeLogis'>查看物流</text>
+    <text wx:if="{{items.orderState==3}}" bindtap='goReturn'>退/换货</text>
+    <block wx:if="{{items.orderState==5}}">
+      <text bindtap='cancelReturnedGoods'>取消退/换货</text>
+      <text bindtap='goLogistics'>填写物流信息</text>
+    </block>
+</view>
+<view class='w_orderDetail_btns' wx:if="{{items.tradeState==1}}">
+    <text bindtap='delOrder'>删除订单</text>
+</view>

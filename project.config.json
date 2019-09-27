@@ -1,0 +1,313 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.0.4",
+	"appid": "wxe4871b79cca89034",
+	"projectname": "zh-wechat-miniprogram",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 37,
+			"list": [
+				{
+					"id": 1,
+					"name": "现金充豆",
+					"pathName": "pages/chargeBean/chargeBean",
+					"query": "storeid=35168&name=铁公鸡土灶坊",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "发豆包",
+					"pathName": "pages/sendBean/sendBean",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "测试swiper",
+					"pathName": "pages/testss/testss",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "二折区",
+					"pathName": "pages/lowbuy/lowbuy",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "登录",
+					"pathName": "pages/user/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "签到领红包",
+					"pathName": "pages/signInRedPackage/signInRedPackage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "邀请好友",
+					"pathName": "pages/inviteFriends/inviteFriends",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/personacenter/personacenter",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "查看手气",
+					"pathName": "pages/beanBagDetail/beanBagDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "帮助中心",
+					"pathName": "pages/helpCenter/helpCenter",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "帮助中心-详情",
+					"pathName": "pages/helpCenterDetail/helpCenterDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 12,
+					"name": "支付失败",
+					"pathName": "pages/payFail/payFail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单表",
+					"pathName": "pages/order/all-orders/all-orders",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "充值记录",
+					"pathName": "pages/rechargeList/rechargeList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "新人专享",
+					"pathName": "pages/activity0903/activity0903",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "99包邮",
+					"pathName": "pages/activityNinetyNine/activityNinetyNine",
+					"query": "storeid=35168&name=铁公鸡土灶坊",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "发现",
+					"pathName": "pages/find/find",
+					"query": "storeid=35168&name=铁公鸡土灶坊",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "代金券详情",
+					"pathName": "pages/specialCoupon/specialCoupon",
+					"query": "storeid=35168&name=铁公鸡土灶坊",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "代金券-订单",
+					"pathName": "pages/order/bargain-confirm-order/bargain-confirm-order",
+					"query": "storeid=35168&name=铁公鸡土灶坊",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "城市",
+					"pathName": "pages/citys/citys",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "邀请好友列表",
+					"pathName": "pages/seaFriends/seaFriends",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "豆包详情",
+					"pathName": "pages/beanBagDetail/beanBagDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "借豆",
+					"pathName": "pages/beans/borrow-beans/borrow-beans",
+					"query": "storeid=35168&name=铁公鸡土灶坊",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/cart/cart",
+					"query": "storeid=35168&name=铁公鸡土灶坊",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单确认页",
+					"pathName": "pages/order/confirm-order/confirm-order",
+					"query": "storeid=35168&name=铁公鸡土灶坊",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "上传头像",
+					"pathName": "pages/user/modifying-head/modifying-head",
+					"query": "storeid=35168&name=铁公鸡土灶坊",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "payFail",
+					"pathName": "pages/payFail/payFail",
+					"query": "isPayOk=false&fromType=11",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "设置新密码",
+					"pathName": "pages/user/find-passwordnext/find-passwordnext",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "收货地址",
+					"pathName": "pages/user/receiving-address/receiving-address",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我要转豆",
+					"pathName": "pages/turnBeans/turnBeans",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我要转豆",
+					"pathName": "pages/turnBeans/turnBeans",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "转豆数量",
+					"pathName": "pages/turnBeanNums/turnBeanNums",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "服务消息",
+					"pathName": "pages/news/news",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "收豆详情",
+					"pathName": "pages/beansHarvestDetails/beansHarvestDetails",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "收豆详情",
+					"pathName": "pages/turnBeanNums/turnBeanNums",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "优惠大促",
+					"pathName": "pages/preferentialPromotion/preferentialPromotion",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "物流消息",
+					"pathName": "pages/logisticsMessage/logisticsMessage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "详情页评论",
+					"pathName": "pages/tab3/store-details/store-details",
+					"query": "storeid=44&name=天禧大酒楼（七宝店)",
+					"scene": null
+				}
+			]
+		}
+	}
+}

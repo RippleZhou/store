@@ -1,0 +1,11 @@
+<!--pages/user/set-loginpw/set-loginpw.wxml-->
+<view class='w_set_paypws'>
+  <view class='w_set_payList'>
+    <input type='password' placeholder='请输入登录密码' maxlength='6' bindinput='defautValue' id='logpw'></input>
+  </view>
+  <view class='w_set_payList'>
+    <input type='password' placeholder='请确认登录密码' maxlength='6' bindinput='defautValue' id='aginlogpw'></input>
+  </view>
+  <view class='w_set_payTips'>*密码为6-16位</view>
+  <view class='w_set_paybtn' bindtap='setlogpw'>确认</view>
+</view>

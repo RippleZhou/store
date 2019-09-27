@@ -1,0 +1,161 @@
+/* pages/payFail/payFail.wxss */
+
+.w_grayBgBox {
+	width:100%;
+	position:absolute;
+	height:100%;
+	background:#f5f5f5
+}
+
+.w_grayBgBox ._v-container {
+	top:2.75rem;
+	background:#f5f5f5
+}
+
+.w_top_rightTxt,.w_top_rightTxt:hover {
+	position:absolute
+}
+
+.w_top_rightTxt,.w_top_rightTxt:hover {
+	position:fixed;
+	width:15%;
+	right:0;
+	top:0;
+	line-height:2.75rem;
+	z-index:101;
+	display:block;
+	font-size:.9375rem;
+	color:#666;
+	text-align:right;
+	padding-left:0;
+	padding-right:.625rem
+}
+
+.w_payFail_content {
+	width:100%;
+	background:#fff;
+	margin-bottom:.625rem;
+	padding:1.875rem .625rem;
+	text-align:center
+}
+.w_payFail_content .h2 {
+	font-size:1.0625rem;
+	color:#333;
+	padding-bottom:1.40625rem
+}
+
+/* 支付成功icon */
+.w_payFail_content .h2:before {
+   font-family: 'nwscfonts';
+	font-weight:400;
+	font-style:normal;
+	content:"\E026";
+	color:#fff;
+	font-size:2.5rem;
+	vertical-align:middle
+}
+/* 支付失败icon */
+.w_payFail_content .fail:before {
+	font-family:'nwscfonts'!important;
+	font-weight:400;
+	font-style:normal;
+	content:"\E020";
+	color:#fff;
+	font-size:2.5rem;
+	vertical-align:middle
+}
+.w_payFail_content .h2:before {
+	display:block;
+	width:4.0625rem;
+	height:4.0625rem;
+	text-align:center;
+	border-radius:4.0625rem;
+	margin:0 auto;
+	background:linear-gradient(to right,#f90000,#f61e65);
+	margin-bottom:1.09375rem;
+	font-size:4.0625rem!important;
+	line-height:3.75rem
+}
+
+
+.w_payFail_content .w_payFail_btns {
+	width:100%;
+	text-align:center
+}
+
+
+.w_payFail_content .w_payFail_btns .a,.w_payFail_content .w_payFail_btns .a:hover {
+	display:inline-block;
+	font-size:.875rem;
+	color:#333;
+	border:1px solid #333;
+	height:1.75rem;
+	line-height:1.6875rem;
+	-webkit-border-radius:1.75rem;
+	-moz-border-radius:1.75rem;
+	border-radius:1.75rem;
+	padding:0 .78125rem;
+	margin-left:.9375rem;
+	margin-right:.9375rem
+}
+.w_payFail_content .w_payFail_btns .a:hover:last-child,.w_payFail_content .w_payFail_btns .a:last-child {
+	color:#e61817;
+	border-color:#e61817
+}
+
+.w_recd_boxs {
+    width: 100%;
+    background: #fff;
+}
+
+.w_recd_boxs .w_recd_tits {
+    font-size: .9375rem;
+    color: #333;
+    height: 2.75rem;
+    line-height: 2.75rem;
+    text-align: center;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.w_recd_boxs .w_recd_Cons {
+    display: flex;
+    flex-wrap: wrap;
+    padding: .625rem .3125rem;
+}
+
+.w_recd_boxs .w_recd_Cons .w_recd_lists {
+    width: 33.33%;
+    padding: 0 .3125rem;
+    padding-bottom: .8125rem;
+    text-align: left;
+}
+
+.w_recd_boxs .w_recd_Cons .w_recd_lists .img {
+    margin: 0 auto;
+    display: block;
+    line-height: 0;
+    width: 100%;
+}
+
+.w_recd_boxs .w_recd_Cons .w_recd_lists .h2 {
+    text-align: left;
+    font-size: .8125rem;
+    color: #333;
+    margin-top: .46875rem;
+    margin-bottom: .46875rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+}
+
+.w_recd_boxs .w_recd_Cons .w_recd_lists .h3 {
+    font-size: .75rem;
+    color: #e61817;
+}
+
+.w_recd_boxs .w_recd_Cons .w_recd_lists .h3 .b {
+    display: inline-block;
+    font-size: .9375rem;
+}

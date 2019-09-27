@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+      "index-recommend": "/components/index/index-recommend/index-recommend",
+      "index-home": "/components/index/index-home/index-home"
+    }
+}

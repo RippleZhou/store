@@ -1,0 +1,10 @@
+<!--pages/beansHarvestDetails/beansHarvestDetails.wxml-->
+<view >
+ 
+  <view  class="w_beanharsBox">
+    <view class="h2" >{{ stateName }}</view>
+    <view class="h3" >转换豆:{{beanNum}}粒</view>
+    <view class="enter-bean {{isSubmit==true?'':'continue-bean'}}" bindtap='enterBean'>{{stateSubmitText}}</view>
+  </view>
+  <view class="p w_beaHarsTims">转豆时间：{{createDate}}</view>
+</view>

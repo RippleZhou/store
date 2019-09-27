@@ -1,0 +1,19 @@
+<!--pages/modify-loginpw/modify-loginpw.wxml-->
+<view class='w_mod_logpw'>
+  <view class='w_mod_list'>
+      <input type='password' placeholder='请输入当前密码' bindinput="curPw"></input>
+  </view>
+   <view class='w_mod_list'>
+      <input type='password' placeholder='请输入新密码' bindinput="newPw"></input>
+  </view>
+   <view class='w_mod_list'>
+      <input type='password' placeholder='请确认新密码' bindinput="aginPw"></input>
+  </view>
+  <view class='w_mod_txts'>
+    <label>*密码为6-16位</label>
+    <navigator url='/pages/user/find-password/find-password' hover-class="none">*忘记密码？</navigator>
+  </view>
+  <view class='w_mod_btn' bindtap='modifypw'>
+      确认修改
+    </view>
+</view>

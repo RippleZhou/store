@@ -1,0 +1,41 @@
+/* pages/order/refund-schedule/refund-schedule.wxss */
+
+/***中间**/
+.vir_box{
+  margin-top: 88rpx;padding-bottom: 100rpx;
+}
+
+
+.no_blankIms{
+  font-size:30rpx;color:#999;text-align: center;padding-top:60rpx;
+}
+.no_blankIms image{
+  width:40%;margin: 0 auto;display:block;margin-bottom:10rpx;
+}
+
+.vir_refund_con{
+  width:100%;
+}
+.vir_refund_list{
+  background: #fff;padding:20rpx;margin-bottom: 20rpx;
+}
+.vir_refund_tit{
+  font-size: 30rpx;color:#333;padding-bottom: 40rpx;
+}
+.vir_refund_tit label{
+  color:#E61817;
+}
+.w_refSched_liTxt{
+  line-height: 50rpx;position: relative;
+}
+.w_refSched_liTxt::after{
+  content: "\E003";font-family: nwscfonts!important;font-size: 60rpx;top:15%;color:#666;
+  right:0;position: absolute;display:inline-block;
+}
+.v_re_datas{
+   font-size: 26rpx;color:#666;
+}
+.w_re_codeLis{
+font-size: 28rpx;color:#666;
+}
+.w_re_codeLis text{font-weight:bold;font-size: 30rpx;color:#333;}

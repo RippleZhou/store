@@ -1,0 +1,11 @@
+<!--pages/user/modifying-head/modifying-head.wxml-->
+<view class='mod_head_Tit'>默认头像</view>
+
+<view class='mod_head_Cons'>
+    <view class='mod_head_list' wx:for="{{tempFilePaths}}" wx:key="unique" wx:if="{{item.length > 0}}" >
+      <image src='{{item}}' mode="widthFix"></image>
+    </view>
+    <view class='mod_head_list　mod_head_lasts' bindtap='addImgs'>自定义</view>
+</view>
+
+<view class='mod_head_btn' bindtap='saveHeads'>确认</view>

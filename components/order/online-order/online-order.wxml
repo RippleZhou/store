@@ -1,0 +1,69 @@
+<!--components/order/online-order/online-order.wxml-->
+<wxs module="util" src="./online-order.wxs"></wxs>
+
+<swiper class="swiper-wrap-tab" display-multiple-items="{{5}}" next-margin="36rpx">
+  <block wx:for="{{orderTab}}" wx:key="unique" >
+    <swiper-item class="swiper-item-tab tc "
+      bindtap="clickTab" data-index="{{index}}">
+      <view class="swiper-item-tab-text {{states == index ? 'active-tab': ''}}">
+        {{item}}
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
+
+<!--没有数据时显示-->
+<view class="eb_noPros {{isShows==true?'':'eb_noShows'}}" wx:if="{{isShows==false}}">
+        <view class="eb_noImgs">
+            <image src="{{noMores}}" mode="widthFix"></image>
+        </view>
+    <view class="eb_noTxts">还没有相关订单</view>
+</view>
+
+<swiper class='w_sw_con' current='{{states}}' bindchange="swiperChangeTab" wx:else>
+    <block wx:for="{{orderTab}}" wx:key="unique">
+      <swiper-item class="swiper-slide">
+        <scroll-view data-index="{{index}}" style='height:100%;' scroll-y bindscrolltolower="scrolltolower" lower-threshold="100">
+          <view class='order_conBox'>
+                  <view class='orderLists' wx:for="{{onlineItem}}" wx:key="unique" wx:for-item="lists">
+                      <view class='order_list_states order_list_states2' wx:if="{{states == 0}}">订单编号：{{lists.orderGroupCode}}</view>
+                      <view class='order_list_states' wx:else>{{util.getStateTxt(states)}}</view>
+                      <view class='order_proList' wx:for="{{lists.sopOrderList}}" wx:key="unique" wx:for-item="x" bindtap='goDetails' data-grid='{{lists.orderGroupId}}' data-states='{{states}}' data-orid='{{x.orderId}}'>
+                          <image mode="widthFix" src='{{x.imageUrl||errorImg}}' binderror="errImg" data-err-img="{{errorImg}}"></image>
+                          <view class='order_pro_mids'>
+                              <view class='order_pMid_tit'>{{x.productName}}</view>
+                              <view class='order_pMid_spec' wx:if="{{x.productWeight>0}}">{{x.productWeight}}</view>
+                              <text class='order_pMid_label' wx:if="{{x.requestBuyLimit>1}}">{{x.requestBuyLimit}}件起购</text>
+                          </view>
+                          <view class='order_pro_rigs'>
+                              <view class='order_pRig_pric'>￥{{x.productPrice}}</view>
+                              <view class='order_pRig_nums'>x{{x.productNum}}</view>
+                          </view>
+                      </view>
+                      <view class='order_totals'>
+                          共计{{util.methodBind(lists.sopOrderList,1)}}件商品  合计：¥{{util.methodBind(lists.sopOrderList,2)}}
+                      </view>
+
+                      <view class='order_p_btns' wx:if="{{states == 1}}">
+                        <text class='order_btn_defs order_btn_reds' bindtap='payShows' data-grid='{{lists.orderGroupId}}'>立即付款</text>
+                         <picker bindchange="bindPickerChange" value="index" range="{{cancelList}}" range-key="{{'text'}}">
+                        <text class='order_btn_defs' bindtap='cancelShows' data-orderid="{{util.getorderids(lists.sopOrderList)}}" data-grid='{{lists.orderGroupId}}' style="padding:12rpx 20rpx;position:relative;top:2rpx;">取消订单</text>
+                        </picker>
+                      </view>
+                      <view class='order_p_btns' wx:if="{{states == 3}}">
+                        <text class='order_btn_defs' bindtap='goSeeLogis' data-orderid="{{util.getorderids(lists.sopOrderList)}}">查看物流</text>
+                      </view>
+                  </view>
+              
+          </view>
+          <view class="w_loading_box">
+            <block wx:if="{{noPage==1}}">
+                <view class='w_load_tips'>{{tipTxt}}</view>
+            </block>
+          </view>
+        </scroll-view> 
+        
+        
+      </swiper-item>
+    </block>
+  </swiper>
